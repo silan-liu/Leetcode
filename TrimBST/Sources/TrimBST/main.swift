@@ -19,6 +19,21 @@ public class TreeNode {
 
 class Solution {
     func trimBST(_ root: TreeNode?, _ L: Int, _ R: Int) -> TreeNode? {
+        if let root = root {
+            if root.val < L {
+                // 因为左边必定小于value，root左子树可去掉，只保留右子树
+                return trimBST(root.right, L, R)
+            } else if root.val > R {
+                // root的右子树可去掉，只保留左子树
+                return trimBST(root.left, L, R)
+            }
+            
+            root.left = trimBST(root.left, L, R)
+            root.right = trimBST(root.right, L, R)
+        }
+        
+        return root
+        
         var results = [Int]()
         
         findNodesOutOfRange(root, L, R, &results)
@@ -41,22 +56,7 @@ class Solution {
             findNodesOutOfRange(root.right, L, R, &results)
         }
     }
-    
-    func recursive(_ root: inout TreeNode?, _ node: TreeNode?, _ L: Int, _ R: Int) {
-        if node == nil {
-            return
-        }
-        else if let node = node {
-            if node.val < L || node.val > R {
-                print("delete node \(node.val)")
-                root = deleteNode(root, node.val)
-            }
-            
-            recursive(&root, node.left, L, R)
-            recursive(&root, node.right, L, R)
-        }
-    }
-    
+
     func createBST(_ values: [Int]) -> TreeNode? {
         if values.count == 0 {
             return nil
