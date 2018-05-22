@@ -80,3 +80,42 @@ func averageOfLevels(_ root: TreeNode?) -> [Double] {
         return [0]
     }
 }
+
+func averageOfLevels_2(_ root: TreeNode?) -> [Double] {
+    var queue = [TreeNode]()
+    var result = [Double]()
+    
+    if let root = root {
+        queue.append(root)
+        
+        while queue.count > 0 {
+            
+            var sum: Int = 0
+            var count = 0
+            var tmp = [TreeNode]()
+            
+            while queue.count > 0 {
+                let node = queue[0]
+                queue.removeFirst()
+                
+                sum += node.val
+                count += 1
+                
+                if let left = node.left {
+                    tmp.append(left)
+                }
+                
+                if let right = node.right {
+                    tmp.append(right)
+                }
+            }
+            
+            queue = tmp
+            
+            result.append(Double(sum) / Double(count))
+        }
+    }
+    
+    return result
+}
+
