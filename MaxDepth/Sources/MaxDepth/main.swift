@@ -11,12 +11,11 @@ public class TreeNode {
 }
 
 func maxDepth(_ root: TreeNode?) -> Int {
-    var level = 0
     if let _ = root {
-        level = 1
+        return calMaxDepth(root, level: 1)
     }
-    
-    return calMaxDepth(root, level: level)
+ 
+    return 0
 }
 
 func calMaxDepth(_ node: TreeNode?, level: Int) -> Int {
@@ -37,4 +36,12 @@ func calMaxDepth(_ node: TreeNode?, level: Int) -> Int {
     }
     
     return level
+}
+
+func maxDepth_2(_ root: TreeNode?) -> Int {
+    if root == nil {
+        return 0
+    }
+    
+    return max(maxDepth_2(root?.left), maxDepth_2(root?.right)) + 1
 }
