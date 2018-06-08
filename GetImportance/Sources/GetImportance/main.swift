@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/employee-importance/description/
 struct Employee {
     var id: Int
     var importance: Int
