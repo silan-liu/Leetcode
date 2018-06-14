@@ -90,10 +90,34 @@ class Solution {
             }
         }
     }
+    
+    ///////// 使用set
+    func findTarget_2(_ root: TreeNode?, _ k: Int) -> Bool {
+        var set = Set<Int>()
+        return find_2(root, k, &set)
+    }
+    
+    func find_2(_ root: TreeNode?, _ k : Int, _ set: inout Set<Int>) -> Bool {
+        if let root = root {
+            if set.contains(k - root.val) {
+                return true
+            }
+            
+            // add
+            set.insert(root.val)
+            
+            return find_2(root.left, k, &set) || find_2(root.right, k, &set)
+        }
+        
+        return false
+    }
 }
  
- let array = [1]
+ let array = [1,2,3]
  let s = Solution()
  let node = s.buildBST(array)
- let result = s.findTarget(node, 2)
- print(result)
+ let result1 = s.findTarget(node, 2)
+ print(result1)
+
+let result2 = s.findTarget_2(node, 2)
+print(result2)
