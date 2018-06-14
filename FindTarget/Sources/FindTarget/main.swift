@@ -1,4 +1,5 @@
- public class TreeNode {
+// https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/
+public class TreeNode {
       public var val: Int
       public var left: TreeNode?
       public var right: TreeNode?
