@@ -1,4 +1,5 @@
 
+// https://leetcode.com/problems/construct-string-from-binary-tree/description/
  public class TreeNode {
     public var val: Int
     public var left: TreeNode?
@@ -23,7 +24,7 @@ class Solution {
             result.append(String(t.val))
             
             if t.left != nil || t.right != nil {
-                
+                // 若只有右子树，加()
                 if t.left == nil {
                     result.append("()")
                 } else {
