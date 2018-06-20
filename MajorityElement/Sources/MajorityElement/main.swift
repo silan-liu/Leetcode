@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/majority-element/description/
 func majorityElement(_ nums: [Int]) -> Int {
     var map = [Int: Int]()
     var max = nums.count / 2
