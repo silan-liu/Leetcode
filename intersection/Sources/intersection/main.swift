@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/intersection-of-two-arrays/description/
 func intersection(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
     var set1 = Set<Int>()
     var set2 = Set<Int>()
