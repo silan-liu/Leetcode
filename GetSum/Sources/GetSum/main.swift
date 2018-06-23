@@ -36,3 +36,17 @@ func getSum(_ a: Int, _ b: Int) -> Int {
 }
 
 print(getSum(10000000222, 1000000022))
+
+func test(_ num: Int) -> Int {
+    var a = num
+    var count = 0
+    
+    while a + 1 != 0 {
+        count += 1
+        a |= (a + 1)
+    }
+    
+    return a
+}
+
+print(test(8))
