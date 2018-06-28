@@ -1,6 +1,7 @@
 import Foundation
 // 相同字母，不同顺序
 // 这种方式超时了
+//https://leetcode.com/problems/valid-anagram/description/
 func isAnagram(_ s: String, _ t: String) -> Bool {
     if s.count != t.count {
         return false
