@@ -15,7 +15,7 @@ func findShortestSubArray(_ nums: [Int]) -> Int {
         if let value = positionMap[num] {
             positionMap[num] = (value.0, i)
         } else {
-            positionMap[num] = (i, -1)
+            positionMap[num] = (i, i)
         }
         
         i += 1
@@ -36,14 +36,7 @@ func findShortestSubArray(_ nums: [Int]) -> Int {
         if value == maxDegree {
             // 找到其对应的index元组
             if let value = positionMap[key] {
-                // 说明只有1个重复
-                var len = 0
-                if value.1 == -1 {
-                    len = 1
-                } else {
-                    // 即为长度
-                    len = value.1 - value.0 + 1
-                }
+                let len = value.1 - value.0 + 1
                 
                 if len < minLen {
                     minLen = len
