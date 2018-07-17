@@ -1,6 +1,9 @@
 // https://leetcode.com/problems/degree-of-an-array/description/
 func findShortestSubArray(_ nums: [Int]) -> Int {
+    // 记录num的个数
     var map = [Int: Int]()
+    
+    //  记录num开始/结束的索引: [num: (startIndex, endIndex)]
     var positionMap = [Int: (Int, Int)]()
     
     var i = 0
@@ -13,8 +16,10 @@ func findShortestSubArray(_ nums: [Int]) -> Int {
         
         //  记录num开始/结束的索引
         if let value = positionMap[num] {
+            // 再次出现，更新endIndex
             positionMap[num] = (value.0, i)
         } else {
+            // 第一次出现
             positionMap[num] = (i, i)
         }
         
