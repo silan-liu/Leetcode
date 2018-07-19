@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
+// 即为求最大的数
 func peakIndexInMountainArray(_ A: [Int]) -> Int {
     var max = Int.min
     var maxIndex = 0
