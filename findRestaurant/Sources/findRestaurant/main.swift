@@ -22,7 +22,7 @@ func findRestaurant(_ list1: [String], _ list2: [String]) -> [String] {
     
     var minSum = Int.max
     
-    // 因为需要输出所有index之和相同并且最小的restaurant
+    // 因为需要输出所有index1+index2之和相同并且最小的restaurant
     for (key1, value1) in indexMap1 {
         if let value2 = indexMap2[key1] {
             let sum = value1 + value2
