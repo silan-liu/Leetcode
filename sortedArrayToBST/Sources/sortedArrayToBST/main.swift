@@ -1,4 +1,4 @@
-
+// https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/discuss/
 // Definition for a binary tree node.
 public class TreeNode {
     public var val: Int
@@ -30,7 +30,29 @@ func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
     return nil
 }
 
+// solution2
+func sortedArrayToBST_2(_ nums: [Int]) -> TreeNode? {
+    return recursiveTree(nums, 0, nums.count - 1)
+}
 
-let nums = [-10]
+func recursiveTree(_ nums: [Int], _ left: Int, _ right: Int) -> TreeNode? {
+    if left > right {
+        return nil
+    }
+    
+    let mid = (left + right) / 2
+    let midNum = nums[mid]
+    
+    let node = TreeNode(midNum)
+    node.left = recursiveTree(nums, left, mid - 1)
+    node.right = recursiveTree(nums, mid + 1, right)
+    
+    return node
+}
+
+
+let nums = [-10,-3,0,5,9]
 let root = sortedArrayToBST(nums)
-print(root)
+let root2 = sortedArrayToBST_2(nums)
+
+print("end")
