@@ -43,6 +43,28 @@ class Solution {
         
         return 0
     }
+    
+    // 方法2，只需遍历一次
+    func diameterOfBinaryTree_2(_ root: TreeNode?) -> Int {
+        var maxDiameter = 0
+        level(root, &maxDiameter)
+        return maxDiameter
+    }
+    
+    @discardableResult func level(_ root: TreeNode?, _ maxDiameter: inout Int) -> Int {
+        if let root = root {
+            let leftLevel = level(root.left, &maxDiameter)
+            let rightLevel = level(root.right, &maxDiameter)
+            
+            print("node:\(root.val), leftLevel:\(leftLevel), rightLevel:\(rightLevel)")
+            
+            // 记录最大值
+            maxDiameter = max(maxDiameter, leftLevel + rightLevel)
+            return 1 + max(leftLevel, rightLevel)
+        }
+        
+        return 0
+    }
 }
 
 let s = Solution()
@@ -56,5 +78,5 @@ let right = TreeNode(3)
 root.left = left
 root.right = right
 
-let d = s.diameterOfBinaryTree(root)
+let d = s.diameterOfBinaryTree_2(root)
 print(d)
