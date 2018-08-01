@@ -23,7 +23,7 @@ func readBinaryWatch(_ num: Int) -> [String] {
     
     var result = [String]()
     
-    if num > 0 {
+    if num >= 0 {
         var i = 0
         while i <= num {
             let j = num - i
@@ -109,11 +109,11 @@ func recursive_1(_ nums: [Int], _ n: Int, _ result: inout [Int], _ total: inout 
     }
 }
 
-let nums = [0, 1, 2, 3]
+let nums = [0, 1, 2, 3, 4, 5, 6]
 var result = [Int]()
 var total = [[Int]]()
-recursive(nums, 1, result, &total)
+recursive(nums, 7, result, &total)
 //recursive_1(nums, 2, &result, &total)
-readBinaryWatch(2)
+//readBinaryWatch(7)
 
 print(total)
