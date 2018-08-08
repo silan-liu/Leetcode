@@ -75,5 +75,5 @@ func reverse(_ s: String, _ k: Int) -> String {
     
 }
 
-let s = "abcdefgh", k = 2
+let s = "abcd", k = 2
 print(reverseStr(s, k))

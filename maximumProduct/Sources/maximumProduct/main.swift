@@ -100,5 +100,53 @@ func maximumProduct(_ nums: [Int]) -> Int {
     return result
 }
 
+// 比1更简单，不用考虑负数和正数的情况
+func maximumProduct_2(_ nums: [Int]) -> Int {
+    if nums.count <= 2 {
+        return 0
+    }
+    
+    if nums.count == 3 {
+        var result = 1
+        for n in nums {
+            result *= n
+        }
+        
+        return result
+    }
+    
+    // 找出最大的三个数
+    var max1 = Int.min
+    var max2 = Int.min
+    var max3 = Int.min
+    
+    // 选出最小的2个数
+    var min1 = Int.max
+    var min2 = Int.max
+    
+    for n in nums {
+        if n < min1 {
+            min2 = min1
+            min1 = n
+        } else if n < min2 {
+            min2 = n
+        }
+        
+        if n > max1 {
+            max3 = max2
+            max2 = max1
+            max1 = n
+        } else if n > max2 {
+            max3 = max2
+            max2 = n
+        } else if n > max3 {
+            max3 = n
+        }
+    }
+    
+    return max(max1 * max2 * max3, min1 * min2 * max1)
+}
+
 let nums = [0,0,0,4]
 print(maximumProduct(nums))
+print(maximumProduct_2(nums))
