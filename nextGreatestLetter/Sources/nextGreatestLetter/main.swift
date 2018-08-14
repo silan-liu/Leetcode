@@ -1,30 +1,17 @@
 
-extension Character
-{
-    func toInt() -> Int
-    {
-        var intFromCharacter:Int = 0
-        for scalar in String(self).unicodeScalars
-        {
-            intFromCharacter = Int(scalar.value)
-        }
-        return intFromCharacter
-    }
-}
-
 func nextGreatestLetter(_ letters: [Character], _ target: Character) -> Character {
     var minDiff = Int.max
-    let targetValue = target.toInt()
-    var result: Character = Character("")
+    let targetValue = toInt(target)
+    var result: Character = Character("a")
     
     for letter in letters {
-        let letterValue = letter.toInt()
-        var diff = 0
+        let letterValue = toInt(letter)
+        var diff = Int.max
         
-        if letterValue <= targetValue {
+        if letterValue < targetValue {
             diff = letterValue + 26 - targetValue
-        } else {
-            diff = targetValue - letterValue
+        } else if letterValue > targetValue {
+            diff = letterValue - targetValue
         }
         
         if diff < minDiff {
@@ -35,3 +22,17 @@ func nextGreatestLetter(_ letters: [Character], _ target: Character) -> Characte
     
     return result
 }
+
+func toInt(_ c: Character) -> Int
+{
+    var intFromCharacter:Int = 0
+    for scalar in String(c).unicodeScalars
+    {
+        intFromCharacter = Int(scalar.value)
+    }
+    return intFromCharacter
+}
+
+let letters = [Character("c"), Character("f"), Character("j")]
+let target = Character("e")
+print(nextGreatestLetter(letters, target))
