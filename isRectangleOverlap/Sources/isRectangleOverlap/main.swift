@@ -89,5 +89,17 @@
     return false
  }
  
+ // 通过计算面积
+ func isRectangleOverlap_2(_ rec1: [Int], _ rec2: [Int]) -> Bool {
+    guard rec1.count == 4, rec2.count == 4 else {
+        return false
+    }
+    
+    let height = min(rec1[3], rec2[3]) - max(rec1[1], rec2[1])
+    let width = min(rec1[2], rec2[2]) - max(rec1[0], rec2[0])
+    
+    return height * width > 0
+ }
+ 
  let rec1 = [7,8,13,15], rec2 = [10,8,12,20]
  print(isRectangleOverlap(rec1, rec2))
