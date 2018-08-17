@@ -50,6 +50,27 @@ class Solution {
             }
         }
     }
+    
+    func binaryTreePaths_2(_ root: TreeNode?) -> [String] {
+        var result = [String]()
+
+        recursiveVisit_2(root, "", &result)
+        return result
+    }
+    
+    func recursiveVisit_2(_ root: TreeNode?, _ path: String, _ result: inout [String]) {
+        if let root = root {
+
+            // leaf
+            if root.left == nil && root.right == nil {
+                result.append(path + String(root.val))
+            } else {
+                let curPath = path + String(root.val) + "->"
+                recursiveVisit_2(root.left, curPath, &result)
+                recursiveVisit_2(root.right, curPath, &result)
+            }
+        }
+    }
 }
 
 let s = Solution()
@@ -59,3 +80,4 @@ root.right = TreeNode(2)
 
 let result = s.binaryTreePaths(root)
 print(result)
+print(s.binaryTreePaths_2(root))
