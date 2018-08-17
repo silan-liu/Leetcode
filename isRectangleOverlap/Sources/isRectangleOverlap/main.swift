@@ -1,3 +1,4 @@
+ // https://leetcode.com/problems/rectangle-overlap/description/
  func isRectangleOverlap(_ rec1: [Int], _ rec2: [Int]) -> Bool {
     guard rec1.count == 4, rec2.count == 4 else {
         return false
@@ -58,7 +59,7 @@
  
  // 有2条对边重合
  func edgeOverlap(_ rec1: [Int], _ rec2: [Int]) -> Bool {
-    guard rec1.count == 4, rec2.count == 3 else {
+    guard rec1.count == 4, rec2.count == 4 else {
         return false
     }
     
@@ -77,19 +78,11 @@
         return true
     }
     
-    if x11 > x21 && x11 < x22 && y21 >= y22 && y11 <= y21 {
+    if x11 > x12 && x11 < x22 && y21 >= y22 && y11 <= y12 {
         return true
     }
     
-    if y11 > y21 && y11 < y22 && x21 >= x22 && x11 <= x21 {
-        return true
-    }
-    
-    if x11 == x12 && x12 == x22 && ((y11 > y12 && y11 < y22) || (y21 > y12 && y21 < y22)) {
-        return true
-    }
-    
-    if y11 == y12 && y21 == y22 && ((x11 > x12 && x11 < x22) || (x21 > x12 && x21 < x22)) {
+    if y11 > y12 && y11 < y22 && x21 >= x22 && x11 <= x12 {
         return true
     }
     
