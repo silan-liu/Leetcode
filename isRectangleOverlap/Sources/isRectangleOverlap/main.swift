@@ -103,3 +103,4 @@
  
  let rec1 = [7,8,13,15], rec2 = [10,8,12,20]
  print(isRectangleOverlap(rec1, rec2))
+ print(isRectangleOverlap_2(rec1, rec2))

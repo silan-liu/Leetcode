@@ -1,6 +1,5 @@
 // https://leetcode.com/problems/projection-area-of-3d-shapes/description/
 func projectionArea(_ grid: [[Int]]) -> Int {
-    var flagMap = [String: Int]()
     
     let rowCount = grid.count
     if rowCount > 0 {
@@ -29,80 +28,49 @@ func projectionArea(_ grid: [[Int]]) -> Int {
             i += 1
         }
         
+        for value in row {
+            total += value
+        }
+        
         // 按列遍历
         var column = [Int]()
         i = 0
         j = 0
         while i < rowCount {
-            column.append(grid[i][j])
+            let value = grid[i][j]
+            column.append(value)
+            
+            // 计算地面阴影
+            if value > 0 {
+                total += 1
+            }
             i += 1
         }
         
+        j = 1
         
-        while i < rowCount {
-            j = 0
-            while j < columnCount  {
+        while j < columnCount {
+            i = 0
+            while i < rowCount {
                 let value = grid[i][j]
-                
-                if value > 0 {
-                    total += value * 4 + 1
-                    
-                    // 减去覆盖的部分
-                    // 上
-                    if i - 1 >= 0 {
-                        let key = String(i-1) + "_" + String(j)
-                        let flag = flagMap[key]
-                        if flag == nil {
-                            let top = grid[i-1][j]
-                            // 最小覆盖*2
-                            total -= min(value, top) * 2
-                            
-                            flagMap[key] = 1
-                        }
-                    }
-                    
-                    // 下
-                    if i + 1 < rowCount {
-                        let key = String(i+1) + "_" + String(j)
-                        let flag = flagMap[key]
-                        if flag == nil {
-                            let bottom = grid[i+1][j]
-                            total -= min(value, bottom) * 2
-                            
-                            flagMap[key] = 1
-                        }
-                    }
-                    
-                    // 左
-                    if j - 1 >= 0 {
-                        let key = String(i) + "_" + String(j - 1)
-                        let flag = flagMap[key]
-                        if flag == nil {
-                            let left = grid[i][j-1]
-                            total -= min(value, left) * 2
-                            
-                            flagMap[key] = 1
-                        }
-                    }
-                    
-                    // 右
-                    if j + 1 < columnCount {
-                        let key = String(i) + "_" + String(j + 1)
-                        let flag = flagMap[key]
-                        
-                        if flag == nil {
-                            let right = grid[i][j+1]
-                            total -= min(value, right) * 2
-                            
-                            flagMap[key] = 1
-                        }
-                    }
+
+                if column[i] < value {
+                    column[i] = value
                 }
                 
-                j += 1
+                // 计算地面阴影
+                if value > 0 {
+                    total += 1
+                }
+                
+                i += 1
             }
             
-            i += 1
+            j += 1
+        }
+        
+        for value in column {
+            total += value
         }
         
         return total
@@ -111,5 +79,5 @@ func projectionArea(_ grid: [[Int]]) -> Int {
     return 0
 }
 
-let grid = [[1,2],[3,4]]
+let grid = [[2,2,2],[2,1,2],[2,2,2]]
 print(projectionArea(grid))
