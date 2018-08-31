@@ -35,8 +35,34 @@ func recurserive(_ root: TreeNode?, _ min1: inout Int, _ min2: inout Int) {
     }
 }
 
+func findSecondMinimumValue_2(_ root: TreeNode?) -> Int {
+    if let root = root {
+        var min2 = Int.max
+        
+        // root是最小的
+        recurserive_2(root, root.val, &min2)
+        
+        return min2 == Int.max ? -1 : min2
+    }
+    
+    return -1
+}
+
+func recurserive_2(_ root: TreeNode?, _ min1: Int, _ min2: inout Int) {
+    if let root = root {
+        if root.val > min1 && root.val < min2 {
+            min2 = root.val
+        } else if root.val == min1 {
+            recurserive_2(root.left, min1, &min2)
+            recurserive_2(root.right, min1, &min2)
+        }
+    }
+}
+
+
 let root = TreeNode(2)
 root.left = TreeNode(2)
 root.right = TreeNode(2)
 
 print(findSecondMinimumValue(root))
+print(findSecondMinimumValue_2(root))
