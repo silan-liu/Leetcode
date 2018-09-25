@@ -18,6 +18,17 @@ class Solution {
         return num
     }
     
+    // or
+    func pathSum_1(_ root: TreeNode?, _ sum: Int) -> Int {
+        if let root = root {
+            recursive(root, sum, 0)
+            pathSum_1(root.left, sum)
+            pathSum_1(root.right, sum)
+        }
+        
+        return num
+    }
+    
     func travel(_ root: TreeNode?, _ sum: Int) {
         if let root = root {
             recursive(root, sum, 0)
@@ -59,4 +70,5 @@ l2.left = TreeNode(1)
 r2.left = l2
 
 let s = Solution()
-print(s.pathSum(root, 4))
+//print(s.pathSum(root, 4))
+print(s.pathSum_1(root, 4))
