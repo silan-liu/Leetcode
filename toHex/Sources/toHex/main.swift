@@ -1,5 +1,6 @@
 import Foundation
 
+// https://leetcode.com/problems/convert-a-number-to-hexadecimal/description/
 func toHex(_ num: Int) -> String {
     var result = ""
     var map = [10:"a", 11:"b", 12:"c", 13:"d", 14:"e", 15:"f"]
