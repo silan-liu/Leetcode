@@ -8,22 +8,14 @@ func getRow(_ rowIndex: Int) -> [Int] {
         var list = [1,1]
         var i = 2
         while i <= rowIndex {
-            var j = 0
-            var result = [Int]()
-            while j <= rowIndex {
-                if j == 0 || j == rowIndex {
-                    result.append(1)
-                } else {
-                    if j - 1 >= 0 && j < list.count {
-                        let value = list[j - 1] + list[j]
-                        result.append(value)
-                    }
-                }
-                
-                j += 1
+            var j = i - 1
+            while j >= 1  {
+                list[j] = list[j - 1] + list[j]
+
+                j -= 1
             }
-            
-            list = result
+
+            list.append(1)
             
             i += 1
         }
@@ -34,4 +26,4 @@ func getRow(_ rowIndex: Int) -> [Int] {
     }
 }
 
-print(getRow(9))
+print(getRow(5))
