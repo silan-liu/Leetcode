@@ -1,5 +1,5 @@
 
-// 耗时不通过
+// Time Limit Exceeded
 func reverseVowels(_ s: String) -> String {
     var vowelList = [Character]()
     for c in s {
@@ -34,6 +34,7 @@ func reverseVowels(_ s: String) -> String {
     return result
 }
 
+// Time Limit Exceeded
 func reverseVowels_2(_ s: String) -> String {
     var i = 0
     var j = s.count - 1
@@ -42,8 +43,8 @@ func reverseVowels_2(_ s: String) -> String {
     
     var result = s
     
-    while i <= j  {
-        while i <= j {
+    while i < j  {
+        while i < j {
             let index = s.index(s.startIndex, offsetBy: i)
             let c = s[index]
             
@@ -55,7 +56,7 @@ func reverseVowels_2(_ s: String) -> String {
             }
         }
         
-        while i <= j {
+        while i < j {
             let index = s.index(s.startIndex, offsetBy: j)
             let c = s[index]
             
@@ -80,11 +81,39 @@ func reverseVowels_2(_ s: String) -> String {
 
             i += 1
             j -= 1
-        } else {
-            break
         }
     }
     
+    return result
+}
+
+func reverseVowels_3(_ s: String) -> String {
+    var list = Array(s)
+    
+    var i = 0
+    var j = list.count - 1
+    while i < j {
+        while i < j && !isVowel(list[i]) {
+            i += 1
+        }
+        
+        while i < j && !isVowel(list[j]) {
+            j -= 1
+        }
+        
+        if (i != j) {
+            let a = list[i]
+            let b = list[j]
+            
+            list[i] = b
+            list[j] = a
+            
+            i += 1
+            j -= 1
+        }
+    }
+    
+    let result = String(list)
     return result
 }
 
@@ -97,9 +126,13 @@ func isVowel(_ c: Character) -> Bool {
     return false
 }
 
-let string = "leetcodeabc"
+let string = "A manfdsjkfdjsfldsjaoifsdapciobfoaoaiauifdkjpouiaiaoaudofdiaoaocisoqdfgadsioaiudkfjdioaoiso"
+
 
 print(reverseVowels(string))
 
 print(reverseVowels_2(string))
+
+print(reverseVowels_3(string))
+
 
