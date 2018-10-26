@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/power-of-four/
 class Solution {
     func isPowerOfFour(_ num: Int) -> Bool {
         if num == 0 {
