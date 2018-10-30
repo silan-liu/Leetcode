@@ -68,6 +68,35 @@ func pivotIndex_2(_ nums: [Int]) -> Int {
     return -1
 }
 
+// more faster
+func pivotIndex_3(_ nums: [Int]) -> Int {
+    var sum = 0
+    
+    var i = 0
+    while i < nums.count {
+        sum += nums[i]
+        
+        i += 1
+    }
+    
+    i = 0
+    var leftSum = 0
+    // 边遍历，边计算总和，比第二种方法计算次数要少，思路大致一样
+    while i < nums.count {
+        
+        if leftSum * 2 == sum - nums[i] {
+            return i
+        }
+        
+        leftSum += nums[i]
+        
+        i += 1
+    }
+    
+    return -1
+}
+
 let nums = [1,7,3,6,5,6]
 print(pivotIndex(nums))
 print(pivotIndex_2(nums))
+print(pivotIndex_3(nums))
