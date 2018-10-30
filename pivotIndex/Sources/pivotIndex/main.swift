@@ -27,5 +27,47 @@ func pivotIndex(_ nums: [Int]) -> Int {
     return -1
 }
 
-let nums = [1, 7, 3, 6, 5, 6, 6]
+// faster
+func pivotIndex_2(_ nums: [Int]) -> Int {
+    var sum = 0
+    
+    var i = 0
+    while i < nums.count {
+        sum += nums[i]
+        
+        i += 1
+    }
+    
+    i = 0
+    while i < nums.count {
+        var j = 0
+        var leftSum = 0
+        
+        let diff = sum - nums[i]
+        // 非偶数，跳过
+        if diff % 2 != 0 {
+            i += 1
+            continue
+        }
+        
+        let expectSum = diff / 2
+        
+        while j < i {
+            leftSum += nums[j]
+        
+            j += 1
+        }
+        
+        if leftSum == expectSum {
+            return i
+        }
+        
+        i += 1
+    }
+    
+    return -1
+}
+
+let nums = [1,7,3,6,5,6]
 print(pivotIndex(nums))
+print(pivotIndex_2(nums))
