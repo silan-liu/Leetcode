@@ -97,14 +97,13 @@ class KthLargest_2 {
             nums[q] = nums[i]
             nums[i] = value
             
-            print(nums)
             return i
         }
         
         return -1
     }
-    
 }
+
 let obj = KthLargest_2(3, [4,5,8,2])
 print(obj.add(3))
 print(obj.add(5))
