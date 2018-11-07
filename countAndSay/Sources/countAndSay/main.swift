@@ -8,6 +8,8 @@ func countAndSay(_ n: Int) -> String {
     
     var i = 1
     var count = 1
+    
+    // 遍历n次
     while i < n {
         
         if last.count >= 1 {
@@ -16,10 +18,11 @@ func countAndSay(_ n: Int) -> String {
             count = 1
             
             while j < last.count {
+                // 计算相同的个数
                 if last[j] == last[j - 1] {
                     count += 1
                 } else {
-                    // 计算
+                    // 碰到不同的说明相同的数字已经计算完毕
                     result.append(count)
                     result.append(last[j - 1])
                     
