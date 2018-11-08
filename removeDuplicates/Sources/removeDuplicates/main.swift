@@ -3,23 +3,13 @@ func removeDuplicates(_ nums: inout [Int]) -> Int {
     if nums.count >= 1 {
         var lastIndex = 1
         var lastNum = nums[0]
-        var count = 1
         
         var i = 1
         while i < nums.count {
             let num = nums[i]
-            if num == lastNum {
-                count += 1
-                
-                // 如果是最后一个，需要判断是否覆盖
-                if i == nums.count - 1 {
-                    nums[lastIndex] = num
-                    count = 1
-                }
-            } else {
+            if num != lastNum {
                 // 将不同的数覆盖到对应的位置
                 nums[lastIndex] = num
-                count = 1
                 
                 lastIndex += 1
                 
@@ -40,25 +30,15 @@ func removeDuplicates(_ nums: inout [Int]) -> Int {
     if (numsSize >= 1) {
         int lastIndex = 1;
         int lastNum = nums[0];
-        int count = 1;
-        
+ 
         int i = 1;
         while (i < numsSize) {
             int num = nums[i];
-            if (num == lastNum) {
-                count += 1;
-                
-                // 如果是最后一个
-                if (i == numsSize - 1) {
-                    nums[lastIndex] = num;
-                    count = 1;
-                }
-            } else {
-                // 将不同的数覆盖到对应的位置
-                nums[lastIndex++] = num;
-                count = 1;
-                
-                lastNum = num;
+            if (num != lastNum) {
+                 // 将不同的数覆盖到对应的位置
+                 nums[lastIndex++] = num;
+ 
+                 lastNum = num;
             }
             
             i += 1;
