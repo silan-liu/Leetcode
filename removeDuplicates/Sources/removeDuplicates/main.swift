@@ -35,7 +35,8 @@ func removeDuplicates(_ nums: inout [Int]) -> Int {
     return 0
 }
 
-int removeDuplicates(int* nums, int numsSize) {
+// c 语言
+/*int removeDuplicates(int* nums, int numsSize) {
     if (numsSize >= 1) {
         int lastIndex = 1;
         int lastNum = nums[0];
@@ -68,6 +69,7 @@ int removeDuplicates(int* nums, int numsSize) {
     
     return 0;
 }
+ */
 
 var nums = [2,2,3,3,5,5,6,7,7]
 print(removeDuplicates(&nums))
