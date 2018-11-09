@@ -34,6 +34,38 @@ func findMaxAverage(_ nums: [Int], _ k: Int) -> Double {
     return Double(maxSum) / Double(k)
 }
 
+func findMaxAverage_2(_ nums: [Int], _ k: Int) -> Double {
+    if nums.count == 0 || k <= 0 {
+        return 0
+    }
+    
+    var sum = 0
+    var maxSum = Int.min
+    
+    // 先计算K个数的和
+    var i = 0
+    while i < k {
+        sum += nums[i]
+        i += 1
+    }
+    
+    maxSum = max(maxSum, sum)
+
+    // 从k开始
+    i = k
+    while i < nums.count {
+        // 减去第一个数，加上当前数
+        sum += nums[i]
+        sum -= nums[i - k]
+        
+        maxSum = max(sum, maxSum)
+        
+        i += 1
+    }
+    
+    return Double(maxSum) / Double(k)
+}
 
 let nums = [1,12,-5,-6,50,3,90], k = 4
 print(findMaxAverage(nums, k))
+print(findMaxAverage_2(nums, k))
