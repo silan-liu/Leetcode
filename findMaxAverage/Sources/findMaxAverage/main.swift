@@ -16,6 +16,7 @@ func findMaxAverage(_ nums: [Int], _ k: Int) -> Double {
             count += 1
             i += 1
         } else if count == k {
+            // 当计算了k个数后，减去第一个数，然后加上下一个数，即为新的k个数之和
             maxSum = max(maxSum, sum)
             sum -= nums[j]
             j += 1
