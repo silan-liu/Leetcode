@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/guess-number-higher-or-lower/
-var pick = 6
 func guessNumber(_ n: Int, _ pick: Int) -> Int {
     var low = 1
     var high = n
@@ -7,7 +6,7 @@ func guessNumber(_ n: Int, _ pick: Int) -> Int {
     while low <= high {
         let mid = low + (high - low) / 2
         
-        let result = guess(mid)
+        let result = guess(mid, pick)
         if result == 0 {
             return mid
         } else if result == -1 {
@@ -22,7 +21,7 @@ func guessNumber(_ n: Int, _ pick: Int) -> Int {
     return -1
 }
 
-func guess(_ num: Int) -> Int {
+func guess(_ num: Int, _ pick: Int) -> Int {
     if num < pick {
         return -1
     } else if num == pick {
@@ -32,4 +31,4 @@ func guess(_ num: Int) -> Int {
     }
 }
 
-print(guessNumber(10, pick))
+print(guessNumber(10, 6))
