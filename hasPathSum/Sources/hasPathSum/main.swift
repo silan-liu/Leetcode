@@ -19,15 +19,18 @@ class Solution {
     func recursive(_ root: TreeNode?, _ sum: Int, _ total: Int) -> Bool {
         if let root = root {
             let result = total + root.val
+            // 如果是叶子节点，则比较总和
             if root.left == nil && root.right == nil {
                 return sum == result
             }
         
             var flag = false
+            // 遍历左子树
             if root.left != nil {
                 flag = flag || recursive(root.left, sum, result)
             }
             
+            // 遍历右子树
             if root.right != nil {
                 flag = flag || recursive(root.right, sum, result)
             }
