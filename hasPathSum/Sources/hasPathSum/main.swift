@@ -40,4 +40,17 @@ class Solution {
             return false
         }
     }
+    
+    func hasPathSum_2(_ root: TreeNode?, _ sum: Int) -> Bool {
+        if let root = root {
+            // 使用减法，遍历完一个节点后，减去该值，如果遇到叶子节点，值刚好等于sum，则满足条件。
+            if root.left == nil && root.right == nil {
+                return root.val == sum
+            }
+            
+            return hasPathSum_2(root.left, sum - root.val) || hasPathSum_2(root.right, sum - root.val)
+        }
+        
+        return false
+    }
 }
