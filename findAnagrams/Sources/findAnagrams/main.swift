@@ -1,36 +1,39 @@
 //https://leetcode.com/problems/find-all-anagrams-in-a-string/submissions/
 class Solution {
     var map_p = [Character: Int]()
+    var map_s = [Character: Int]()
     
+    init() {
+        var i = 0
+        while i < 26 {
+            let key = Character(UnicodeScalar(i + 97)!)
+            map_p[key] = 0
+            map_s[key] = 0
+            
+            i += 1
+        }
+    }
+    
+    // a -> 97
+    // 还是超时。
     func findAnagrams_2(_ s: String, _ p: String) -> [Int] {
         let len = p.count
         if s.count < len {
             return []
         }
         
-        if map_p.count == 0 {
-            for c in p {
-                if let value = map_p[c] {
-                    map_p[c] = value + 1
-                } else {
-                    map_p[c] = 1
-                }
-            }
+        for c in p {
+            map_p[c] = map_p[c]! + 1
         }
         
         var result = [Int]()
 
         // 以p的长度为窗口，首先计算第一个窗口
-        var map_s = [Character: Int]()
         let ls = Array(s)
         var j = 0
         while j < p.count {
             let c = ls[j]
-            if let value = map_s[c] {
-                map_s[c] = value + 1
-            } else {
-                map_s[c] = 1
-            }
+            map_s[c] = map_s[c]! + 1
             
             j += 1
         }
@@ -44,24 +47,14 @@ class Solution {
         while i < s.count {
             // 尾部
             let end = ls[i]
-            
+
             // +1
-            if let count = map_s[end] {
-                map_s[end] = count + 1
-            } else {
-                map_s[end] = 1
-            }
-            
+            map_s[end] = map_s[end]! + 1
+
             // 头部
             let begin = ls[i - p.count]
             // -1
-            if let count = map_s[begin] {
-                if count == 1 {
-                    map_s.removeValue(forKey: begin)
-                } else {
-                    map_s[begin] = count - 1
-                }
-            }
+            map_s[begin] = map_s[begin]! - 1
 
             if map_s == map_p {
                 result.append(i - p.count + 1)
@@ -141,8 +134,3 @@ let p = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 let obj = Solution()
 print(obj.findAnagrams_2(s, p))
-
-
-let map_1 = ["a":1, "b":0]
-let map_2 = ["a":1]
-print(map_1 == map_2)
