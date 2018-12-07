@@ -26,6 +26,7 @@ public class ListNode {
 class Solution {
     func removeElements(_ head: ListNode?, _ val: Int) -> ListNode? {
         if let head = head {
+            // 添加一个虚拟的头，以便处理头节点与其他节点一致。
             let dummyHead = ListNode(0)
             dummyHead.next = head
             
