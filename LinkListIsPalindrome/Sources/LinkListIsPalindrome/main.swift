@@ -99,21 +99,46 @@ class Solution {
         return true
     }
     
-    // 第三种方式，遍历链表，用栈存储元素的值，然后从头开始遍历链表，对比栈顶元素。
-    
+    // 第三种方式，遍历链表，用栈存储元素的值，然后从头开始遍历链表，对比栈顶元素。空间复杂度O(n)
+    func isPalindrome_3(_ head: ListNode?) -> Bool {
+        if let head = head {
+            var stack = [Int]()
+            
+            var p: ListNode? = head
+            while p != nil {
+                stack.append(p!.val)
+                p = p?.next
+            }
+            
+            p = head
+            while p != nil {
+                if p?.val != stack.last {
+                    return false
+                }
+                
+                stack.removeLast()
+                p = p?.next
+            }
+            
+            return stack.isEmpty
+        }
+        
+        return true
+    }
 }
 
 let node1 = ListNode(1)
-let node2 = ListNode(3)
-let node3 = ListNode(1)
-let node4 = ListNode(3)
+let node2 = ListNode(2)
+let node3 = ListNode(2)
+let node4 = ListNode(2)
 let node5 = ListNode(1)
 
 node1.next = node2
 node2.next = node3
-//node3.next = node4
-//node4.next = node5
+node3.next = node4
+node4.next = node5
 
 let obj = Solution()
 print(obj.isPalindrome(node1))
+print(obj.isPalindrome_3(node1))
 print(obj.isPalindrome_2(node1))
