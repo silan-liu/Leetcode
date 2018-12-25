@@ -27,8 +27,10 @@ func checkPerfectNumber_2(_ num: Int) -> Bool {
     var sum = 0
     while i <= num / 2 {
         if num % i == 0 {
+            // 同时计算商，减少次数
             let n = num / i
-            print(n)
+
+            // 如果未超过，则说明在前半部分，防止重复加
             if i <= n {
                 sum += i
                 if n != num, n != i {
@@ -36,15 +38,12 @@ func checkPerfectNumber_2(_ num: Int) -> Bool {
                 }
             } else {
                 break
-            }
-            
-            print("sum:\(sum)")
+            }            
         }
 
         i += 1
     }
 
-    print(sum)
     return sum == num
 }
 
