@@ -11,6 +11,7 @@ public class TreeNode {
 }
 
 class Solution {
+    // 这种方式重复次数太多
     func longestUnivaluePath(_ root: TreeNode?) -> Int {
         if let root = root {
             let count = countOfSameValue(root, root.val)
@@ -45,6 +46,46 @@ class Solution {
     }
 }
 
+
+class Solution_2 {
+    var maxCount = 0
+    func longestUnivaluePath(_ root: TreeNode?) -> Int {
+        countOfSameValue(root)
+        return maxCount
+    }
+    
+    // 求经过root节点的最长路径，左子树路径+右子树路径
+    func countOfSameValue(_ root: TreeNode?) ->  Int {
+        if let root = root {
+            // 左子树相同值最大长度
+            let left = countOfSameValue(root.left)
+            
+            // 右子树相同值最大长度
+            let right = countOfSameValue(root.right)
+
+            var leftLen = 0
+            var rightLen = 0
+
+            // 如果左子树的值和当前值相等，则需要加上左子树路径
+            if root.left?.val == root.val {
+                leftLen += 1 + left
+            }
+
+            // 如果右子树的值和当前值相等，则需要加上右子树路径
+            if root.right?.val == root.val {
+                rightLen += 1 + right
+            }
+
+            // 计算最大值
+            maxCount = max(maxCount, leftLen + rightLen)
+            return max(leftLen, rightLen)
+        }
+        
+        return 0
+    }
+}
+
+
 let root = TreeNode(5)
 let node1 = TreeNode(2)
 let node2 = TreeNode(2)
@@ -60,3 +101,6 @@ root.right = node3
 let obj = Solution()
 print(obj.longestUnivaluePath(root))
 print(obj.countOfSameValue(root, 5))
+
+let obj1 = Solution_2()
+print(obj1.longestUnivaluePath(root))
