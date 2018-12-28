@@ -10,7 +10,7 @@ func recursive(_ A: [Int], _ index: Int, _ result: String) {
         }
     }
 
-    // 递归计算出所有符合贵族的字符串
+    // 递归计算出所有符合规则的字符串
     var i = 0
     while i < A.count {
         let a = A[i]
