@@ -8,6 +8,7 @@ class Solution {
         var i = 0
 
         while i < listA.count {
+            // 遍历每个与b[0]相等的字符。aaac, aac，比如这种不能直接取第一个相等的。
             if listA[i] == listB[0] {
                 
                 var j = 0
