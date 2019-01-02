@@ -7,7 +7,7 @@ func lengthOfLastWord(_ s: String) -> Int {
      let list = s.split(separator: " ")
      if list.count > 0 {
          return list.last!.count
-     }
+     } 
 
      return 0
 }
