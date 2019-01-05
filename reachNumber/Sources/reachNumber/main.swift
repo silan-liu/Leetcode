@@ -18,7 +18,7 @@ func reachNumber(_ target: Int) -> Int {
             // +变-，需要减去2倍
             if delta % 2 == 0 {
                 let n = delta / 2
-                // 要减去的数, 1..i之和为i * (i + 1) / 2，为正数时，n肯定在范围内，其实不用判断
+                // 要减去的数, 1..i之和为i * (i + 1) / 2，target为正数时，n肯定在范围内，其实不用判断
                 if n <= i * (i + 1) / 2 {
                     return i
                 } else {
