@@ -55,6 +55,6 @@ func reachNumber_2(_ target: Int) -> Int {
     }
 }
 
-let target = -5
+let target = -99999
 print(reachNumber(target))
 print(reachNumber_2(target))
