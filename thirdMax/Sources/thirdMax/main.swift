@@ -29,5 +29,5 @@ func thirdMax(_ nums: [Int]) -> Int {
     return max3
 }
 
-let nums = [3,0,0]
+let nums = [1,2,2,5,3,5]
 print(thirdMax(nums))
