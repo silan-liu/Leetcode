@@ -18,7 +18,6 @@ func convertToTitle(_ n: Int) -> String {
             tmp = tmp / 26
         }
 
-
         if let str = map[m] {
             result.append(str)
         }
@@ -28,4 +27,4 @@ func convertToTitle(_ n: Int) -> String {
     return String(result.reversed())
 }
 
-print(convertToTitle(26))
+print(convertToTitle(26*53))
