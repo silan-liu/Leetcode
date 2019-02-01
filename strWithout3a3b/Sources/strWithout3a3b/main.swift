@@ -5,12 +5,10 @@ func strWithout3a3b(_ A: Int, _ B: Int) -> String {
 
     var count = 0
     var i = 0
-    var str = ""
     var list = [Character]()
     
     // 首先2个a配一个b
     while i < A {
-        str += "a"
         list.append("a")
 
         count += 1
@@ -18,7 +16,6 @@ func strWithout3a3b(_ A: Int, _ B: Int) -> String {
         if count == 2 {
             // 添加间隔
             if len > 0 {
-                str += "b"
                 list.append("b")
 
                 len -= 1
@@ -77,5 +74,7 @@ func strWithout3a3b(_ A: Int, _ B: Int) -> String {
    let result = String(list)
    return result
 }
+
+
 
 print(strWithout3a3b(6,3))
