@@ -1,61 +1,81 @@
-
+// https://leetcode.com/problems/string-without-aaa-or-bbb/submissions/
 func strWithout3a3b(_ A: Int, _ B: Int) -> String {
     
-    let lenA = A / 2
-    var realLenA = lenA
-    if A % 2 != 0 {
-        realLenA += 1
-    }
+    var len = B
 
-    let lenB = B / 2
-    var realLenB = lenB
-    if B % 2 != 0 {
-        realLenB += 1
-    }
-    
+    var count = 0
     var i = 0
-    var result = ""
-    while i < realLenA || i < realLenB {
-        if B / A > 2 {
-            if i < realLenB {
-                if i < lenB {
-                    result += "bb"
-                } else {
-                    result += "b"
-                }
-            } 
+    var str = ""
+    var list = [Character]()
+    
+    // 首先2个a配一个b
+    while i < A {
+        str += "a"
+        list.append("a")
 
-            if i < realLenA {
-                if i < lenA {
-                    result += "aa"
-                } else {
-                    result += "a"
-                }
-            }
-        } else {
-            if i < realLenA {
-                if i < lenA {
-                    result += "aa"
-                } else {
-                    result += "a"
-                }
-            } 
+        count += 1
 
-            if i < realLenB {
-                if i < lenB {
-                    result += "bb"
-                } else {
-                    result += "b"
-                }
+        if count == 2 {
+            // 添加间隔
+            if len > 0 {
+                str += "b"
+                list.append("b")
+
+                len -= 1
             }
+
+            count = 0
         }
-        
 
         i += 1
     }
 
+    // 如果b有剩余
+    if len > 0 {
+        var j = 0
+        while j < list.count, len > 0 {
+            if j == 0 && list[j] == "a" {
+                // 可直接插入b
+                list.insert("b", at: 0);
+                len -= 1
+            } else {
+                if list[j] == "a" {
+                    list.insert("b", at: j + 1)
+                    j += 1
+                    len -= 1
+                } else if list[j] == "b" {
+                    // 如果前后都不是b，则可以插入
+                    var flag = true
+                    if j - 1 >= 0, list[j - 1] == "b" {
+                        flag = false
+                    }
+                    
+                    if j + 1 < list.count, list[j + 1] == "b" {
+                        flag = false
+                    }
+                    
+                    if flag {
+                        list.insert("b", at: j + 1)
+                        len -= 1
+                    }
+                    
+                    j += 1
+                }
+            }
+        }
 
-    return result
+        // 直接加在末尾
+        if len > 0 {
+            j = 0
+            while j < len {
+                list.append("b")
+                j += 1
+            }
+        }
+    }
+    
+   let result = String(list)
+   return result
 }
 
-print(strWithout3a3b(3,6))
+print(strWithout3a3b(6,3))
