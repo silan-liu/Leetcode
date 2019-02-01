@@ -75,6 +75,32 @@ func strWithout3a3b(_ A: Int, _ B: Int) -> String {
    return result
 }
 
-
+func strWithout3a3b_2(_ A: Int, _ B: Int) -> String {
+    var i = max(A, B)
+    var j = min(A, B)
+    
+    let ca = A > B ? "a" : "b"
+    let cb = A > B ? "b" : "a"
+    
+    var result = ""
+    
+    while i > 0 {
+        result += ca
+        i -= 1
+        
+        if i > j {
+            result += ca
+            i -= 1
+        }
+        
+        if j > 0 {
+            result += cb
+            j -= 1
+        }
+    }
+    
+    return result
+}
 
 print(strWithout3a3b(6,3))
+print(strWithout3a3b_2(6,4))
