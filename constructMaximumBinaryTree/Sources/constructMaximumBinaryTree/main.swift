@@ -1,4 +1,4 @@
-
+// https://leetcode.com/problems/maximum-binary-tree/submissions/
 public class TreeNode {
       public var val: Int
       public var left: TreeNode?
@@ -16,39 +16,36 @@ class Solution {
             return nil
         }
 
-        let sortedNums = nums.sorted(by: { num1, num2 in
-            return num1 > num2
-        })
+        let largestIndex = largestNumIndex(nums)
+        let value = nums[largestIndex]
+        let node = TreeNode(value)
 
-        var list = [TreeNode]()
+        let leftArray = Array(nums[0..<largestIndex])
+        let rightArray = Array(nums[largestIndex+1..<nums.count])
 
+        node.left = constructMaximumBinaryTree(leftArray)
+        node.right = constructMaximumBinaryTree(rightArray)
+
+        return node
+    }
+
+    func largestNumIndex(_ nums:[Int]) -> Int {
+        if nums.count == 0 {
+            return -1
+        }
+
+        var max = Int.min
         var i = 0
-        let root: TreeNode = TreeNode(sortedNums[i])
-        list.append(root)
-
-        while i < sortedNums.count / 2 {
-            // 取出一个node
-            if let node = list.first {
-                    // 移除第一个
-                list.remove(at: 0)
-
-                if 2 * i+1 < sortedNums.count {
-                    let left = TreeNode(sortedNums[2 * i + 1])
-                    node.left = left
-                    list.append(left)
-                }
-
-                if 2 * i + 2 < sortedNums.count {
-                    let right = TreeNode(sortedNums[2 * i + 2])
-                    node.right = right
-                    list.append(right)                    
-                }                 
+        var index = 0
+        while i < nums.count {
+            if max < nums[i] {
+                max = nums[i]
+                index = i
             }
-
             i += 1
         }
 
-        return root
+        return index
     }
 }
 
