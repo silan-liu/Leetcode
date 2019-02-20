@@ -103,4 +103,4 @@ func strWithout3a3b_2(_ A: Int, _ B: Int) -> String {
 }
 
 print(strWithout3a3b(6,3))
-print(strWithout3a3b_2(6,4))
+print(strWithout3a3b_2(2,2))

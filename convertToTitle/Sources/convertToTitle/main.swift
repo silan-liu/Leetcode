@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2404eb611c6875365daa8247091ed2cf8c5d8649
 // https://leetcode.com/problems/excel-sheet-column-title/submissions/
 func convertToTitle(_ n: Int) -> String {
     let map = [1:"A", 2:"B", 3:"C", 4:"D", 5:"E", 6:"F", 7:"G", 8:"H", 9:"I", 10:"J", 11:"K",
