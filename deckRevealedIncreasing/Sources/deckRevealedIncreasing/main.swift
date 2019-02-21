@@ -1,1 +1,5 @@
-print("Hello, world!")
+class Solution {
+    func deckRevealedIncreasing(_ deck: [Int]) -> [Int] {
+        return []
+    }
+}
