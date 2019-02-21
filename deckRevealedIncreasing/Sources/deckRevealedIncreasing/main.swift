@@ -26,8 +26,44 @@ class Solution {
 
         return result
     }
+
+    func deckRevealedIncreasing2(_ deck: [Int]) -> [Int] {
+        let sortedDeck = deck.sorted()
+
+        // 假设result是正确结果
+        var result = [Int]()
+
+        // 用于模拟deck移动
+        var index = [Int]()
+
+        var i = 0
+        while i < sortedDeck.count {
+            index.append(i)
+            result.append(0)
+            i += 1
+        }
+
+        i = 0
+        while i < sortedDeck.count {
+            // index.first这个位置应填入升序排列的值
+            result[index[0]] = sortedDeck[i]
+            
+            // 模拟，移除第一个，下一个，移到最后
+            index.removeFirst()
+
+            if index.count > 1 {
+                index.append(index[0])
+                index.removeFirst()
+            }
+            
+            i += 1
+        }
+
+        return result
+    }
 }
 
 let s = Solution()
 let deck = [17,5,4,8]
 print(s.deckRevealedIncreasing(deck))
+print(s.deckRevealedIncreasing2(deck))
