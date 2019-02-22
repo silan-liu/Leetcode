@@ -55,7 +55,7 @@ class Solution {
                 index.append(index[0])
                 index.removeFirst()
             }
-            
+
             i += 1
         }
 
@@ -64,6 +64,6 @@ class Solution {
 }
 
 let s = Solution()
-let deck = [17,5,4,8]
+let deck = [17,5,4,8,9,0,1,2,15,13,100]
 print(s.deckRevealedIncreasing(deck))
 print(s.deckRevealedIncreasing2(deck))
