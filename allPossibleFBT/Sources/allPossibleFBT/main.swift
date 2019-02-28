@@ -31,9 +31,11 @@ class Solution {
             list.append(node)
         } else {
             var i = 1
-            // 比如N = 7，那么左右节点个数组合为(1,5),(3,3),(5,1)，然后再对子树的进行细分。
+            // 比如N = 7，那么左右节点个数组合为(1,5),(3,3),(5,1)，然后再对子树部分进行细分。
             while i < N {
+                // 比如当i= 5，leftList会有2个元素，对应2种情况。(1,3),(3,1)
                 let leftList = allPossibleFBT(i)
+                // rightList只有一个元素。
                 let rightList = allPossibleFBT(N - i - 1)
 
                 for leftNode in leftList {
