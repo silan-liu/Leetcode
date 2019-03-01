@@ -15,22 +15,21 @@ class Solution {
 
         var column = 0
         
+        // 先调整行
+        var row = 0
+        while row < rowCount {
+            if shouldFlipRow(list, row) {
+                flipRow(&list, row)
+            }
+            
+            row += 1
+        }
+        
+        // 后调整列
         while column < columnCount {
             
             if shouldFlipColumn(list, column) {
                 flipColumn(&list, column)
-            }
-            
-            // 每行只需调整一次。
-            if column == 0 {
-                var row = 0
-                while row < rowCount {
-                    if shouldFlipRow(list, row) {
-                        flipRow(&list, row)
-                    }
-                    
-                    row += 1
-                }
             }
             
             column += 1
@@ -58,7 +57,7 @@ class Solution {
 
                 i += 1
             }
-
+ 
             if countOfOne * 2 >= rowCount {
                 return false
             }
@@ -112,7 +111,7 @@ class Solution {
             var rowSum = 0
             while j < columnCount {
                 if (A[i][j] == 1) {
-                    rowSum += Int(pow(Double(2), Double(columnCount - j - 1)))
+                    rowSum += 1 << (columnCount - j - 1)
                 }
                 
                 j += 1
