@@ -26,7 +26,7 @@ class Solution {
         i = 0
         while i < list.count {
             let char = list[i]
-            print(char)
+            // print(char)
             if let indexes = map[char] {
                 if indexes.count == 1 {
                     if last.count >= 2 {
@@ -47,7 +47,7 @@ class Solution {
                 } else if indexes.count > 1 {
        
                     let union = unionIndex(last, indexes)
-                    print(union)
+                    // print(union)
                     if union.isEmpty {
                         // 无相交
                         result.append(last.last! - last.first! + 1)
@@ -64,7 +64,7 @@ class Solution {
                         i += 1
                     }
 
-                    print("result:\(result)")
+                    // print("result:\(result)")
                 }
             }
         }
@@ -97,6 +97,50 @@ class Solution {
     }
 }
 
+// 更简单的方法
+class Solution2 {
+    func partitionLabels(_ S: String) -> [Int] {
+        let list = Array(S)
+        var map = [Character: Int]()
+
+        var result = [Int]()
+        var i = 0
+
+        // 记录字符的最后下标
+        while i < list.count {
+            map[list[i]] = i
+            i += 1
+        }
+
+        i = 0
+        var j = 0
+        var start = 0
+        while i < list.count {
+            if let index = map[list[i]] {
+                // 记录一段最大index，因为如果字符出现多次，找到的肯定是最远的位置。依次遍历，求出最远位置。
+                if index > j {
+                    j = index
+                }
+
+                // 则表示遍历到了一段的最后
+                if i == j {
+                    result.append(i - start + 1)
+
+                    // 重新记录start
+                    start = i + 1
+                }
+            }
+
+            i += 1
+        }
+
+        return result
+    }
+}
+
 let s = Solution()
+let s2 = Solution2()
+
 let S = "ababcbacadefegdehijhklijwwx"
 print(s.partitionLabels(S))
+print(s2.partitionLabels(S))
