@@ -95,7 +95,77 @@ class Solution {
     }
 }
 
+class Solution2 {
+    func kClosest(_ points: [[Int]], _ K: Int) -> [[Int]] {
+        
+        // 初始化
+        var heap = [[Int]]()
+        var i = 0
+        while i < K, i < points.count {
+            heap.append(points[i])
+            i += 1
+        }
+        
+        // 构建大根堆, 从下往上调整
+        i = K / 2 - 1
+        while i >= 0 {
+            adjustHeap(&heap, i)
+            i -= 1
+        }
+        
+        i = K
+        while i < points.count {
+            // 如果比最大的数小，则替换
+            if getDistance(points[i]) < getDistance(heap[0]) {
+                heap[0] = points[i]
+                adjustHeap(&heap, 0)
+            }
+            
+            i += 1
+        }
+
+        return heap
+    }
+    
+    func adjustHeap(_ list: inout [[Int]], _ i: Int) {
+        var j = i
+        while j < list.count {
+            var next = j
+            if 2 * j + 1 < list.count, getDistance(list[next]) < getDistance(list[2 * j + 1]) {
+                next = 2 * j + 1
+            }
+            
+            if 2 * j + 2 < list.count, getDistance(list[next]) < getDistance(list[2 * j + 2]) {
+                next = 2 * j + 2
+            }
+            
+            if next != j {
+                // swap
+                let tmp = list[next]
+                list[next] = list[j]
+                list[j] = tmp
+                
+                j = next
+            } else {
+                break
+            }
+        }
+    }
+    
+    func getDistance(_ point: [Int]) -> Int {
+        if point.count == 2 {
+            return point[0] * point[0] + point[1] * point[1]
+        }
+        
+        return Int.max
+    }
+}
+
 let s = Solution()
-let points = [[-2,10],[-4,-8],[10,7],[-4,-7]]
+let s2 = Solution2()
+
+let points = [[-2,10],[-4,-8],[10,7],[-4,-7],[1,1]]
 let k = 3
 print(s.kClosest(points, k))
+
+print(s2.kClosest(points, k))
