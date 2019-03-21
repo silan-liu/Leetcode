@@ -16,6 +16,7 @@ class Solution {
     var list = [Int]()
 
     func insertIntoMaxTree(_ root: TreeNode?, _ val: Int) -> TreeNode? {
+        // 先序遍历的顺序满足按规则构建的顺序
         preVisitTree(root)
 
         // 直接加在末尾
@@ -70,4 +71,22 @@ class Solution {
         return index
     }
 
+    // 另一种方式，用递归，因为value是直接加在Alist后面的，所以当它大于Alist-max，A的root为其左节点；当它小于AList-max，肯定是在root的右节点。
+    // A[0],A[1]...A[i], A[i+1]...A[n-1]，从A[0]-A[i-1]为A[i]的左子树，A[i+1]...A[n-1]为A[i]的右子树。
+    // value添加到A后面时，A[0],A[1]...A[i], A[i+1]...A[n-1],value; 当value>A[i]，A[0]...A[n-1]为value的左子树，当value<A[i]时，为A[i]的右子树。
+
+    func insertIntoMaxTree2(_ root: TreeNode?, _ val: Int) -> TreeNode? {
+        if let root = root {
+            if val > root.val {
+                let node = TreeNode(val)
+                node.left = root
+                return node
+            } else {
+                root.right = insertIntoMaxTree2(root.right, val)
+                return root
+            }
+        }
+
+        return nil
+    }
 }
