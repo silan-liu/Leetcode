@@ -85,6 +85,33 @@ class Solution {
 
         return Interval(start, end)
     }
+    
+    // 简洁的方法，思路一样
+    func intervalIntersection_2(_ A: [Interval], _ B: [Interval]) -> [Interval] {
+        var result = [Interval]()
+        
+        var i = 0
+        var j = 0
+        while i < A.count, j < B.count {
+            let a = A[i]
+            let b = B[j]
+            
+            let start = max(a.start, b.start)
+            let end = min(a.end, b.end)
+            
+            if start <= end {
+                result.append(Interval(start, end))
+            }
+            
+            if a.end < b.end {
+                i += 1
+            } else {
+                j += 1
+            }
+        }
+        
+        return result
+    }
 }
 
 let s = Solution()
@@ -94,4 +121,9 @@ let B = [Interval(1,2), Interval(8,9), Interval(15,17), Interval(22,29)]
 let list = s.intervalIntersection(A, B)
 for i in list {
   print("\(i.start)-\(i.end)")
+}
+
+let list2 = s.intervalIntersection_2(A, B)
+for i in list2 {
+    print("\(i.start)-\(i.end)")
 }
