@@ -17,18 +17,12 @@ class Solution {
                     tmp = flip(tmp, maxIndex + 1)
                 }
 
-                print(tmp)
-
                 // 把整个tmp.count进行flip
                 result.append(tmp.count)
                 tmp = flip(tmp, tmp.count)
-
-                print(tmp)
             }
 
             tmp = Array(tmp[0..<tmp.count - 1])
-
-            print(tmp)
         }
                 
         return result
@@ -51,6 +45,33 @@ class Solution {
         }
 
         return (max, index)
+    }
+
+    // 由于A最终是 [1, 2, ..., A.length]，所以不需要遍历每次的最大值
+    func pancakeSort_2(_ A: [Int]) -> [Int] {
+        var result = [Int]()
+
+        var max = A.count
+        var tmp = A
+
+        while max > 1 {
+            // 计算最大值的位置
+            var i = 0
+            while tmp[i] != max {
+                i += 1
+            }
+
+            print(i)
+            result.append(i + 1)
+            tmp = flip(tmp, i + 1)
+
+            result.append(max)
+            tmp = flip(tmp, max)
+
+            max -= 1
+        }
+
+        return result
     }
     
     func flip(_ A: [Int], _ k: Int) -> [Int] {
@@ -79,3 +100,4 @@ class Solution {
 let s = Solution()
 let A = [3,2,4,1]
 print(s.pancakeSort(A))
+print(s.pancakeSort_2(A))
