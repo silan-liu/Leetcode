@@ -104,9 +104,70 @@ class Solution {
         
         return String(result)
     }
+    
+    func customSortString_3(_ S: String, _ T: String) -> String {
+        // 反向思维
+        var count = [Int]()
+        var result = [Character]()
+        
+        var i = 0
+        while i < 26 {
+            count.insert(0, at: i)
+            i += 1
+        }
+        
+        for char in T {
+            count[char.toInt() - 97] += 1
+        }
+        
+        // 遍历s
+        for char in S {
+            while count[char.toInt() - 97] > 0 {
+                count[char.toInt() - 97] -= 1
+                result.append(char)
+            }
+        }
+        
+        // 遍历count
+        i = 0
+        while i < 26 {
+            while count[i] > 0 {
+                count[i] -= 1
+                result.append(Character(UnicodeScalar(i + 97)!))
+            }
+            
+            i += 1
+        }
+
+        return String(result)
+    }
 }
 
-let S = "dcba", T = "abcddc"
+extension Character
+{
+    func toInt() -> Int
+    {
+        var intFromCharacter:Int = 0
+        for scalar in String(self).unicodeScalars
+        {
+            intFromCharacter = Int(scalar.value)
+        }
+        return intFromCharacter
+    }
+    
+    func lowercase() -> Character {
+        let int = toInt()
+        if int >= 65 && int <= 90 {
+            return Character(UnicodeScalar(int + 32)!)
+        }
+        
+        return self
+    }
+}
+
+
+let S = "cba", T = "abcd"
 let s = Solution()
 print(s.customSortString(S, T))
 print(s.customSortString_2(S, T))
+print(s.customSortString_3(S, T))
