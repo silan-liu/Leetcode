@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/stone-game/solution/
 class Solution {
     func stoneGame(_ piles: [Int]) -> Bool {
         return true
