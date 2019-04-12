@@ -90,9 +90,50 @@ class Solution {
         
         return result
     }
+    
+    
+    // 由于温度的范围在 [33,100] 之间，对应 T[i]，遍历 T[i] + 1 ... 100，寻找最近的值
+    func dailyTemperatures_3(_ T: [Int]) -> [Int] {
+        var result = [Int]()
+        var next = [Int]()
+        var i = 0
+        while i <= 100 {
+            next.append(Int.max)
+            i += 1
+        }
+        
+        // 倒序遍历
+        i = T.count - 1
+        while i >= 0 {
+            var j = T[i] + 1
+            var index = Int.max
+            
+            while j <= 100 {
+                if next[j] < index {
+                    index = next[j]
+                }
+                
+                j += 1
+            }
+            
+            if index != Int.max {
+                result.insert(index - i, at: 0)
+            } else {
+                result.insert(0, at: 0)
+            }
+            
+            // 记录位置
+            next[T[i]] = i
+            
+            i -= 1
+        }
+        
+        return result
+    }
 }
 
 let s = Solution()
 let T = [71,76,71,76,71,76,76,78,74,33]
 print(s.dailyTemperatures(T))
 print(s.dailyTemperatures_2(T))
+print(s.dailyTemperatures_3(T))
