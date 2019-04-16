@@ -40,30 +40,34 @@ class Solution {
                 
                 let value = sortedValue[i]
                 if value.count == 2 {
-                    if value[1] == 0 {
-                        result.insert(value, at: 0)
-                    } else {
-                        // 在 result 中找到合适的位置
-                        var j = 0
-                        var count = 0
-                        while j < result.count {
-                            if result[j][0] >= value[0] {
-                                count += 1
-                                
-                                if count == value[1] {
-                                    result.insert(value, at: j + 1)
-                                    break
-                                }
-                            }
-                            
-                            j += 1
-                        }
-                        
-                        // 未找到合适的位置，直接加在后面
-                        if j == result.count {
-                            result.append(value)
-                        }
-                    }
+                    // 其实不用找位置，直接插入到 value[1]
+                    result.insert(value, at: value[1])
+
+//                    if value[1] == 0 {
+//                        result.insert(value, at: 0)
+//                    } else {
+//                        // 在 result 中找到合适的位置
+//                        result.insert(value, at: value[1])
+//                        var j = 0
+//                        var count = 0
+//                        while j < result.count {
+//                            if result[j][0] >= value[0] {
+//                                count += 1
+//
+//                                if count == value[1] {
+//                                    result.insert(value, at: j + 1)
+//                                    break
+//                                }
+//                            }
+//
+//                            j += 1
+//                        }
+//
+//                        // 未找到合适的位置，直接加在后面
+//                        if j == result.count {
+//                            result.append(value)
+//                        }
+//                    }
                 }
                 
                 i += 1
