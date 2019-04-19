@@ -95,10 +95,13 @@ class Solution {
     // 由于温度的范围在 [33,100] 之间，对应 T[i]，遍历 T[i] + 1 ... 100，寻找最近的值
     func dailyTemperatures_3(_ T: [Int]) -> [Int] {
         var result = [Int]()
-        var next = [Int]()
+        
+        // 记录已经出现元素的位置
+        var record = [Int]()
+        
         var i = 0
         while i <= 100 {
-            next.append(Int.max)
+            record.append(Int.max)
             i += 1
         }
         
@@ -109,8 +112,8 @@ class Solution {
             var index = Int.max
             
             while j <= 100 {
-                if next[j] < index {
-                    index = next[j]
+                if record[j] < index {
+                    index = record[j]
                 }
                 
                 j += 1
@@ -123,7 +126,7 @@ class Solution {
             }
             
             // 记录位置
-            next[T[i]] = i
+            record[T[i]] = i
             
             i -= 1
         }

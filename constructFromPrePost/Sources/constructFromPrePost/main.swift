@@ -12,6 +12,6 @@ public class TreeNode {
  }
 class Solution {
     func constructFromPrePost(_ pre: [Int], _ post: [Int]) -> TreeNode? {
-        
+        return nil
     }
 }
