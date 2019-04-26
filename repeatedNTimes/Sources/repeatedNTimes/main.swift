@@ -50,6 +50,7 @@ class Solution {
     func repeatedNTimes_3(_ A: [Int]) -> Int {
         var map = [Int: Int]()
         for n in A {
+            // 如果有重复，直接返回
             if let _ = map[n] {
                 return n
             } else {
