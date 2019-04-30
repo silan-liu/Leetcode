@@ -28,8 +28,36 @@ class Solution {
         
         return result
     }
+    
+    // 99.2
+    func diStringMatch_2(_ S: String) -> [Int] {
+        var left = 0
+        var right = S.count
+        
+        var result = [Int]()
+        
+        for s in S {
+            // <
+            if s == "I" {
+            
+                result.append(left)
+                
+                left += 1
+                
+            } else if s == "D" {
+                // >
+                result.append(right)
+                right -= 1
+            }
+        }
+        
+        result.append(left)
+        
+        return result
+    }
 }
 
 let s = Solution()
 let S = "DDI"
 print(s.diStringMatch(S))
+print(s.diStringMatch_2(S))
