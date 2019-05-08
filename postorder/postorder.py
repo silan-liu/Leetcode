@@ -9,6 +9,7 @@ class Node(object):
         self.children = children
 
 class Solution(object):
+    # 递归
     def postorder(self, root):
         """
         :type root: Node
@@ -28,4 +29,34 @@ class Solution(object):
             return [root.val]
         else:
             return []
+
+
+        # 非递归
+        def postorder2(self, root):
+            """
+            :type root: Node
+            :rtype: List[int]
+            """
+
+            queue = []
+            stack = []
+            if root:
+                stack.append(root)
+
+
+            while len(stack) > 0:
+                # pop
+                top = stack.pop()
+
+                # 放到结果数组
+                queue.append(top.val)
+
+                # children push
+                if len(top.children) > 0:
+                    for child in top.children:
+                        stack.append(child)
+
+
+            queue.reverse()
+            return queue
         
