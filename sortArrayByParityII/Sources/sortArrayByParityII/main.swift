@@ -41,8 +41,43 @@ class Solution {
         
         return result
     }
+    
+    // 100.00% 
+    func sortArrayByParityII_2(_ A: [Int]) -> [Int] {
+        if A.count % 2 != 0 {
+            return []
+        }
+        
+        var result = [Int]()
+        
+        var i = 0
+        while i < A.count {
+            result.append(0)
+            i += 1
+        }
+        
+        var j = 0
+        var k = 1
+        
+        i = 0
+        while i < A.count {
+            // 奇数
+            if A[i] % 2 != 0 {
+                result[k] = A[i]
+                k += 2
+            } else {
+                result[j] = A[i]
+                j += 2
+            }
+            
+            i += 1
+        }
+        
+        return result
+    }
 }
 
 let s = Solution()
 let A = [4,2,5,7,9,8]
 print(s.sortArrayByParityII(A))
+print(s.sortArrayByParityII_2(A))
