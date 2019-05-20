@@ -11,7 +11,7 @@ class Solution {
         }
     }
     
-    // 非递归, 98.5
+    // 非递归, 98.5%
     func fib2(_ N: Int) -> Int {
         
         if N == 0 {
