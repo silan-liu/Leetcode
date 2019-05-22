@@ -76,7 +76,7 @@ class Solution {
             }
         }
         
-        // 遍历后面的string
+        // 遍历后面的string，比较出现次数大小
         var i = 1
         while i < A.count {
             let str = A[i]
@@ -87,12 +87,6 @@ class Solution {
             while j < list.count {
                 let char = list[j]
 
-                if dict[char] == nil {
-                    j += 1
-                    dict.removeValue(forKey: char)
-                    continue
-                }
-                
                 // 计算当前str 每个字符的个数
                 if let count = tmpDict[char] {
                     tmpDict[char] = count + 1
@@ -134,4 +128,4 @@ class Solution {
 
 let s = Solution()
 print(s.commonChars(["coooll","looclk","lcook"]))
-print(s.commonChars2(["coooll"]))
+print(s.commonChars2(["coooll","looclk","lcook"]))
