@@ -32,3 +32,15 @@ class Solution(object):
             q1 = q2
 
         return level
+
+    
+
+    def maxDepth3(self, root):
+        if root == None:
+            return 0
+        
+        depth = 0
+        for child in root.children:
+            depth = max(depth, self.maxDepth3(child))
+
+        return depth + 1
