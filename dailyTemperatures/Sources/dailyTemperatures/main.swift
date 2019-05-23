@@ -133,10 +133,49 @@ class Solution {
         
         return result
     }
+    
+    func dailyTemperatures_4(_ T: [Int]) -> [Int] {
+        var stack = [Int]()
+        var record = [Int]()
+        
+        var i = 0
+        while i < T.count {
+            record.append(0)
+            i += 1
+        }
+        
+        i = T.count - 1
+        while i >= 0 {
+            // 倒序遍历，模拟栈
+            var j = stack.count - 1
+            while j >= 0 {
+                // 如果当前温度高，出栈删除
+                if T[i] >= T[stack[j]] {
+                    stack.remove(at: j)
+                }
+                
+                j -= 1
+            }
+            
+            if stack.isEmpty {
+                record[i] = 0
+            } else {
+                record[i] = stack.last! - i
+            }
+            
+            // 进栈
+            stack.append(i)
+            
+            i -= 1
+        }
+        
+        return record
+    }
 }
 
 let s = Solution()
-let T = [71,76,71,76,71,76,76,78,74,33]
+let T = [71,76,71,76,71,76,76,78,74,33,77,66,55,67]
 print(s.dailyTemperatures(T))
 print(s.dailyTemperatures_2(T))
 print(s.dailyTemperatures_3(T))
+print(s.dailyTemperatures_4(T))
