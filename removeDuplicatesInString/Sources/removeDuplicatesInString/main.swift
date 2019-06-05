@@ -25,8 +25,31 @@ class Solution {
         
         return String(list)
     }
+    
+    func removeDuplicates2(_ S: String) -> String {
+        var list = Array(S)
+        var stack = [Character]()
+        
+        var i = 0
+        
+        while i < list.count {
+            // 如果与栈中最后一个相同，则出栈
+            if stack.count > 0 && stack.last! == list[i] {
+                // pop
+                stack.removeLast()
+            } else {
+                // 进栈
+                stack.append(list[i])
+            }
+            
+            i += 1
+        }
+        
+        return String(stack)
+    }
 }
 
 let s = Solution()
-let str = "aa"
+let str = "cbaabcdeff"
 print(s.removeDuplicates(str))
+print(s.removeDuplicates2(str))
