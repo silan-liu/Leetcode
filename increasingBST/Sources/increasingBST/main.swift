@@ -13,6 +13,7 @@ public class TreeNode {
 
 class Solution {
     var list = [Int]()
+    var result: TreeNode? = nil
     
     func increasingBST(_ root: TreeNode?) -> TreeNode? {
         // 先序遍历后，就是有序数组
@@ -50,6 +51,29 @@ class Solution {
             }
         }
     }
+    
+    func increasingBST2(_ root: TreeNode?) -> TreeNode? {
+        var node: TreeNode? = nil
+        recursive(root, &node)
+        return result
+    }
+    
+    func recursive(_ root: TreeNode?, _ node: inout TreeNode?) {
+        if let root = root {
+            recursive(root.left, &node)
+            
+            let t = TreeNode(root.val)
+            if result == nil {
+                result = t
+            } else {
+                node?.right = t
+            }
+            
+            node = t
+            
+            recursive(root.right, &node)
+        }
+    }
 }
 
 let root = TreeNode(5)
@@ -64,4 +88,7 @@ root.right = right
 let s = Solution()
 
 let node = s.increasingBST(root);
+
+let node2 = s.increasingBST2(root);
+
 print(s.increasingBST(root))
