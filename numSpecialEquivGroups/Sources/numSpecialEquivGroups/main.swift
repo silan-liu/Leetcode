@@ -14,11 +14,7 @@ class Solution {
                 map[transformString] = [str]
             }
         }
-        
-        for (_,value) in map {
-            print(value)
-        }
-        
+
         return map.values.count
     }
     
