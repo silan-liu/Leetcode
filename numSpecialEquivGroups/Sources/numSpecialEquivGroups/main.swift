@@ -4,7 +4,7 @@ class Solution {
     func numSpecialEquivGroups(_ A: [String]) -> Int {
         var map = [String: [String]]()
         for str in A {
-            // 转换后的结果相关，则表明满足条件
+            // 转换后的结果相等，则表明满足条件
             let transformString = tansform(str)
             
             if var list = map[transformString] {
