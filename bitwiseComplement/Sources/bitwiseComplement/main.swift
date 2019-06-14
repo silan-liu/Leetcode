@@ -64,10 +64,21 @@ class Solution {
         
         return result - N
     }
+    
+    func bitwiseComplement4(_ N: Int) -> Int {
+        var S = 1
+        while S < N {
+            S = (S << 1) | 1
+            // S = S * 2 + 1
+        }
+        
+        return S - N
+    }
 }
 
 let s = Solution()
-let N = 0
+let N = 1025455456465
 print(s.bitwiseComplement(N))
 print(s.bitwiseComplement2(N))
 print(s.bitwiseComplement3(N))
+print(s.bitwiseComplement4(N))
