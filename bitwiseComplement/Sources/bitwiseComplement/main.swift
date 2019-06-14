@@ -45,9 +45,29 @@ class Solution {
         
         return result - N
     }
+    
+    // 98.36%
+    func bitwiseComplement3(_ N: Int) -> Int {
+        if (N == 0) {
+            return 1
+        }
+        
+        var result = 0
+        var tmp = N
+        
+        while tmp != 0 {
+            
+            result = (result << 1) | 1
+            
+            tmp = tmp >> 1
+        }
+        
+        return result - N
+    }
 }
 
 let s = Solution()
 let N = 0
 print(s.bitwiseComplement(N))
 print(s.bitwiseComplement2(N))
+print(s.bitwiseComplement3(N))
