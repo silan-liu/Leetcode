@@ -44,12 +44,53 @@ class Solution {
         
         print(arr)
     }
+    
+    func duplicateZeros3(_ arr: inout [Int]) {
+        let n = arr.count
+        var i = 0
+        var j = 0
+        
+        // j 表示增加 0 后的数组总长度
+        while i < n {
+            if arr[i] == 0 {
+                j += 1
+            }
+            
+            i += 1
+            j += 1
+        }
+        
+        // 从后遍历
+        i = n - 1
+        while i >= 0 {
+            
+            // 如果 j 在原数组范围内，则赋值，相当于在 i 中跳过不满足条件的值
+            j -= 1
+            if j < n, j >= 0 {
+                arr[j] = arr[i]
+            }
+            
+            // 如果 = 0，再添加一个0
+            if arr[i] == 0 {
+                j -= 1
+                if j < n, j >= 0 {
+                    arr[j] = 0
+                }
+            }
+            
+            i -= 1
+        }
+        
+        print(arr)
+    }
 }
 
 let s = Solution()
 var arr1 = [1,2,3,8,9,0,8,7,0,9,0,0,89,0,9,0,9,0,0,0]
 var arr2 = [1,2,3,8,9,0,8,7,0,9,0,0,89,0,9,0,9,0,0,0]
+var arr3 = [1,2,3,8,9,0,8,7,0,9,0,0,89,0,9,0,9,0,0,0]
 
 s.duplicateZeros(&arr1)
 s.duplicateZeros2(&arr2)
+s.duplicateZeros3(&arr3)
 
