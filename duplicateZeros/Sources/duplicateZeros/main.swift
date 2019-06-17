@@ -21,8 +21,35 @@ class Solution {
        
         print(arr)
     }
+    
+    // 20.00%
+    func duplicateZeros2(_ arr: inout [Int]) {
+        var i = arr.count - 1
+        
+        // 从后往前，遍历 0
+        while i >= 0 {
+            if arr[i] == 0 {
+                // 后移 [i+1, arr.count-2]
+                var k = arr.count - 2
+                while k >= i + 1 {
+                    arr[k + 1] = arr[k]
+                    k -= 1
+                }
+                
+                // 填上0
+                arr[k + 1] = 0
+            }
+            i -= 1
+        }
+        
+        print(arr)
+    }
 }
 
 let s = Solution()
-var arr = [1,0,2,3,0,4,5,0]
-s.duplicateZeros(&arr)
+var arr1 = [1,2,3,8,9,0,8,7,0,9,0,0,89,0,9,0,9,0,0,0]
+var arr2 = [1,2,3,8,9,0,8,7,0,9,0,0,89,0,9,0,9,0,0,0]
+
+s.duplicateZeros(&arr1)
+s.duplicateZeros2(&arr2)
+
