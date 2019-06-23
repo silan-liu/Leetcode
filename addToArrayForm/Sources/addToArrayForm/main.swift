@@ -61,8 +61,37 @@ class Solution {
         
         return result
     }
+    
+    // 14.58% 
+    // 567 + 345,  c = 345
+    // 1. 7 + 345 = 352, c = 35, 2
+    // 2. 35 + 6 = 41, c = 4, 1
+    // 3. 5 + 4 = 9, 9
+    func addToArrayForm2(_ A: [Int], _ K: Int) -> [Int] {
+        // 对 A 的每位加上 K
+        var result = [Int]()
+        var i = A.count - 1
+        var c = K
+        
+        while i >= 0 {
+            result.insert(((A[i] + c) % 10), at: 0)
+            
+            // 更新 c
+            c = (A[i] + c) / 10
+                
+            i -= 1
+        }
+        
+        while c > 0 {
+            result.insert(c % 10, at: 0)
+            c = c / 10
+        }
+        
+        return result
+    }
 }
 
 let s = Solution()
-let A = [0], K = 999999
+let A = [5,6,7], K = 2345
 print(s.addToArrayForm(A, K))
+print(s.addToArrayForm2(A, K))
