@@ -15,20 +15,24 @@ class Solution {
             if j < typedList.count, nameList[i] == typedList[j] {
                 var c1 = 1
                 
+                // 在 nameList 中找相同的字符
                 while i + 1 < nameList.count, nameList[i] == nameList[i+1] {
                     i += 1
                     c1 += 1
                 }
                 
                 var c2 = 1
+                // 在 typedList 中找相同的字符
                 while j + 1 < typedList.count, typedList[j] == typedList[j+1] {
                     j += 1
                     c2 += 1
                 }
                 
+                // 字符数较少，不符合
                 if c2 < c1 {
                     return false
                 } else {
+                    // 继续遍历
                     i += 1
                     j += 1
                 }
@@ -37,6 +41,7 @@ class Solution {
             }
         }
         
+        // 如果 j 还未匹配完，肯定不符合
         if j < typedList.count {
             return false
         }
