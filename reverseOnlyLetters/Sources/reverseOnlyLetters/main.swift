@@ -30,8 +30,34 @@ class Solution {
         
         return String(list)
     }
+    
+    // 98.04%
+    func reverseOnlyLetters2(_ S: String) -> String {
+        var list = Array(S)
+        var i = 0
+        var j = list.count - 1
+        var result = ""
+        
+        while i < list.count {
+            if list[i].isLetter {
+                while !list[j].isLetter {
+                    j -= 1
+                }
+                
+                result += String(list[j])
+                j -= 1
+            } else {
+                result += String(list[i])
+            }
+            
+            i += 1
+        }
+        
+        return result
+    }
 }
 
 let s = Solution()
-let S = "ab-cd"
+let S = "dd-aco0fs!f-0kk"
 print(s.reverseOnlyLetters(S))
+print(s.reverseOnlyLetters2(S))
