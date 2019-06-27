@@ -10,7 +10,7 @@ public class TreeNode {
     }
 }
 
-// https://leetcode.com/problems/sum-of-root-to-leaf-binary-number
+// https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/
 class Solution {
     // 10.42%
     func sumRootToLeaf(_ root: TreeNode?) -> Int {
@@ -61,6 +61,26 @@ class Solution {
         
         return []
     }
+    
+    // 98.18%
+    func sumRootToLeaf2(_ root: TreeNode?) -> Int {
+        let result = recursive2(root, 0)
+        return result
+    }
+    
+    // 每往下一层，只需要左移 1 位，然后或上当前的数
+    func recursive2(_ root: TreeNode?, _ cur: Int) -> Int {
+        if let root = root {
+            let num = cur << 1 | root.val
+            if root.left == nil, root.right == nil {
+                return num
+            }
+            
+            return recursive2(root.left, num) + recursive2(root.right, num)
+        }
+        
+        return 0
+    }
 }
 
 let s = Solution()
@@ -78,3 +98,4 @@ root.left = left
 root.right = right
 
 print(s.sumRootToLeaf(root))
+print(s.sumRootToLeaf2(root))
