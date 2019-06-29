@@ -24,6 +24,18 @@ func nextGreatestLetter(_ letters: [Character], _ target: Character) -> Characte
     return result
 }
 
+// letters 已排序
+// 93.75%
+func nextGreatestLetter2(_ letters: [Character], _ target: Character) -> Character {
+    for letter in letters {
+        if letter > target {
+            return letter
+        }
+    }
+    
+    return letters[0]
+}
+
 func toInt(_ c: Character) -> Int
 {
     var intFromCharacter:Int = 0
@@ -35,5 +47,6 @@ func toInt(_ c: Character) -> Int
 }
 
 let letters = [Character("c"), Character("f"), Character("j")]
-let target = Character("e")
+let target = Character("f")
 print(nextGreatestLetter(letters, target))
+print(nextGreatestLetter2(letters, target))
