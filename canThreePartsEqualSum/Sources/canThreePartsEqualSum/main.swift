@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/partition-array-into-three-parts-with-equal-sum
 class Solution {
-    // 5.81% 
+    // 5.81%
     func canThreePartsEqualSum(_ A: [Int]) -> Bool {
         var sum = 0
         for num in A {
@@ -18,41 +18,37 @@ class Solution {
         var sum1 = 0
         var sum3 = 0
         
-        while i + 1 < j {
-            while i < A.count {
-                sum1 += A[i]
+        while i < A.count {
+            sum1 += A[i]
+            
+            if sum1 == avg {
+                break
+            }
+            
+            i += 1
+        }
+        
+        if i < A.count {
+            
+            // 计算第三部分的和
+            while i + 1 < j {
+                sum3 += A[j]
                 
-                if sum1 == avg {
+                if sum3 == avg {
                     break
                 }
                 
-                i += 1
+                j -= 1
             }
             
-            if i < A.count {
-                
-                // 计算第三部分的和
-                while i + 1 < j {
-                    sum3 += A[j]
-                    
-                    if sum3 == avg {
-                        break
-                    }
-                    
-                    j -= 1
-                }
-                
-                if i + 1 < j {
-                    return true
-                } else {
-                    return false
-                }
+            if i + 1 < j {
+                return true
             } else {
                 return false
             }
+        } else {
+            return false
         }
-        
-        return false
     }
 }
 
