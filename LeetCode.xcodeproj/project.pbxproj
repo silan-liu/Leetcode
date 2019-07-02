@@ -3,68 +3,6 @@
    archiveVersion = "1";
    objectVersion = "46";
    objects = {
-      "LeetCode::LeetCode" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_272";
-         buildPhases = (
-            "OBJ_275",
-            "OBJ_277"
-         );
-         dependencies = (
-         );
-         name = "LeetCode";
-         productName = "LeetCode";
-         productReference = "LeetCode::LeetCode::Product";
-         productType = "com.apple.product-type.tool";
-      };
-      "LeetCode::LeetCode::Product" = {
-         isa = "PBXFileReference";
-         path = "LeetCode";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "LeetCode::LeetCodePackageTests::ProductTarget" = {
-         isa = "PBXAggregateTarget";
-         buildConfigurationList = "OBJ_285";
-         buildPhases = (
-         );
-         dependencies = (
-            "OBJ_288"
-         );
-         name = "LeetCodePackageTests";
-         productName = "LeetCodePackageTests";
-      };
-      "LeetCode::LeetCodeTests" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_290";
-         buildPhases = (
-            "OBJ_293",
-            "OBJ_296"
-         );
-         dependencies = (
-            "OBJ_297"
-         );
-         name = "LeetCodeTests";
-         productName = "LeetCodeTests";
-         productReference = "LeetCode::LeetCodeTests::Product";
-         productType = "com.apple.product-type.bundle.unit-test";
-      };
-      "LeetCode::LeetCodeTests::Product" = {
-         isa = "PBXFileReference";
-         path = "LeetCodeTests.xctest";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "LeetCode::SwiftPMPackageDescription" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_279";
-         buildPhases = (
-            "OBJ_282"
-         );
-         dependencies = (
-         );
-         name = "LeetCodePackageDescription";
-         productName = "LeetCodePackageDescription";
-         productType = "com.apple.product-type.framework";
-      };
       "OBJ_1" = {
          isa = "PBXProject";
          attributes = {
@@ -82,10 +20,10 @@
          productRefGroup = "OBJ_14";
          projectDirPath = ".";
          targets = (
-            "LeetCode::LeetCode",
-            "LeetCode::SwiftPMPackageDescription",
-            "LeetCode::LeetCodePackageTests::ProductTarget",
-            "LeetCode::LeetCodeTests"
+            "leetcode::leetcode",
+            "leetcode::SwiftPMPackageDescription",
+            "leetcode::leetcodePackageTests::ProductTarget",
+            "leetcode::leetcodeTests"
          );
       };
       "OBJ_10" = {
@@ -99,52 +37,52 @@
       };
       "OBJ_100" = {
          isa = "PBXFileReference";
-         path = "reverseList";
+         path = "KthLargest";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_101" = {
          isa = "PBXFileReference";
-         path = "transpose";
+         path = "longestWord";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_102" = {
          isa = "PBXFileReference";
-         path = "maxDistToClosest";
+         path = "LinkListIsPalindrome";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_103" = {
          isa = "PBXFileReference";
-         path = "allPathsSourceTarget";
+         path = "isLongPressedName";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_104" = {
          isa = "PBXFileReference";
-         path = "MinStack";
+         path = "repeatedNTimes";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_105" = {
          isa = "PBXFileReference";
-         path = "ReverseNumber";
+         path = "allPossibleFBT";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_106" = {
          isa = "PBXFileReference";
-         path = "canConstruct";
+         path = "reverseList";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_107" = {
          isa = "PBXFileReference";
-         path = "isAnagram";
+         path = "transpose";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_108" = {
          isa = "PBXFileReference";
-         path = "insertIntoMaxTree";
+         path = "reorderLogFiles";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_109" = {
          isa = "PBXFileReference";
-         path = "middleNode";
+         path = "maxDistToClosest";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_11" = {
@@ -153,58 +91,58 @@
             "OBJ_12",
             "OBJ_13"
          );
-         name = "LeetCodeTests";
-         path = "Tests/LeetCodeTests";
+         name = "leetcodeTests";
+         path = "Tests/leetcodeTests";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_110" = {
          isa = "PBXFileReference";
-         path = "countBits";
+         path = "duplicateZeros";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_111" = {
          isa = "PBXFileReference";
-         path = "UniqueMorseRepresentations";
+         path = "allPathsSourceTarget";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_112" = {
          isa = "PBXFileReference";
-         path = "arrangeCoins";
+         path = "MinStack";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_113" = {
          isa = "PBXFileReference";
-         path = "licenseKeyFormatting";
+         path = "ReverseNumber";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_114" = {
          isa = "PBXFileReference";
-         path = "countBattleships";
+         path = "canConstruct";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_115" = {
          isa = "PBXFileReference";
-         path = "countAndSay";
+         path = "isAnagram";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_116" = {
          isa = "PBXFileReference";
-         path = "GetImportance";
+         path = "insertIntoMaxTree";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_117" = {
          isa = "PBXFileReference";
-         path = "numUniqueEmails";
+         path = "middleNode";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_118" = {
          isa = "PBXFileReference";
-         path = "CanWinNim";
+         path = "countBits";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_119" = {
          isa = "PBXFileReference";
-         path = "maximumProduct";
+         path = "UniqueMorseRepresentations";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_12" = {
@@ -214,52 +152,52 @@
       };
       "OBJ_120" = {
          isa = "PBXFileReference";
-         path = "guessNumber";
+         path = "arrangeCoins";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_121" = {
          isa = "PBXFileReference";
-         path = "reverseBits";
+         path = "licenseKeyFormatting";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_122" = {
          isa = "PBXFileReference";
-         path = "deckRevealedIncreasing";
+         path = "countBattleships";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_123" = {
          isa = "PBXFileReference";
-         path = "sortedArrayToBST";
+         path = "countAndSay";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_124" = {
          isa = "PBXFileReference";
-         path = "levelOrderBottom";
+         path = "GetImportance";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_125" = {
          isa = "PBXFileReference";
-         path = "complexNumberMultiply";
+         path = "numUniqueEmails";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_126" = {
          isa = "PBXFileReference";
-         path = "SameTree";
+         path = "CanWinNim";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_127" = {
          isa = "PBXFileReference";
-         path = "CountBinarySubstrings";
+         path = "maximumProduct";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_128" = {
          isa = "PBXFileReference";
-         path = "MyLinkedList";
+         path = "guessNumber";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_129" = {
          isa = "PBXFileReference";
-         path = "AverageOfLevels";
+         path = "reverseBits";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_13" = {
@@ -269,59 +207,59 @@
       };
       "OBJ_130" = {
          isa = "PBXFileReference";
-         path = "flipEquiv";
+         path = "deckRevealedIncreasing";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_131" = {
          isa = "PBXFileReference";
-         path = "shortestToChar";
+         path = "sortedArrayToBST";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_132" = {
          isa = "PBXFileReference";
-         path = "insertIntoBST";
+         path = "levelOrderBottom";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_133" = {
          isa = "PBXFileReference";
-         path = "findShortestSubArray";
+         path = "complexNumberMultiply";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_134" = {
          isa = "PBXFileReference";
-         path = "robotSim";
+         path = "SameTree";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_135" = {
          isa = "PBXFileReference";
-         path = "isBalanced";
+         path = "CountBinarySubstrings";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_136" = {
          isa = "PBXFileReference";
-         path = "countPrimeSetBits";
+         path = "MyLinkedList";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_137" = {
          isa = "PBXFileReference";
-         path = "canPlaceFlowers";
+         path = "AverageOfLevels";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_138" = {
          isa = "PBXFileReference";
-         path = "findAndReplacePattern";
+         path = "flipEquiv";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_139" = {
          isa = "PBXFileReference";
-         path = "surfaceArea";
+         path = "shortestToChar";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_14" = {
          isa = "PBXGroup";
          children = (
-            "LeetCode::LeetCodeTests::Product",
-            "LeetCode::LeetCode::Product"
+            "leetcode::leetcodeTests::Product",
+            "leetcode::leetcode::Product"
          );
          name = "Products";
          path = "";
@@ -329,152 +267,152 @@
       };
       "OBJ_140" = {
          isa = "PBXFileReference";
-         path = "toLowerCase";
+         path = "insertIntoBST";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_141" = {
          isa = "PBXFileReference";
-         path = "RotateDigit";
+         path = "findShortestSubArray";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_142" = {
          isa = "PBXFileReference";
-         path = "constructFromPrePost";
+         path = "robotSim";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_143" = {
          isa = "PBXFileReference";
-         path = "trailingZeroes";
+         path = "isBalanced";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_144" = {
          isa = "PBXFileReference";
-         path = "isValidParenthese";
+         path = "removeDuplicatesInString";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_145" = {
          isa = "PBXFileReference";
-         path = "FindLUSlength";
+         path = "countPrimeSetBits";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_146" = {
          isa = "PBXFileReference";
-         path = "intersection";
+         path = "smallestRangeI";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_147" = {
          isa = "PBXFileReference";
-         path = "IslandPerimeter";
+         path = "canPlaceFlowers";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_148" = {
          isa = "PBXFileReference";
-         path = "LetterCasePermutation";
+         path = "findAndReplacePattern";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_149" = {
          isa = "PBXFileReference";
-         path = "search";
+         path = "surfaceArea";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_150" = {
          isa = "PBXFileReference";
-         path = "IsToeplitzMatrix";
+         path = "toLowerCase";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_151" = {
          isa = "PBXFileReference";
-         path = "pruneTree";
+         path = "addToArrayForm";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_152" = {
          isa = "PBXFileReference";
-         path = "maxIncreaseKeepingSkyline";
+         path = "RotateDigit";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_153" = {
          isa = "PBXFileReference";
-         path = "NumberOfLines";
+         path = "constructFromPrePost";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_154" = {
          isa = "PBXFileReference";
-         path = "minAddToMakeValid";
+         path = "trailingZeroes";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_155" = {
          isa = "PBXFileReference";
-         path = "minDiffInBST";
+         path = "isValidParenthese";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_156" = {
          isa = "PBXFileReference";
-         path = "MoveZeros";
+         path = "FindLUSlength";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_157" = {
          isa = "PBXFileReference";
-         path = "SingleNumber";
+         path = "intersection";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_158" = {
          isa = "PBXFileReference";
-         path = "findMaxAverage";
+         path = "IslandPerimeter";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_159" = {
          isa = "PBXFileReference";
-         path = "lengthOfLastWord";
+         path = "LetterCasePermutation";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_160" = {
          isa = "PBXFileReference";
-         path = "maxSubArray";
+         path = "search";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_161" = {
          isa = "PBXFileReference";
-         path = "minCostClimbingStairs";
+         path = "IsToeplitzMatrix";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_162" = {
          isa = "PBXFileReference";
-         path = "DeleteListNode";
+         path = "pruneTree";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_163" = {
          isa = "PBXFileReference";
-         path = "findUnsortedSubarray";
+         path = "maxIncreaseKeepingSkyline";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_164" = {
          isa = "PBXFileReference";
-         path = "removeLinkedElements";
+         path = "NumberOfLines";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_165" = {
          isa = "PBXFileReference";
-         path = "findAnagrams";
+         path = "minAddToMakeValid";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_166" = {
          isa = "PBXFileReference";
-         path = "climbStairs";
+         path = "maxDepth-N";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_167" = {
          isa = "PBXFileReference";
-         path = "hasGroupsSizeX";
+         path = "minDiffInBST";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_168" = {
          isa = "PBXFileReference";
-         path = "longestPalindrome";
+         path = "MoveZeros";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_169" = {
          isa = "PBXFileReference";
-         path = "isUgly";
+         path = "SingleNumber";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_17" = {
@@ -484,52 +422,52 @@
       };
       "OBJ_170" = {
          isa = "PBXFileReference";
-         path = "rob";
+         path = "findMaxAverage";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_171" = {
          isa = "PBXFileReference";
-         path = "isIsomorphic";
+         path = "lengthOfLastWord";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_172" = {
          isa = "PBXFileReference";
-         path = "FindWords";
+         path = "maxSubArray";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_173" = {
          isa = "PBXFileReference";
-         path = "numRookCaptures";
+         path = "minCostClimbingStairs";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_174" = {
          isa = "PBXFileReference";
-         path = "MinDepth";
+         path = "DeleteListNode";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_175" = {
          isa = "PBXFileReference";
-         path = "LinkListHasCycle";
+         path = "findUnsortedSubarray";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_176" = {
          isa = "PBXFileReference";
-         path = "twoSum";
+         path = "removeLinkedElements";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_177" = {
          isa = "PBXFileReference";
-         path = "SelfDividing";
+         path = "findAnagrams";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_178" = {
          isa = "PBXFileReference";
-         path = "sortArrayByParityII";
+         path = "climbStairs";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_179" = {
          isa = "PBXFileReference";
-         path = "constructMaximumBinaryTree";
+         path = "hasGroupsSizeX";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_18" = {
@@ -539,52 +477,52 @@
       };
       "OBJ_180" = {
          isa = "PBXFileReference";
-         path = "MatrixReshape";
+         path = "longestPalindrome";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_181" = {
          isa = "PBXFileReference";
-         path = "InvertTree";
+         path = "isUgly";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_182" = {
          isa = "PBXFileReference";
-         path = "largeGroupPositions";
+         path = "rob";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_183" = {
          isa = "PBXFileReference";
-         path = "MaxDepth";
+         path = "isIsomorphic";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_184" = {
          isa = "PBXFileReference";
-         path = "stoneGame";
+         path = "FindWords";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_185" = {
          isa = "PBXFileReference";
-         path = "buddyStrings";
+         path = "numRookCaptures";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_186" = {
          isa = "PBXFileReference";
-         path = "minMoves";
+         path = "MinDepth";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_187" = {
          isa = "PBXFileReference";
-         path = "JudgeCircle";
+         path = "LinkListHasCycle";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_188" = {
          isa = "PBXFileReference";
-         path = "queryString";
+         path = "twoSum";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_189" = {
          isa = "PBXFileReference";
-         path = "FindMaxConsecutiveOnes";
+         path = "SelfDividing";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_19" = {
@@ -594,52 +532,52 @@
       };
       "OBJ_190" = {
          isa = "PBXFileReference";
-         path = "imageSmoother";
+         path = "sortArrayByParityII";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_191" = {
          isa = "PBXFileReference";
-         path = "FlipAndInvertImage";
+         path = "constructMaximumBinaryTree";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_192" = {
          isa = "PBXFileReference";
-         path = "findContentChildren";
+         path = "MatrixReshape";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_193" = {
          isa = "PBXFileReference";
-         path = "AddDigits";
+         path = "InvertTree";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_194" = {
          isa = "PBXFileReference";
-         path = "FindTheDifference";
+         path = "bitwiseComplement";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_195" = {
          isa = "PBXFileReference";
-         path = "RomanToInt";
+         path = "largeGroupPositions";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_196" = {
          isa = "PBXFileReference";
-         path = "removeDuplicates";
+         path = "increasingBST";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_197" = {
          isa = "PBXFileReference";
-         path = "intervalIntersection";
+         path = "MaxDepth";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_198" = {
          isa = "PBXFileReference";
-         path = "searchInsert";
+         path = "stoneGame";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_199" = {
          isa = "PBXFileReference";
-         path = "dominantIndex";
+         path = "heightChecker";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_2" = {
@@ -658,52 +596,52 @@
       };
       "OBJ_200" = {
          isa = "PBXFileReference";
-         path = "addStrings";
+         path = "buddyStrings";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_201" = {
          isa = "PBXFileReference";
-         path = "generate";
+         path = "minMoves";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_202" = {
          isa = "PBXFileReference";
-         path = "networkDelayTime";
+         path = "JudgeCircle";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_203" = {
          isa = "PBXFileReference";
-         path = "partitionLabels";
+         path = "queryString";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_204" = {
          isa = "PBXFileReference";
-         path = "rotateArray";
+         path = "FindMaxConsecutiveOnes";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_205" = {
          isa = "PBXFileReference";
-         path = "MajorityElement";
+         path = "imageSmoother";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_206" = {
          isa = "PBXFileReference";
-         path = "convertToBase7";
+         path = "FlipAndInvertImage";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_207" = {
          isa = "PBXFileReference";
-         path = "strStr";
+         path = "findContentChildren";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_208" = {
          isa = "PBXFileReference";
-         path = "LemonadeChange";
+         path = "AddDigits";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_209" = {
          isa = "PBXFileReference";
-         path = "NumArray";
+         path = "FindTheDifference";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_21" = {
@@ -713,52 +651,52 @@
       };
       "OBJ_210" = {
          isa = "PBXFileReference";
-         path = "repeatedSubstringPattern";
+         path = "RomanToInt";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_211" = {
          isa = "PBXFileReference";
-         path = "reverseStr";
+         path = "removeDuplicates";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_212" = {
          isa = "PBXFileReference";
-         path = "minDeletionSize";
+         path = "intervalIntersection";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_213" = {
          isa = "PBXFileReference";
-         path = "containsDuplicate";
+         path = "searchInsert";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_214" = {
          isa = "PBXFileReference";
-         path = "convertBST";
+         path = "fib";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_215" = {
          isa = "PBXFileReference";
-         path = "allCellsDistOrder";
+         path = "dominantIndex";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_216" = {
          isa = "PBXFileReference";
-         path = "isHappy";
+         path = "sumEvenAfterQueries";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_217" = {
          isa = "PBXFileReference";
-         path = "findNthDigit";
+         path = "addStrings";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_218" = {
          isa = "PBXFileReference";
-         path = "MaxAreaOfIsland";
+         path = "generate";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_219" = {
          isa = "PBXFileReference";
-         path = "checkRecord";
+         path = "networkDelayTime";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_22" = {
@@ -768,52 +706,52 @@
       };
       "OBJ_220" = {
          isa = "PBXFileReference";
-         path = "numMagicSquaresInside";
+         path = "MyHashMap";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_221" = {
          isa = "PBXFileReference";
-         path = "missingNumber";
+         path = "partitionLabels";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_222" = {
          isa = "PBXFileReference";
-         path = "maxCount";
+         path = "rotateArray";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_223" = {
          isa = "PBXFileReference";
-         path = "matrixScore";
+         path = "MajorityElement";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_224" = {
          isa = "PBXFileReference";
-         path = "addBinary";
+         path = "convertToBase7";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_225" = {
          isa = "PBXFileReference";
-         path = "pivotIndex";
+         path = "strStr";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_226" = {
          isa = "PBXFileReference";
-         path = "TitleToNumber";
+         path = "LemonadeChange";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_227" = {
          isa = "PBXFileReference";
-         path = "toHex";
+         path = "NumArray";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_228" = {
          isa = "PBXFileReference";
-         path = "findPairs";
+         path = "repeatedSubstringPattern";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_229" = {
          isa = "PBXFileReference";
-         path = "findSecondMinimumValue";
+         path = "reverseStr";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_23" = {
@@ -823,52 +761,52 @@
       };
       "OBJ_230" = {
          isa = "PBXFileReference";
-         path = "largestTimeFromDigits";
+         path = "minDeletionSize";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_231" = {
          isa = "PBXFileReference";
-         path = "removeOuterParentheses";
+         path = "containsDuplicate";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_232" = {
          isa = "PBXFileReference";
-         path = "floodFill";
+         path = "convertBST";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_233" = {
          isa = "PBXFileReference";
-         path = "FindTarget";
+         path = "allCellsDistOrder";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_234" = {
          isa = "PBXFileReference";
-         path = "HasAlternatingBits";
+         path = "isHappy";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_235" = {
          isa = "PBXFileReference";
-         path = "findDuplicates";
+         path = "findNthDigit";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_236" = {
          isa = "PBXFileReference";
-         path = "countPrimes";
+         path = "MaxAreaOfIsland";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_237" = {
          isa = "PBXFileReference";
-         path = "mergeTwoLists";
+         path = "checkRecord";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_238" = {
          isa = "PBXFileReference";
-         path = "wordPattern";
+         path = "isBoomerang";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_239" = {
          isa = "PBXFileReference";
-         path = "judgeSquareSum";
+         path = "numMagicSquaresInside";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_24" = {
@@ -878,52 +816,52 @@
       };
       "OBJ_240" = {
          isa = "PBXFileReference";
-         path = "plusOne";
+         path = "missingNumber";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_241" = {
          isa = "PBXFileReference";
-         path = "constructRectangle";
+         path = "maxCount";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_242" = {
          isa = "PBXFileReference";
-         path = "validMountainArray";
+         path = "matrixScore";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_243" = {
          isa = "PBXFileReference";
-         path = "isPowerOfThree";
+         path = "addBinary";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_244" = {
          isa = "PBXFileReference";
-         path = "poorPigs";
+         path = "pivotIndex";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_245" = {
          isa = "PBXFileReference";
-         path = "findMode";
+         path = "TitleToNumber";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_246" = {
          isa = "PBXFileReference";
-         path = "TrimBST";
+         path = "toHex";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_247" = {
          isa = "PBXFileReference";
-         path = "maxProfit2";
+         path = "findPairs";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_248" = {
          isa = "PBXFileReference";
-         path = "BackspaceCompare";
+         path = "findSecondMinimumValue";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_249" = {
          isa = "PBXFileReference";
-         path = "findErrorNums";
+         path = "largestTimeFromDigits";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_25" = {
@@ -933,52 +871,52 @@
       };
       "OBJ_250" = {
          isa = "PBXFileReference";
-         path = "CalPoints";
+         path = "removeOuterParentheses";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_251" = {
          isa = "PBXFileReference";
-         path = "isSymmetric";
+         path = "floodFill";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_252" = {
          isa = "PBXFileReference";
-         path = "projectionArea";
+         path = "maxTree";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_253" = {
          isa = "PBXFileReference";
-         path = "sortArrayByParity";
+         path = "FindTarget";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_254" = {
          isa = "PBXFileReference";
-         path = "findRelativeRanks";
+         path = "HasAlternatingBits";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_255" = {
          isa = "PBXFileReference";
-         path = "QuadTree";
+         path = "findDuplicates";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_256" = {
          isa = "PBXFileReference";
-         path = "binaryGap";
+         path = "countPrimes";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_257" = {
          isa = "PBXFileReference";
-         path = "isPerfectSquare";
+         path = "mergeTwoLists";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_258" = {
          isa = "PBXFileReference";
-         path = "diameterOfBinaryTree";
+         path = "wordPattern";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_259" = {
          isa = "PBXFileReference";
-         path = "NextGreaterElement";
+         path = "divisorGame";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_26" = {
@@ -988,52 +926,52 @@
       };
       "OBJ_260" = {
          isa = "PBXFileReference";
-         path = "FizzBuzz";
+         path = "judgeSquareSum";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_261" = {
          isa = "PBXFileReference";
-         path = "MyHashSet";
+         path = "plusOne";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_262" = {
          isa = "PBXFileReference";
-         path = "convertToTitle";
+         path = "constructRectangle";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_263" = {
          isa = "PBXFileReference";
-         path = "DistributeCandies";
+         path = "validMountainArray";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_264" = {
          isa = "PBXFileReference";
-         path = "countSegments";
+         path = "isPowerOfThree";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_265" = {
          isa = "PBXFileReference";
-         path = "sortedSquares";
+         path = "poorPigs";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_266" = {
          isa = "PBXFileReference";
-         path = "minFallingPathSum";
+         path = "findMode";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_267" = {
          isa = "PBXFileReference";
-         path = "pancakeSort";
+         path = "TrimBST";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_268" = {
          isa = "PBXFileReference";
-         path = "maxProfit";
+         path = "maxProfit2";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_269" = {
          isa = "PBXFileReference";
-         path = "readFile";
+         path = "BackspaceCompare";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_27" = {
@@ -1043,119 +981,53 @@
       };
       "OBJ_270" = {
          isa = "PBXFileReference";
-         path = "README.md";
-         sourceTree = "<group>";
+         path = "levelOrder";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_271" = {
+         isa = "PBXFileReference";
+         path = "sumRootToLeaf";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_272" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_273",
-            "OBJ_274"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
+         isa = "PBXFileReference";
+         path = "findErrorNums";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_273" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "LeetCode.xcodeproj/LeetCode_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "8.0";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-               "@executable_path"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_FORCE_DYNAMIC_LINK_STDLIB = "YES";
-            SWIFT_FORCE_STATIC_LINK_STDLIB = "NO";
-            SWIFT_VERSION = "5.0";
-            TARGET_NAME = "LeetCode";
-            TVOS_DEPLOYMENT_TARGET = "9.0";
-            WATCHOS_DEPLOYMENT_TARGET = "2.0";
-         };
-         name = "Debug";
+         isa = "PBXFileReference";
+         path = "CalPoints";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_274" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "LeetCode.xcodeproj/LeetCode_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "8.0";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-               "@executable_path"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_FORCE_DYNAMIC_LINK_STDLIB = "YES";
-            SWIFT_FORCE_STATIC_LINK_STDLIB = "NO";
-            SWIFT_VERSION = "5.0";
-            TARGET_NAME = "LeetCode";
-            TVOS_DEPLOYMENT_TARGET = "9.0";
-            WATCHOS_DEPLOYMENT_TARGET = "2.0";
-         };
-         name = "Release";
+         isa = "PBXFileReference";
+         path = "isSymmetric";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_275" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_276"
-         );
+         isa = "PBXFileReference";
+         path = "commonChars";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_276" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_9";
+         isa = "PBXFileReference";
+         path = "projectionArea";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_277" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-         );
+         isa = "PBXFileReference";
+         path = "sortArrayByParity";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_278" = {
+         isa = "PBXFileReference";
+         path = "numSpecialEquivGroups";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_279" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_280",
-            "OBJ_281"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
+         isa = "PBXFileReference";
+         path = "findRelativeRanks";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_28" = {
          isa = "PBXFileReference";
@@ -1163,75 +1035,54 @@
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_280" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "5",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
-            );
-            SWIFT_VERSION = "5.0";
-         };
-         name = "Debug";
+         isa = "PBXFileReference";
+         path = "QuadTree";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_281" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "5",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
-            );
-            SWIFT_VERSION = "5.0";
-         };
-         name = "Release";
+         isa = "PBXFileReference";
+         path = "binaryGap";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_282" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_283"
-         );
+         isa = "PBXFileReference";
+         path = "isPerfectSquare";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_283" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_6";
+         isa = "PBXFileReference";
+         path = "diameterOfBinaryTree";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_284" = {
+         isa = "PBXFileReference";
+         path = "NextGreaterElement";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_285" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_286",
-            "OBJ_287"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
+         isa = "PBXFileReference";
+         path = "FizzBuzz";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_286" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-         };
-         name = "Debug";
+         isa = "PBXFileReference";
+         path = "MyHashSet";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_287" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-         };
-         name = "Release";
+         isa = "PBXFileReference";
+         path = "convertToTitle";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_288" = {
-         isa = "PBXTargetDependency";
-         target = "LeetCode::LeetCodeTests";
+         isa = "PBXFileReference";
+         path = "DistributeCandies";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_289" = {
+         isa = "PBXFileReference";
+         path = "countSegments";
+         sourceTree = "SOURCE_ROOT";
       };
       "OBJ_29" = {
          isa = "PBXFileReference";
@@ -1239,19 +1090,47 @@
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_290" = {
+         isa = "PBXFileReference";
+         path = "sortedSquares";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_291" = {
+         isa = "PBXFileReference";
+         path = "minFallingPathSum";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_292" = {
+         isa = "PBXFileReference";
+         path = "pancakeSort";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_293" = {
+         isa = "PBXFileReference";
+         path = "maxProfit";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_294" = {
+         isa = "PBXFileReference";
+         path = "readFile";
+         sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_295" = {
+         isa = "PBXFileReference";
+         path = "README.md";
+         sourceTree = "<group>";
+      };
+      "OBJ_297" = {
          isa = "XCConfigurationList";
          buildConfigurations = (
-            "OBJ_291",
-            "OBJ_292"
+            "OBJ_298",
+            "OBJ_299"
          );
          defaultConfigurationIsVisible = "0";
          defaultConfigurationName = "Release";
       };
-      "OBJ_291" = {
+      "OBJ_298" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
-            CLANG_ENABLE_MODULES = "YES";
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
             FRAMEWORK_SEARCH_PATHS = (
                "$(inherited)",
                "$(PLATFORM_DIR)/Developer/Library/Frameworks"
@@ -1259,12 +1138,12 @@
             HEADER_SEARCH_PATHS = (
                "$(inherited)"
             );
-            INFOPLIST_FILE = "LeetCode.xcodeproj/LeetCodeTests_Info.plist";
+            INFOPLIST_FILE = "leetcode.xcodeproj/leetcode_Info.plist";
             IPHONEOS_DEPLOYMENT_TARGET = "8.0";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks"
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+               "@executable_path"
             );
             MACOSX_DEPLOYMENT_TARGET = "10.10";
             OTHER_CFLAGS = (
@@ -1279,18 +1158,18 @@
             SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
                "$(inherited)"
             );
+            SWIFT_FORCE_DYNAMIC_LINK_STDLIB = "YES";
+            SWIFT_FORCE_STATIC_LINK_STDLIB = "NO";
             SWIFT_VERSION = "5.0";
-            TARGET_NAME = "LeetCodeTests";
+            TARGET_NAME = "leetcode";
             TVOS_DEPLOYMENT_TARGET = "9.0";
             WATCHOS_DEPLOYMENT_TARGET = "2.0";
          };
          name = "Debug";
       };
-      "OBJ_292" = {
+      "OBJ_299" = {
          isa = "XCBuildConfiguration";
          buildSettings = {
-            CLANG_ENABLE_MODULES = "YES";
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
             FRAMEWORK_SEARCH_PATHS = (
                "$(inherited)",
                "$(PLATFORM_DIR)/Developer/Library/Frameworks"
@@ -1298,12 +1177,12 @@
             HEADER_SEARCH_PATHS = (
                "$(inherited)"
             );
-            INFOPLIST_FILE = "LeetCode.xcodeproj/LeetCodeTests_Info.plist";
+            INFOPLIST_FILE = "leetcode.xcodeproj/leetcode_Info.plist";
             IPHONEOS_DEPLOYMENT_TARGET = "8.0";
             LD_RUNPATH_SEARCH_PATHS = (
                "$(inherited)",
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks"
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+               "@executable_path"
             );
             MACOSX_DEPLOYMENT_TARGET = "10.10";
             OTHER_CFLAGS = (
@@ -1318,36 +1197,14 @@
             SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
                "$(inherited)"
             );
+            SWIFT_FORCE_DYNAMIC_LINK_STDLIB = "YES";
+            SWIFT_FORCE_STATIC_LINK_STDLIB = "NO";
             SWIFT_VERSION = "5.0";
-            TARGET_NAME = "LeetCodeTests";
+            TARGET_NAME = "leetcode";
             TVOS_DEPLOYMENT_TARGET = "9.0";
             WATCHOS_DEPLOYMENT_TARGET = "2.0";
          };
          name = "Release";
-      };
-      "OBJ_293" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_294",
-            "OBJ_295"
-         );
-      };
-      "OBJ_294" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_12";
-      };
-      "OBJ_295" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_13";
-      };
-      "OBJ_296" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-         );
-      };
-      "OBJ_297" = {
-         isa = "PBXTargetDependency";
-         target = "LeetCode::LeetCode";
       };
       "OBJ_3" = {
          isa = "XCBuildConfiguration";
@@ -1395,15 +1252,221 @@
          path = "MostCommonWord";
          sourceTree = "SOURCE_ROOT";
       };
+      "OBJ_300" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_301"
+         );
+      };
+      "OBJ_301" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_9";
+      };
+      "OBJ_302" = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+         );
+      };
+      "OBJ_304" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_305",
+            "OBJ_306"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_305" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            LD = "/usr/bin/true";
+            OTHER_SWIFT_FLAGS = (
+               "-swift-version",
+               "5",
+               "-I",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
+               "-target",
+               "x86_64-apple-macosx10.10",
+               "-sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
+            );
+            SWIFT_VERSION = "5.0";
+         };
+         name = "Debug";
+      };
+      "OBJ_306" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            LD = "/usr/bin/true";
+            OTHER_SWIFT_FLAGS = (
+               "-swift-version",
+               "5",
+               "-I",
+               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
+               "-target",
+               "x86_64-apple-macosx10.10",
+               "-sdk",
+               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
+            );
+            SWIFT_VERSION = "5.0";
+         };
+         name = "Release";
+      };
+      "OBJ_307" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_308"
+         );
+      };
+      "OBJ_308" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_6";
+      };
       "OBJ_31" = {
          isa = "PBXFileReference";
          path = "findLengthOfLCIS";
          sourceTree = "SOURCE_ROOT";
       };
+      "OBJ_310" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_311",
+            "OBJ_312"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_311" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+         };
+         name = "Debug";
+      };
+      "OBJ_312" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+         };
+         name = "Release";
+      };
+      "OBJ_313" = {
+         isa = "PBXTargetDependency";
+         target = "leetcode::leetcodeTests";
+      };
+      "OBJ_315" = {
+         isa = "XCConfigurationList";
+         buildConfigurations = (
+            "OBJ_316",
+            "OBJ_317"
+         );
+         defaultConfigurationIsVisible = "0";
+         defaultConfigurationName = "Release";
+      };
+      "OBJ_316" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_MODULES = "YES";
+            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)"
+            );
+            INFOPLIST_FILE = "leetcode.xcodeproj/leetcodeTests_Info.plist";
+            IPHONEOS_DEPLOYMENT_TARGET = "8.0";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "@loader_path/../Frameworks",
+               "@loader_path/Frameworks"
+            );
+            MACOSX_DEPLOYMENT_TARGET = "10.10";
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "5.0";
+            TARGET_NAME = "leetcodeTests";
+            TVOS_DEPLOYMENT_TARGET = "9.0";
+            WATCHOS_DEPLOYMENT_TARGET = "2.0";
+         };
+         name = "Debug";
+      };
+      "OBJ_317" = {
+         isa = "XCBuildConfiguration";
+         buildSettings = {
+            CLANG_ENABLE_MODULES = "YES";
+            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
+            FRAMEWORK_SEARCH_PATHS = (
+               "$(inherited)",
+               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+            );
+            HEADER_SEARCH_PATHS = (
+               "$(inherited)"
+            );
+            INFOPLIST_FILE = "leetcode.xcodeproj/leetcodeTests_Info.plist";
+            IPHONEOS_DEPLOYMENT_TARGET = "8.0";
+            LD_RUNPATH_SEARCH_PATHS = (
+               "$(inherited)",
+               "@loader_path/../Frameworks",
+               "@loader_path/Frameworks"
+            );
+            MACOSX_DEPLOYMENT_TARGET = "10.10";
+            OTHER_CFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_LDFLAGS = (
+               "$(inherited)"
+            );
+            OTHER_SWIFT_FLAGS = (
+               "$(inherited)"
+            );
+            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+               "$(inherited)"
+            );
+            SWIFT_VERSION = "5.0";
+            TARGET_NAME = "leetcodeTests";
+            TVOS_DEPLOYMENT_TARGET = "9.0";
+            WATCHOS_DEPLOYMENT_TARGET = "2.0";
+         };
+         name = "Release";
+      };
+      "OBJ_318" = {
+         isa = "PBXSourcesBuildPhase";
+         files = (
+            "OBJ_319",
+            "OBJ_320"
+         );
+      };
+      "OBJ_319" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_12";
+      };
       "OBJ_32" = {
          isa = "PBXFileReference";
          path = "checkPerfectNumber";
          sourceTree = "SOURCE_ROOT";
+      };
+      "OBJ_320" = {
+         isa = "PBXBuildFile";
+         fileRef = "OBJ_13";
+      };
+      "OBJ_321" = {
+         isa = "PBXFrameworksBuildPhase";
+         files = (
+         );
+      };
+      "OBJ_322" = {
+         isa = "PBXTargetDependency";
+         target = "leetcode::leetcode";
       };
       "OBJ_33" = {
          isa = "PBXFileReference";
@@ -1437,7 +1500,7 @@
       };
       "OBJ_39" = {
          isa = "PBXFileReference";
-         path = "TinyURL";
+         path = "lastStoneWeight";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_4" = {
@@ -1479,52 +1542,52 @@
       };
       "OBJ_40" = {
          isa = "PBXFileReference";
-         path = "pathSum";
+         path = "TinyURL";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_41" = {
          isa = "PBXFileReference";
-         path = "spiralMatrixIII";
+         path = "pathSum";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_42" = {
          isa = "PBXFileReference";
-         path = "FindComplement";
+         path = "spiralMatrixIII";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_43" = {
          isa = "PBXFileReference";
-         path = "isPowerOfTwo";
+         path = "FindComplement";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_44" = {
          isa = "PBXFileReference";
-         path = "findRadius";
+         path = "isPowerOfTwo";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_45" = {
          isa = "PBXFileReference";
-         path = "GetSum";
+         path = "findRadius";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_46" = {
          isa = "PBXFileReference";
-         path = "IsPalindrome";
+         path = "GetSum";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_47" = {
          isa = "PBXFileReference";
-         path = "validPalindrome";
+         path = "IsPalindrome";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_48" = {
          isa = "PBXFileReference";
-         path = "preorder";
+         path = "validPalindrome";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_49" = {
          isa = "PBXFileReference";
-         path = "ReverseString";
+         path = "preorder";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_5" = {
@@ -1787,59 +1850,84 @@
             "OBJ_267",
             "OBJ_268",
             "OBJ_269",
-            "OBJ_270"
+            "OBJ_270",
+            "OBJ_271",
+            "OBJ_272",
+            "OBJ_273",
+            "OBJ_274",
+            "OBJ_275",
+            "OBJ_276",
+            "OBJ_277",
+            "OBJ_278",
+            "OBJ_279",
+            "OBJ_280",
+            "OBJ_281",
+            "OBJ_282",
+            "OBJ_283",
+            "OBJ_284",
+            "OBJ_285",
+            "OBJ_286",
+            "OBJ_287",
+            "OBJ_288",
+            "OBJ_289",
+            "OBJ_290",
+            "OBJ_291",
+            "OBJ_292",
+            "OBJ_293",
+            "OBJ_294",
+            "OBJ_295"
          );
          path = "";
          sourceTree = "<group>";
       };
       "OBJ_50" = {
          isa = "PBXFileReference";
-         path = "findTilt";
+         path = "ReverseString";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_51" = {
          isa = "PBXFileReference";
-         path = "Tree2str";
+         path = "findTilt";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_52" = {
          isa = "PBXFileReference";
-         path = "getMinimumDifference";
+         path = "Tree2str";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_53" = {
          isa = "PBXFileReference";
-         path = "isRectangleOverlap";
+         path = "getMinimumDifference";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_54" = {
          isa = "PBXFileReference";
-         path = "longestCommonPrefix";
+         path = "isRectangleOverlap";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_55" = {
          isa = "PBXFileReference";
-         path = "MyQueue";
+         path = "longestCommonPrefix";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_56" = {
          isa = "PBXFileReference";
-         path = "findRestaurant";
+         path = "MyQueue";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_57" = {
          isa = "PBXFileReference";
-         path = "canVisitAllRooms";
+         path = "findRestaurant";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_58" = {
          isa = "PBXFileReference";
-         path = "binaryTreePaths";
+         path = "canVisitAllRooms";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_59" = {
          isa = "PBXFileReference";
-         path = "searchBST";
+         path = "binaryTreePaths";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_6" = {
@@ -1850,52 +1938,52 @@
       };
       "OBJ_60" = {
          isa = "PBXFileReference";
-         path = "isSubtree";
+         path = "searchBST";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_61" = {
          isa = "PBXFileReference";
-         path = "reconstructQueue";
+         path = "isSubtree";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_62" = {
          isa = "PBXFileReference";
-         path = "isPowerOfFour";
+         path = "reconstructQueue";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_63" = {
          isa = "PBXFileReference";
-         path = "strWithout3a3b";
+         path = "isPowerOfFour";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_64" = {
          isa = "PBXFileReference";
-         path = "reachNumber";
+         path = "strWithout3a3b";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_65" = {
          isa = "PBXFileReference";
-         path = "intersect";
+         path = "reachNumber";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_66" = {
          isa = "PBXFileReference";
-         path = "thirdMax";
+         path = "intersect";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_67" = {
          isa = "PBXFileReference";
-         path = "deleteDuplicates";
+         path = "thirdMax";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_68" = {
          isa = "PBXFileReference";
-         path = "merge";
+         path = "deleteDuplicates";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_69" = {
          isa = "PBXFileReference";
-         path = "fairCandySwap";
+         path = "merge";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_7" = {
@@ -1909,52 +1997,52 @@
       };
       "OBJ_70" = {
          isa = "PBXFileReference";
-         path = "customSortString";
+         path = "fairCandySwap";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_71" = {
          isa = "PBXFileReference";
-         path = "firstUniqChar";
+         path = "customSortString";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_72" = {
          isa = "PBXFileReference";
-         path = "peakIndexInMountainArray";
+         path = "firstUniqChar";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_73" = {
          isa = "PBXFileReference";
-         path = "HammingDistance";
+         path = "peakIndexInMountainArray";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_74" = {
          isa = "PBXFileReference";
-         path = "reverseVowels";
+         path = "HammingDistance";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_75" = {
          isa = "PBXFileReference";
-         path = "subdomainVisits";
+         path = "reverseVowels";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_76" = {
          isa = "PBXFileReference";
-         path = "hasPathSum";
+         path = "largestPerimeter";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_77" = {
          isa = "PBXFileReference";
-         path = "rangeSumBST";
+         path = "subdomainVisits";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_78" = {
          isa = "PBXFileReference";
-         path = "JewelsAndStones";
+         path = "hasPathSum";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_79" = {
          isa = "PBXFileReference";
-         path = "uncommonFromSentences";
+         path = "rangeSumBST";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_8" = {
@@ -1962,58 +2050,58 @@
          children = (
             "OBJ_9"
          );
-         name = "LeetCode";
-         path = "Sources/LeetCode";
+         name = "leetcode";
+         path = "Sources/leetcode";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_80" = {
          isa = "PBXFileReference";
-         path = "isOneBitCharacter";
+         path = "JewelsAndStones";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_81" = {
          isa = "PBXFileReference";
-         path = "dailyTemperatures";
+         path = "uncommonFromSentences";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_82" = {
          isa = "PBXFileReference";
-         path = "kClosest";
+         path = "isOneBitCharacter";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_83" = {
          isa = "PBXFileReference";
-         path = "ReverseWords";
+         path = "dailyTemperatures";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_84" = {
          isa = "PBXFileReference";
-         path = "repeatedStringMatch";
+         path = "kClosest";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_85" = {
          isa = "PBXFileReference";
-         path = "distributeCoins";
+         path = "ReverseWords";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_86" = {
          isa = "PBXFileReference";
-         path = "ArrayPairSum";
+         path = "reverseOnlyLetters";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_87" = {
          isa = "PBXFileReference";
-         path = "bstFromPreorder";
+         path = "repeatedStringMatch";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_88" = {
          isa = "PBXFileReference";
-         path = "isUnivalTree";
+         path = "distributeCoins";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_89" = {
          isa = "PBXFileReference";
-         path = "twoSum_2";
+         path = "ArrayPairSum";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_9" = {
@@ -2023,53 +2111,115 @@
       };
       "OBJ_90" = {
          isa = "PBXFileReference";
-         path = "getIntersectionNode";
+         path = "bstFromPreorder";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_91" = {
          isa = "PBXFileReference";
-         path = "largestTriangleArea";
+         path = "isUnivalTree";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_92" = {
          isa = "PBXFileReference";
-         path = "MyStack";
+         path = "twoSum_2";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_93" = {
          isa = "PBXFileReference";
-         path = "FindDisappearedNumbers";
+         path = "getIntersectionNode";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_94" = {
          isa = "PBXFileReference";
-         path = "longestUnivaluePath";
+         path = "largestTriangleArea";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_95" = {
          isa = "PBXFileReference";
-         path = "sumOfLeftLeaves";
+         path = "MyStack";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_96" = {
          isa = "PBXFileReference";
-         path = "KthLargest";
+         path = "FindDisappearedNumbers";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_97" = {
          isa = "PBXFileReference";
-         path = "LinkListIsPalindrome";
+         path = "longestUnivaluePath";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_98" = {
          isa = "PBXFileReference";
-         path = "repeatedNTimes";
+         path = "isRobotBounded";
          sourceTree = "SOURCE_ROOT";
       };
       "OBJ_99" = {
          isa = "PBXFileReference";
-         path = "allPossibleFBT";
+         path = "sumOfLeftLeaves";
          sourceTree = "SOURCE_ROOT";
+      };
+      "leetcode::SwiftPMPackageDescription" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_304";
+         buildPhases = (
+            "OBJ_307"
+         );
+         dependencies = (
+         );
+         name = "leetcodePackageDescription";
+         productName = "leetcodePackageDescription";
+         productType = "com.apple.product-type.framework";
+      };
+      "leetcode::leetcode" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_297";
+         buildPhases = (
+            "OBJ_300",
+            "OBJ_302"
+         );
+         dependencies = (
+         );
+         name = "leetcode";
+         productName = "leetcode";
+         productReference = "leetcode::leetcode::Product";
+         productType = "com.apple.product-type.tool";
+      };
+      "leetcode::leetcode::Product" = {
+         isa = "PBXFileReference";
+         path = "leetcode";
+         sourceTree = "BUILT_PRODUCTS_DIR";
+      };
+      "leetcode::leetcodePackageTests::ProductTarget" = {
+         isa = "PBXAggregateTarget";
+         buildConfigurationList = "OBJ_310";
+         buildPhases = (
+         );
+         dependencies = (
+            "OBJ_313"
+         );
+         name = "leetcodePackageTests";
+         productName = "leetcodePackageTests";
+      };
+      "leetcode::leetcodeTests" = {
+         isa = "PBXNativeTarget";
+         buildConfigurationList = "OBJ_315";
+         buildPhases = (
+            "OBJ_318",
+            "OBJ_321"
+         );
+         dependencies = (
+            "OBJ_322"
+         );
+         name = "leetcodeTests";
+         productName = "leetcodeTests";
+         productReference = "leetcode::leetcodeTests::Product";
+         productType = "com.apple.product-type.bundle.unit-test";
+      };
+      "leetcode::leetcodeTests::Product" = {
+         isa = "PBXFileReference";
+         path = "leetcodeTests.xctest";
+         sourceTree = "BUILT_PRODUCTS_DIR";
       };
    };
    rootObject = "OBJ_1";

@@ -6,8 +6,8 @@
         <BuildableReference
           BuildableIdentifier = "primary"
           BuildableName = "'$(TARGET_NAME)'"
-          BlueprintName = "LeetCode"
-          ReferencedContainer = "container:LeetCode.xcodeproj">
+          BlueprintName = "leetcode"
+          ReferencedContainer = "container:leetcode.xcodeproj">
         </BuildableReference>
       </BuildActionEntry>
     </BuildActionEntries>
@@ -24,8 +24,8 @@
           <BuildableReference
             BuildableIdentifier = "primary"
             BuildableName = "'$(TARGET_NAME)'"
-            BlueprintName = "LeetCodeTests"
-            ReferencedContainer = "container:LeetCode.xcodeproj">
+            BlueprintName = "leetcodeTests"
+            ReferencedContainer = "container:leetcode.xcodeproj">
           </BuildableReference>
         </TestableReference>
     </Testables>
@@ -45,8 +45,8 @@
       <BuildableReference
          BuildableIdentifier = "primary"
          BuildableName = "'$(TARGET_NAME)'"
-         BlueprintName = "LeetCode"
-         ReferencedContainer = "container:LeetCode.xcodeproj">
+         BlueprintName = "leetcode"
+         ReferencedContainer = "container:leetcode.xcodeproj">
       </BuildableReference>
    </BuildableProductRunnable>
    <AdditionalOptions>
