@@ -35,6 +35,25 @@ class Solution {
         
         return true
     }
+    
+    // 46.63%
+    func isMonotonic2(_ A: [Int]) -> Bool {
+        var descreasing = true
+        var increasing = true
+        
+        var i = 0
+        while i < A.count - 1 {
+            if A[i] > A[i+1] {
+                increasing = false
+            } else if A[i] < A[i+1] {
+                descreasing = false
+            }
+            
+            i += 1
+        }
+        
+        return descreasing || increasing
+    }
 }
 
 let s = Solution()
