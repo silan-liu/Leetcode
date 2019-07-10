@@ -40,6 +40,45 @@ class MyHashSet {
     }
 }
 
+struct Node {
+    var value: Int
+}
+
+struct LinkList {
+    var node: Node
+    var next: Node?
+}
+
+class MyHashSet2 {
+    
+    var list: [LinkList] = [LinkList]()
+    var len = 100
+    
+    /** Initialize your data structure here. */
+    init() {
+        
+    }
+    
+    func add(_ key: Int) {
+        
+    }
+    
+    func remove(_ key: Int) {
+        
+    }
+    
+    /** Returns true if this set contains the specified element */
+    func contains(_ key: Int) -> Bool {
+        let k = hashKey(key)
+        
+        return false
+    }
+    
+    func hashKey(_ key: Int) -> Int {
+        return key % len
+    }
+}
+
 let hashSet = MyHashSet()
 hashSet.add(1);
 hashSet.add(2);
