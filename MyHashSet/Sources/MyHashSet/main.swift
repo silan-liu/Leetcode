@@ -49,7 +49,7 @@ class Node {
     }
 }
 
-// 11.90% 
+// 11.90%
 class MyHashSet2 {
     
     var list: [Node] = [Node]()
