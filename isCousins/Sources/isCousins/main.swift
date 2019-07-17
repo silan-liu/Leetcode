@@ -11,7 +11,7 @@ public class TreeNode {
     }
 }
 
-// 89.39% 
+// 89.39%
 class Solution {
     var xLevel = 0
     var yLevel = 0
@@ -62,6 +62,7 @@ let s = Solution()
 let root = TreeNode(1)
 let left = TreeNode(2)
 let right = TreeNode(3)
+
 left.left = TreeNode(4)
 right.right = TreeNode(5)
 
