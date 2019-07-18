@@ -30,6 +30,7 @@
     }
  }
  
+ // 83.19%
  func findTheDifference_2(_ s: String, _ t: String) -> Character {
     var x = 0
     for c in s {
