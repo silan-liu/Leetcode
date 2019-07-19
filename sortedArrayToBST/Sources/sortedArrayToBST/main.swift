@@ -11,7 +11,7 @@ public class TreeNode {
     }
 }
 
-
+// 22.75%
 func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
     if nums.count > 0 {
         let midIndex = nums.count / 2
@@ -30,6 +30,7 @@ func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
     return nil
 }
 
+// 100.00% 
 // solution2
 func sortedArrayToBST_2(_ nums: [Int]) -> TreeNode? {
     return recursiveTree(nums, 0, nums.count - 1)
