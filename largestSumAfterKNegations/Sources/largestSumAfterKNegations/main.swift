@@ -67,6 +67,44 @@ class Solution {
         
         return sum
     }
+
+    // 60.98%
+    func largestSumAfterKNegations2(_ A: [Int], _ K: Int) -> Int {
+        // 先排序
+        var sortedA = A.sorted()
+
+        // 对前面的负数进行反转
+        var i = 0
+        var j = 0
+
+        // 如果 K 大于负数的个数，最后需要判断是对哪个数进行反转
+        while j < K, i < sortedA.count, sortedA[i] < 0 {
+            sortedA[i] = -sortedA[i]
+            j += 1
+            i += 1
+        }
+        
+        var sum = 0
+        var k = 0
+        var minNum = Int.max
+
+        while k < sortedA.count {
+            sum += sortedA[k]
+
+            if sortedA[k] < minNum {
+                minNum = sortedA[k]
+            }
+
+            k += 1
+        }
+
+        // 如果剩余的 K - j 是奇数，则需要减去 2*最小的数
+        if (K - j) % 2 == 1 {
+            sum -= 2 * minNum
+        }
+
+        return sum
+    }
 }
 
 let s = Solution()
