@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/maximize-sum-of-array-after-k-negations
 class Solution {
+    // 53.66%
     func largestSumAfterKNegations(_ A: [Int], _ K: Int) -> Int {
         // 存负数
         var negArray = [Int]()
@@ -35,11 +36,18 @@ class Solution {
             if K > negArray.count {
                 let leftCount = K - negArray.count
                 
+                // count 表示需要反转负数的个数
                 var count = negArray.count
                 
-                // 奇数，那么对负数的操作需要-1次，如果是偶数，可以对负数全部操作。
+                // 奇数，需要比较正数的最小值与负数的最大值的绝对值关系，如果是偶数，可以对负数全部操作。
                 if leftCount % 2 == 1 {
-                    count -= 1
+                    // 如果负数的绝对值小，则最后一个负数保持不变，相当于 2 次反转。
+                    if -negArray.last! < posArray[0] {
+                        count -= 1
+                    } else {
+                        // 负数反转的增益大于正数变负数，将正数转为负数
+                        sum -= 2 * posArray[0]
+                    }
                 }
                 
                 var i = 0
