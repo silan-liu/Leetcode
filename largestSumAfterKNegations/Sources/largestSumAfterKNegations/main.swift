@@ -42,14 +42,19 @@ class Solution {
                 // 奇数，需要比较正数的最小值与负数的最大值的绝对值关系，如果是偶数，可以对负数全部操作。
                 if leftCount % 2 == 1 {
                     // 如果负数的绝对值小，则最后一个负数保持不变，相当于 2 次反转。
-                    if -negArray.last! < posArray[0] {
-                        count -= 1
+                    if posArray.count > 0 {
+                        if -negArray.last! < posArray[0] {
+                            count -= 1
+                        } else {
+                            // 负数反转的增益大于正数变负数，将正数转为负数
+                            sum -= 2 * posArray[0]
+                        }
                     } else {
-                        // 负数反转的增益大于正数变负数，将正数转为负数
-                        sum -= 2 * posArray[0]
+                        count -= 1
                     }
                 }
                 
+                // 反转负数
                 var i = 0
                 while i < count {
                     sum -= 2 * negArray[i]
@@ -108,7 +113,10 @@ class Solution {
 }
 
 let s = Solution()
-let A = [8,-7,-3,-9,1,9,-6,-9,3]
+// let A = [8,-7,-3,-9,1,9,-6,-9,3]
+let A = [-7,-3,-9,-6,-9]
+
 let K = 8
 // 53?
 print(s.largestSumAfterKNegations(A, K))
+print(s.largestSumAfterKNegations2(A, K))
