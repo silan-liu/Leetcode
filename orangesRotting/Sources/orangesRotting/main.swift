@@ -1,5 +1,6 @@
+// https://leetcode.com/problems/rotting-oranges/submissions/
 class Solution {
-    // 100.00% 
+    // 100.00%
     func orangesRotting(_ grid: [[Int]]) -> Int {
         
         var tmp = grid
