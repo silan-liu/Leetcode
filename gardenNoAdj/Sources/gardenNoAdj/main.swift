@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/flower-planting-with-no-adjacent/
 class Solution {
-    // 79.71% 
+    // 79.71%
     func gardenNoAdj(_ N: Int, _ paths: [[Int]]) -> [Int] {
         
         // 存储相邻的花园
