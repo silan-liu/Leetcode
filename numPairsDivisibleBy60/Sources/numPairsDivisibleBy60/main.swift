@@ -46,5 +46,5 @@ class Solution {
 }
 
 let s = Solution()
-let time = [60,60,60]
+let time = [20, 40, 100, 80]
 print(s.numPairsDivisibleBy60(time))
