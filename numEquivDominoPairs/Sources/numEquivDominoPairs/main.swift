@@ -17,9 +17,7 @@ class Solution {
                 }
             }
         }
-        
-        print(map)
-        
+                
         var result = 0
         for (_, value) in map {
             if value > 1 {
