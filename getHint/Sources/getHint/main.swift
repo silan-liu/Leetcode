@@ -54,5 +54,5 @@ class Solution {
 }
 
 let s = Solution()
-let secret = "1011", guess = "1112"
+let secret = "1122", guess = "1222"
 print(s.getHint(secret, guess))
