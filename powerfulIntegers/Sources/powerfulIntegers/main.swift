@@ -38,6 +38,7 @@ class Solution {
     }
     
     func calculate(_ x: Int, _ bound: Int) -> Int {
+        // 因为 1 的 N 次方始终是 1，只需要返回 0，能遍历一次就好。
         if x == 1 {
             return 0
         }
