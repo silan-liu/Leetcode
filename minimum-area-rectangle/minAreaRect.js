@@ -5,16 +5,11 @@
  */
 var minAreaRect = function(points) {
     let map = new Map()
-    let maxX = Number.MIN_VALUE
     let minArea = 0
 
     points.forEach((value) => {
         const x = value[0]
         const y = value[1]
-
-        if (x > maxX) {
-            maxX = x
-        }
 
         const key = x
 
