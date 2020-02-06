@@ -44,6 +44,10 @@ var lexicalOrder = function(n) {
     return list
 };
 
+var lexicalOrder2 = function(n) {
+    
+}
+
 let list = lexicalOrder(300)
 console.log(list)
 
