@@ -75,6 +75,31 @@ var numComponents = function(head, G) {
     return 0
 };
 
+var numComponents2 = function(head, G) {
+    if (head && G && G.length > 0) {
+        let nums = 0
+
+        // 放入 set
+        const set = new Set()
+        G.forEach(element => {
+            set.add(element)
+        });
+
+        // 遍历链表，若当前节点在 G 中，且下一个节点不在 G 中，则认为断开了链接，算一个 component。
+        while (head) {
+
+            if (set.has(head.val) && (head.next == null || !set.has(head.next.val))) {
+                nums += 1
+            }
+
+            head = head.next
+        }
+
+        return nums
+    }
+
+    return 0
+}
 
 let n0 = new ListNode(0)
 let n1 = new ListNode(1)
@@ -90,3 +115,4 @@ n3.next = n4
 
 const G = [0, 4, 2, 3]
 console.log(numComponents(n0, G))
+console.log(numComponents2(n0, G))
