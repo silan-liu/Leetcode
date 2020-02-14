@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/linked-list-cycle-ii/
 // Definition for singly-linked list.
 function ListNode(val) {
     this.val = val;
@@ -15,13 +16,10 @@ var detectCycle = function(head) {
     }
 
     // 快慢指针，p1 一次走一步，p2 一次走两步
-    let p1 = head.next
-    let p2
-    if (head.next && head.next.next) {
-        p2 = head.next.next
-    } 
+    let p1 = head
+    let p2 = head
 
-    while (p1 && p2 && p1 !== p2) {
+    while (p1 && p2) {
 
         if (p1.next) {
             p1 = p1.next
@@ -34,18 +32,19 @@ var detectCycle = function(head) {
         } else {
             return null
         }
-    }
 
-    // 有环
-    if (p1 && p2 && p1 === p2) {
-        // 从头结点和相遇节点开始，一次一步，若相等，则为入口
-        let p3 = head
-        while (p3 !== p1) {
-            p3 = p3.next
-            p1 = p1.next
+        // 相等，则有环
+        if (p1 === p2) {
+            console.log(p1)
+            // 从头结点和相遇节点开始，一次一步，若相等，则为入口
+            let p3 = head
+            while (p3 !== p1) {
+                p3 = p3.next
+                p1 = p1.next
+            }
+
+            return p1
         }
-
-        return p1
     }
 
     return null
@@ -64,6 +63,6 @@ n2.next = n3
 n3.next = n4
 n4.next = n5
 n5.next = n6
-n6.next = n1
+n6.next = n3
 
 console.log(detectCycle(n1))
