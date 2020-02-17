@@ -1,10 +1,12 @@
+// https://leetcode.com/problems/linked-list-random-node/submissions/
 /**
  * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
  */
+function ListNode(val) {
+     this.val = val;
+     this.next = null;
+}
+
 /**
  * @param head The linked list's head.
         Note that the head is guaranteed to be not null, so it contains at least one node.
@@ -12,6 +14,14 @@
  */
 var Solution = function(head) {
     this.head = head
+
+    let length = 0
+    while (head) {
+        length += 1
+        head = head.next
+    }
+
+    this.length = length
 };
 
 /**
@@ -19,11 +29,26 @@ var Solution = function(head) {
  * @return {number}
  */
 Solution.prototype.getRandom = function() {
-    
+    if (this.length > 0) {
+        const random = Math.floor(Math.random() * this.length)
+
+        let i = 0
+        let node = this.head
+        while (i < random) {
+            node = node.next
+            i += 1
+        }
+
+        return node.val
+    }
 };
 
-/** 
- * Your Solution object will be instantiated and called as such:
- * var obj = new Solution(head)
- * var param_1 = obj.getRandom()
- */
+let n1 = new ListNode(1)
+let n2 = new ListNode(2)
+let n3 = new ListNode(3)
+
+n1.next = n2
+n2.next = n3
+
+var obj = new Solution(n1)
+console.log(obj.getRandom())
