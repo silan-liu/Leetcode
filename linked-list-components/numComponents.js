@@ -24,6 +24,8 @@ var numComponents = function(head, G) {
             head = head.next
         }
 
+        console.log(map)
+
         let num = 0
         let i = 0
         let flagMap = new Map()
@@ -113,6 +115,6 @@ n1.next = n2
 n2.next = n3
 n3.next = n4
 
-const G = [0, 4, 2, 3]
+const G = [0, 1, 4, 2, 3]
 console.log(numComponents(n0, G))
 console.log(numComponents2(n0, G))
