@@ -43,6 +43,30 @@ Solution.prototype.getRandom = function() {
     }
 };
 
+
+var Solution1 = function(head) {
+    this.head = head
+};
+
+Solution1.prototype.getRandom = function() {
+    let count = 1
+    let node = this.head
+    let result
+
+    while (node) {
+        const random = Math.floor(Math.random() * (count))
+        if (random === 0) {
+            result = node
+        }
+
+        count += 1
+
+        node = node.next
+    }
+
+    return result.val
+};
+
 let n1 = new ListNode(1)
 let n2 = new ListNode(2)
 let n3 = new ListNode(3)
@@ -52,3 +76,7 @@ n2.next = n3
 
 var obj = new Solution(n1)
 console.log(obj.getRandom())
+
+
+var obj1 = new Solution1(n1)
+console.log(obj1.getRandom())
