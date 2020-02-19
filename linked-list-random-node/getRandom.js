@@ -54,7 +54,10 @@ Solution1.prototype.getRandom = function() {
     let result
 
     while (node) {
+        // 生成 [0, count-1] 的随机数
         const random = Math.floor(Math.random() * (count))
+
+        // 替换节点
         if (random === 0) {
             result = node
         }
