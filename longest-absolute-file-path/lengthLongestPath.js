@@ -8,9 +8,11 @@ var lengthLongestPath = function(input) {
         const length = input.length
 
         let maxLength = 0
-        let lastDepth = 0
 
-        // 记录每层路径的文件名
+        // 当前路径深度
+        let curDepth = 0
+
+        // 记录每层路径的文件名长度
         let map = new Map()
 
         let i = 0
@@ -22,9 +24,9 @@ var lengthLongestPath = function(input) {
                 i += 1
             }
 
-            // 记录当前深度对应的文件名
+            // 记录当前深度对应的文件名长度
             if (name.length > 0) {
-                map.set(lastDepth, name)
+                map.set(curDepth, name.length)
             }
 
             // 计算下一个路径深度
@@ -36,28 +38,28 @@ var lengthLongestPath = function(input) {
                 i += 1
             }
 
-            // 当前深度比上次的小，说明当前路径达到最深，计算路径长度。且为文件
-            if ((depth <= lastDepth) && (name.includes('.'))) {
+            // 下一个深度比当前的小，说明当前路径达到最深，计算路径长度。且为文件
+            if ((depth <= curDepth) && (name.includes('.'))) {
                 // 从 0 到 lastDepath
                 let j = 0
                 let sum = 0
-                while (j <= lastDepth) {
+                while (j <= curDepth) {
                     if (map.has(j)) {
-                        sum += map.get(j).length
+                        sum += map.get(j)
                     }
 
                     j += 1
                 }
 
                 // 加上 '/' 个数
-                sum += lastDepth
+                sum += curDepth
 
                 if (sum > maxLength) {
                     maxLength = sum
                 }
             }
 
-            lastDepth = depth
+            curDepth = depth
         }
 
         return maxLength
