@@ -68,5 +68,63 @@ var lengthLongestPath = function(input) {
     return 0
 };
 
+var lengthLongestPath2 = function(input) {
+    if (input && input.length > 0) {
+        const length = input.length
+
+        let maxLength = 0
+
+        // 当前路径深度
+        let curDepth = 0
+
+        // 记录每层路径的文件路径总长度
+        let map = new Map()
+
+        let i = 0
+        while (i < length) {
+            // 取出文件名
+            let name = ''
+            while (i < length && input[i] !== '\n') {
+                name += input[i]
+                i += 1
+            }
+
+            // 记录总长度
+            if (curDepth >= 1) {
+                // 上一层的路径长度+文件长度+'/'
+                map.set(curDepth, map.get(curDepth - 1) + name.length + 1)
+            } else {
+                map.set(curDepth, name.length)
+            }
+
+            // 计算下一个路径深度
+            i += 1
+
+            let depth = 0
+            while (i < length && input[i] === '\t') {
+                depth += 1
+                i += 1
+            }
+
+            // 下一个深度比当前的小，说明当前路径达到最深，计算路径长度，且为文件。或者仅仅判断为文件。
+            if ((depth <= curDepth) && (name.includes('.'))) {
+
+                let sum = map.get(curDepth)
+
+                if (sum > maxLength) {
+                    maxLength = sum
+                }
+            }
+
+            curDepth = depth
+        }
+
+        return maxLength
+    }
+
+    return 0
+};
+
 const input = 'dir\n\tfile..x'
 console.log(lengthLongestPath(input))
+console.log(lengthLongestPath2(input))
