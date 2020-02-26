@@ -5,7 +5,7 @@
  * @param {number[][]} mines
  * @return {number}
  */
-// Time Limit Exceeded
+// https://leetcode.com/problems/largest-plus-sign/
 var orderOfLargestPlusSign = function(N, mines) {
 
     // 预处理 mines
