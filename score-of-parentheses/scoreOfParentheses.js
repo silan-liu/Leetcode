@@ -3,6 +3,7 @@
  * @param {string} S
  * @return {number}
  */
+// 96.23%
 var scoreOfParentheses = function(S) {
     return dfs(0, S.length - 1, S)
 };
