@@ -3,6 +3,7 @@
  * @param {string} s
  * @return {string}
  */
+// 69.06%
 var frequencySort = function(s) {
     let map = new Map()
     let i = 0
