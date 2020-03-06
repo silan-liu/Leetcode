@@ -34,5 +34,60 @@ var frequencySort = function(s) {
     return str
 };
 
+// 45.12%
+// 不排序
+var frequencySort2 = function(s) {
+    let map = new Map()
+    let i = 0
+    let maxCount = -1
+    while (i < s.length) {
+        let count = 1
+        if (map.has(s[i])) {
+            count = map.get(s[i]) + 1
+        }
+
+        map.set(s[i], count)
+
+        if (count > maxCount) {
+            maxCount = count
+        }
+
+        i += 1
+    }
+
+    // 数组
+    let frequencyList = new Array()
+    let j = 0
+    while (j < maxCount + 1) {
+        frequencyList.push("")
+        j += 1
+    }
+
+    // 以频次作为下标
+    map.forEach((value, key) => {
+        let totalString = frequencyList[value]
+
+        let k = 0
+        let str = ""
+        while (k < value) {
+            str += key
+            k += 1
+        }
+
+        totalString += str
+        frequencyList[value] = totalString
+    })
+
+    let result = ""
+    let k = frequencyList.length - 1
+    while (k >= 0) {
+        result += frequencyList[k]
+        k -= 1
+    }
+
+    return result
+};
+
 const s = "aavvbn"
 frequencySort(s)
+frequencySort2(s)
