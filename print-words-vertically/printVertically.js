@@ -24,21 +24,23 @@ var printVertically = function(s) {
         i += 1
     }
 
+	// 初始化结果数组
     let result = new Array()
     let j = 0
     while (j < maxLen) {
         result.push('')
-
         j += 1
     }
 
     let k = 0
     let index = -1
     while (k <= s.length) {
+	    // 到末尾或者一个单词结束
         if (k === s.length || s[k] === ' ') {
-
-            // 补齐空格
+            // 当前单词长度
             let m = index + 1
+
+            // 如果比最大单词长度短，则补空格
             while (m < maxLen) {
                 let list = result[m]
                 list += ' '
@@ -50,8 +52,10 @@ var printVertically = function(s) {
             index = -1
 
         } else {
+	        // 行数
             index += 1
-
+			
+			// 取出对应的行
             let list = result[index]
             list += s[k]
             result[index] = list
@@ -87,6 +91,7 @@ var printVertically2 = function(s) {
     while (i >= 0) {
         
         if (s[i] !== ' ') {
+	        // 注意顺序
             word = s[i] + word
 
             // 一个完整单词
@@ -100,7 +105,7 @@ var printVertically2 = function(s) {
 
         if (wordFlag) {
 
-            // 遍历字符串
+            // 遍历单词
             let j = 0
             while (j < word.length) {
 
@@ -112,6 +117,7 @@ var printVertically2 = function(s) {
                     list = result[j]
                 }
 
+				// 注意顺序
                 list = word[j] + list
                 result[j] = list
 
