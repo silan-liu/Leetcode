@@ -160,28 +160,35 @@ var printVertically2 = function(s) {
 
 // 横向填充, 58.36%
 var printVertically3 = function(s) {
-    // 分隔单词
     if (s && s.length > 0) {
+        
+        // 分隔单词
         const wordList = s.split(' ')
+
         if (wordList && wordList.length > 0) {
             let index = 0
             let maxLen = 1
             let result = new Array()
 
+            // 逐步生成行，最大行数为单词的最大长度
             while (index < maxLen) {
                 let str = ""
                 let i = 0
                 let lastIndex = 0
                 while (i < wordList.length) {
                     const word = wordList[i]
+
+                    // 同时计算最大长度
                     if (word.length > maxLen) {
                         maxLen = word.length
                     }
 
                     if (index < word.length) {
+                        // 记录单词索引
                         lastIndex = i
                         str += word[index]
                     } else {
+                        // 补空格
                         str += " "
                     }
 
@@ -190,6 +197,7 @@ var printVertically3 = function(s) {
 
                 index += 1
 
+                // 取子串
                 const substr = str.slice(0, lastIndex + 1)
                 result.push(substr)
             }
