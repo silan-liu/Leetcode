@@ -158,6 +158,50 @@ var printVertically2 = function(s) {
     return result
 }
 
-const S = "howkkkkkkkfmdsl are youkkkks a"
+// 横向填充, 58.36%
+var printVertically3 = function(s) {
+    // 分隔单词
+    if (s && s.length > 0) {
+        const wordList = s.split(' ')
+        if (wordList && wordList.length > 0) {
+            let index = 0
+            let maxLen = 1
+            let result = new Array()
+
+            while (index < maxLen) {
+                let str = ""
+                let i = 0
+                let lastIndex = 0
+                while (i < wordList.length) {
+                    const word = wordList[i]
+                    if (word.length > maxLen) {
+                        maxLen = word.length
+                    }
+
+                    if (index < word.length) {
+                        lastIndex = i
+                        str += word[index]
+                    } else {
+                        str += " "
+                    }
+
+                    i += 1
+                }
+
+                index += 1
+
+                const substr = str.slice(0, lastIndex + 1)
+                result.push(substr)
+            }
+
+            return result
+        }
+    }
+
+    return []
+}
+
+const S = "how are youkkkks afdjklkjkfs"
 console.log(printVertically(S))
 console.log(printVertically2(S))
+console.log(printVertically3(S))
