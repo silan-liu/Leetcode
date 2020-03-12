@@ -3,6 +3,7 @@
  * @param {number[]} popped
  * @return {boolean}
  */
+// https://leetcode.com/problems/validate-stack-sequences/
 // 70.79%
 var validateStackSequences = function(pushed, popped) {
     let list = new Array()
