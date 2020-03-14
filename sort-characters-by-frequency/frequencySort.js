@@ -18,6 +18,7 @@ var frequencySort = function(s) {
         i += 1
     }
 
+    // map 根据 value 从大到小排序
     const sortedMap = new Map([...map].sort((a, b) => {
         return b[1] - a[1]
     }))
@@ -25,6 +26,7 @@ var frequencySort = function(s) {
     let str = ''
     sortedMap.forEach((value, key) => {
         let j = 0
+        // 拼字符串
         while (j < value) {
             str += key
             j += 1
@@ -78,6 +80,7 @@ var frequencySort2 = function(s) {
         frequencyList[value] = totalString
     })
 
+    // 倒序遍历，即频次最高的在前
     let result = ""
     let k = frequencyList.length - 1
     while (k >= 0) {
