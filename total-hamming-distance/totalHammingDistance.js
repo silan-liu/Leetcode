@@ -58,6 +58,7 @@ var totalHammingDistance2 = function(nums) {
         }
 
         if (count > 0) {
+            // 0 的个数与 1 的个数相乘，即为不同总数
             totalDist += count * (nums.length - count)
         }
 
