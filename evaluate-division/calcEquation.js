@@ -4,7 +4,7 @@
  * @param {string[][]} queries
  * @return {number[]}
  */
-// 72.25% 
+// 72.25% , https://leetcode.com/problems/evaluate-division
 // 全局变量，存结果
 var queryResult = -1
 var calcEquation = function(equations, values, queries) {
