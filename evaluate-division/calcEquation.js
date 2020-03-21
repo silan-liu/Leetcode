@@ -63,7 +63,7 @@ var recordValue = function(map, ch1, ch2, value) {
 
 var recursive = function(ch1, ch2, result, map, set) {
 
-    // 如果字符都存在，否则返回 -1
+    // 如果字符都存在
     if (map.has(ch1) && map.has(ch2)) {
         if (ch1 === ch2) {
             queryResult = result * -1
