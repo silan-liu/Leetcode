@@ -19,13 +19,12 @@ var calcEquation = function(equations, values, queries) {
         const ch1 = equation[0]
         const ch2 = equation[1]
 
+        // 记录双向对应关系
         recordValue(map, ch1, ch2, value)
         recordValue(map, ch2, ch1, 1/value)
 
         i += 1
     }
-
-    console.log(map)
 
     i = 0
     while (i < queries.length) {
@@ -33,6 +32,7 @@ var calcEquation = function(equations, values, queries) {
 
         queryResult = -1
 
+        // 存储已经访问的字符
         let set = new Set()
         recursive(query[0], query[1], -1, map, set)
 
@@ -44,6 +44,7 @@ var calcEquation = function(equations, values, queries) {
     return results
 };
 
+// 记录对应关系
 var recordValue = function(map, ch1, ch2, value) {
     let list
     if (map.has(ch1)) {
@@ -61,6 +62,7 @@ var recordValue = function(map, ch1, ch2, value) {
     list.push(obj)
 }
 
+// 递归穷举遍历
 var recursive = function(ch1, ch2, result, map, set) {
 
     // 如果字符都存在
