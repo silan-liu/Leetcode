@@ -34,7 +34,7 @@ var calcEquation = function(equations, values, queries) {
 
         // 存储已经访问的字符
         let set = new Set()
-        recursive(query[0], query[1], -1, map, set)
+        recursive(query[0], query[1], 1, map, set)
 
         results.push(queryResult)
 
@@ -68,7 +68,7 @@ var recursive = function(ch1, ch2, result, map, set) {
     // 如果字符都存在
     if (map.has(ch1) && map.has(ch2)) {
         if (ch1 === ch2) {
-            queryResult = result * -1
+            queryResult = result
             return
         }
 
@@ -84,6 +84,7 @@ var recursive = function(ch1, ch2, result, map, set) {
             if (!set.has(obj.ch)) {
                 const value = obj.value
 
+                // 结果不断相乘
                 recursive(obj.ch, ch2, result * value, map, set)
             }
             
@@ -94,5 +95,5 @@ var recursive = function(ch1, ch2, result, map, set) {
 
 const equations = [ ["a", "b"], ["b", "c"] ],
 values = [2.0, 3.0],
-queries = [ ["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"] ]
+queries = [ ["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"], ["c", "b"] ]
 console.log(calcEquation(equations, values, queries))
