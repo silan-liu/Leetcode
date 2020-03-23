@@ -2,25 +2,19 @@
  * @param {string[]} words
  * @return {number}
  */
+// 51.58%
 var maxProduct2 = function(words) {
     let map = new Map()
     let i = 0
     while (i < words.length) {
         const word = words[i]
 
+        let subMap = new Map()
+        map.set(word, subMap)
         let j = 0
         while (j < word.length) {
             const ch = word[j]
-
-            let list
-            if (map.has(ch)) {
-                list = map.get(ch)
-            } else {
-                list = new Set()
-                map.set(ch, list)
-            }
-
-            list.add(word)
+            subMap.set(ch, 1)
 
             j += 1
         }
@@ -28,8 +22,52 @@ var maxProduct2 = function(words) {
         i += 1
     }
 
-    console.log(map)
+    let maxLen = 0
+    i = 0
+    while (i < words.length - 1) {
+
+        const word1 = words[i]
+
+        let j = i + 1
+        while (j < words.length) {
+
+            const word2 = words[j]
+
+            if (!hasCommonLetter2(word1, word2, map)) {
+                const product = word1.length * word2.length
+                if (product > maxLen) {
+                    maxLen = product
+                }
+            }
+
+            j += 1
+        }
+
+        i += 1
+    }
+
+    return maxLen
 };
+
+var hasCommonLetter2 = function(word1, word2, map) {
+    if (map.has(word2)) {
+        
+        const subMap = map.get(word2)
+        let i = 0
+
+        while (i < word1.length) {
+            const ch = word1[i]
+    
+            if (subMap.has(ch)) {
+                return true
+            }
+
+            i += 1
+        }
+    }
+
+    return false
+}
 
 // 51.58%
 var maxProduct = function(words) {
@@ -75,3 +113,4 @@ var hasCommonLetter = function(word1, word2) {
 
 const words = ["a","aa","aaa","aaaa"]
 console.log(maxProduct(words))
+console.log(maxProduct2(words))
