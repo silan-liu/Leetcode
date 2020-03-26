@@ -3,8 +3,10 @@
  * @return {number}
  */
 // https://leetcode.com/problems/unique-binary-search-trees/
+// 递归解法
 var numTrees = function(n) {
 
+    // 预设值
     let map = new Map()
     map.set(0, 1)
     map.set(1, 1)
@@ -66,4 +68,39 @@ var recursive2 = function(n, map) {
     return 0
 }
 
-console.log(numTrees(20))
+// 非递归
+// 96.56%
+var numTrees2 = function(n) {
+
+    let list = new Array()
+
+    // 长度为 n+1
+    let i = 0
+    while (i <= n) {
+        list.push(1)
+        i += 1
+    }
+
+    // 从 2 开始计算
+    i = 2
+    while (i <= n) {
+        let j = 1
+        let sum = 0
+
+        // 分为左右两部分，去除一个顶点，那么左边为 j - 1 个数，右边 i - j 个数
+        while (j <= i) {
+            sum += list[j - 1] * list[i - j]
+            j += 1
+        }
+
+        list[i] = sum
+
+        i += 1
+    }
+
+    const result = list[n]
+    return result
+};
+
+console.log(numTrees(200))
+console.log(numTrees2(200))
