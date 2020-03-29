@@ -20,6 +20,7 @@ var numTrees = function(n) {
 // 89.50%
 var recursive = function(n, map) {
     if (n >= 0) {
+        // 直接取值
         if (map.has(n)) {
             return map.get(n)
         }
@@ -31,6 +32,7 @@ var recursive = function(n, map) {
             i += 1
         }
 
+        // 缓存结果
         map.set(n, sum)
 
         return sum
