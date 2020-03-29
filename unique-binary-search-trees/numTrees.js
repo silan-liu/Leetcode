@@ -100,6 +100,7 @@ var numTrees2 = function(n) {
         i += 1
     }
 
+    // 1-n 的结果已计算完成，直接取值
     const result = list[n]
     return result
 };
