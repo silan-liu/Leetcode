@@ -1,9 +1,7 @@
 // package app;
 import java.util.concurrent.Semaphore;
 
-// package app;
-import java.util.concurrent.Semaphore;
-
+// https://leetcode.com/problems/the-dining-philosophers/submissions/
 class DiningPhilosophers {
     Semaphore forks[] = { new Semaphore(1), new Semaphore(1), new Semaphore(1), new Semaphore(1), new Semaphore(1)};
     Semaphore pick = new Semaphore(1);
