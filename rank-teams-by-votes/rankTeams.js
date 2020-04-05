@@ -13,6 +13,7 @@ var rankTeams = function (votes) {
     let result = ""
     const len = votes[0].length
     let i = 0
+
     // 记录各个球队得分情况
     let map = new Map()
 
@@ -41,7 +42,6 @@ var rankTeams = function (votes) {
       i += 1
     }
 
-    // 按 value 大小排序
     const sortedMap = new Map([...map].sort((a, b) => {
       // 先按个数排序
       if (a[1] > b[1]) {
@@ -80,7 +80,7 @@ var rankTeams2 = function (votes) {
     const len = votes[0].length
     let i = 0
 
-    // 记录各个球队得分情况
+    // 记录各个球队得分情况，key 为球队名，value 为球队在各个位置的得分，比如 {{'A':[1, 0, 0, ...]}}
     let map = new Map()
 
     // 分别处理每列
@@ -99,6 +99,7 @@ var rankTeams2 = function (votes) {
           list = map.get(ch)
           list[i] += 1
         } else {
+          // 默认 26 个位置
           list = new Array(26)
           let m = 0
           while (m < 26) {
@@ -137,7 +138,6 @@ var rankTeams2 = function (votes) {
         i += 1
       }
 
-      // 按字母顺序排
       // 按字顺序排序
       if (a[0] < b[0]) {
         return -1
