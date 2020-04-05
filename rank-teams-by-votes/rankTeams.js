@@ -2,6 +2,7 @@
  * @param {string[]} votes
  * @return {string}
  */
+// https://leetcode.com/problems/rank-teams-by-votes
 // 59.36%
 var rankTeams = function (votes) {
   if (votes && votes.length >= 1) {
