@@ -5,36 +5,6 @@
  * @return {number}
  */
 var shoppingOffers = function (price, special, needs) {
-  // 将 price 处理为 special
-  // let i = 0
-  // let specialOffers = new Array()
-
-  // while (i < price.length) {
-  //   let offer = new Array()
-  //   let j = 0
-  //   while (j < price.length) {
-  //     if (j === i) {
-  //       offer.push(1)
-  //     } else {
-  //       offer.push(0)
-  //     }
-
-  //     j += 1
-  //   }
-
-  //   offer.push(price[i])
-  //   specialOffers.push(offer)
-
-  //   i += 1
-  // }
-
-
-  // i = 0
-  // while (i < special.length) {
-  //   specialOffers.push(special[i])
-  //   i += 1
-  // }
-
   const result = recursive(price, needs, special)
   return result
 };
@@ -50,7 +20,7 @@ var recursive = function (price, needs, special) {
     return map.get(key)
   }
 
-  // 需要个数全是 0
+  // 需求个数全是 0
   if (isOver(needs)) {
     return 0
   } else {
