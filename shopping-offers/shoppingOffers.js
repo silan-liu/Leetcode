@@ -6,52 +6,56 @@
  */
 var shoppingOffers = function (price, special, needs) {
   // 将 price 处理为 special
-  let i = 0
-  let specialOffers = new Array()
+  // let i = 0
+  // let specialOffers = new Array()
 
-  while (i < price.length) {
-    let offer = new Array()
-    let j = 0
-    while (j < price.length) {
-      if (j === i) {
-        offer.push(1)
-      } else {
-        offer.push(0)
-      }
+  // while (i < price.length) {
+  //   let offer = new Array()
+  //   let j = 0
+  //   while (j < price.length) {
+  //     if (j === i) {
+  //       offer.push(1)
+  //     } else {
+  //       offer.push(0)
+  //     }
 
-      j += 1
-    }
+  //     j += 1
+  //   }
 
-    offer.push(price[i])
-    specialOffers.push(offer)
+  //   offer.push(price[i])
+  //   specialOffers.push(offer)
 
-    i += 1
-  }
+  //   i += 1
+  // }
 
 
-  i = 0
-  while (i < special.length) {
-    specialOffers.push(special[i])
-    i += 1
-  }
+  // i = 0
+  // while (i < special.length) {
+  //   specialOffers.push(special[i])
+  //   i += 1
+  // }
 
-  const result = recursive2(needs, specialOffers)
+  const result = recursive(price, needs, special)
   return result
 };
 
 
 var map = new Map()
-var recursive2 = function (needs, special) {
+var recursive = function (price, needs, special) {
+
   const key = generateKey(needs)
+
+  // 从缓存中取
   if (map.has(key)) {
     return map.get(key)
   }
 
+  // 需要个数全是 0
   if (isOver(needs)) {
     return 0
   } else {
     let i = 0
-    let minTotalPrice = Number.MAX_SAFE_INTEGER
+    let minTotalPrice = buy(price, needs)
     while (i < special.length) {
       const offer = special[i]
 
@@ -71,7 +75,7 @@ var recursive2 = function (needs, special) {
       }
 
       if (canBuy) {
-        const total = recursive2(newNeeds, special) + offer[offer.length - 1]
+        const total = recursive(price, newNeeds, special) + offer[offer.length - 1]
         if (total < minTotalPrice) {
           minTotalPrice = total
         }
@@ -85,6 +89,19 @@ var recursive2 = function (needs, special) {
   }
 }
 
+// 直接购买
+var buy = function (price, needs) {
+  let total = 0
+  let i = 0
+  while (i < needs.length) {
+    total += price[i] * needs[i]
+    i += 1
+  }
+
+  return total
+}
+
+// 生成 key
 var generateKey = function (needs) {
   if (needs) {
     let i = 0
@@ -99,6 +116,7 @@ var generateKey = function (needs) {
   }
 }
 
+// 完成购买
 var isOver = function (needs) {
 
   if (needs) {
@@ -115,27 +133,8 @@ var isOver = function (needs) {
   return true
 }
 
-const price = [0, 0, 0]
+const price = [2, 3, 4]
 const special = [[1, 1, 0, 4], [2, 2, 1, 9]]
-const needs = [1, 1, 1]
-
-let specialOffers = new Array()
-let i = 0
-while (i < 3) {
-  let j = 0
-  let offer = new Array()
-  while (j < 6) {
-    const count = Math.floor(Math.random() * 10) % 10
-    offer.push(count)
-    j += 1
-  }
-
-  const price = Math.floor(Math.random() * 100) % 50
-  offer.push(price)
-
-  i += 1
-
-  specialOffers.push(offer)
-}
+const needs = [1, 2, 1]
 
 console.log(shoppingOffers(price, special, needs))
