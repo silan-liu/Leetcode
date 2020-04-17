@@ -76,6 +76,53 @@ var insertNode = function (root, val) {
   }
 }
 
+/**
+ * Decodes your encoded data to tree.
+ *
+ * @param {string} data
+ * @return {TreeNode}
+ */
+// 60.00% 
+var deserialize2 = function (data) {
+  let str = data
+  if (str && str.length > 0) {
+    // 去除首个 -，因为 split 后是空格
+    if (str.startsWith('-')) {
+      str = str.substring(1, str.length)
+    }
+
+    let array = str.split('-')
+
+    if (array.length >= 1) {
+
+      let root = null
+      let i = 0
+      while (i < array.length) {
+        root = buildTree(root, parseInt(array[i]))
+        i += 1
+      }
+
+      return root
+    }
+  }
+
+  return null
+};
+
+var buildTree = function (root, val) {
+  if (!root) {
+    return new TreeNode(val)
+  }
+
+  if (val < root.val) {
+    root.left = buildTree(root.left, val)
+  } else {
+    root.right = buildTree(root.right, val)
+  }
+
+  return root
+}
+
 let root = new TreeNode(8)
 let left = new TreeNode(5)
 let right = new TreeNode(15)
@@ -89,3 +136,4 @@ right.right = new TreeNode(16)
 
 
 console.log(deserialize(serialize(root)));
+console.log(deserialize2(serialize(root)));
