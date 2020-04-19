@@ -62,6 +62,7 @@ var exclusiveTime = function (n, logs) {
         break
       }
     } else {
+      // 将 start 函数记录
       logIds.push(logInfo[0])
     }
 
