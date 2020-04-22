@@ -34,7 +34,7 @@ var exclusiveTime = function (n, logs) {
     const logInfo = log.split(':')
     let period = 0
 
-    // 操作符相同，start - start ,end - end
+    // 操作符相同，start - start , end - end
     if (preLogInfo[1] === logInfo[1]) {
       period = logInfo[2] - preLogInfo[2]
     } else {
