@@ -1,4 +1,6 @@
+// https://leetcode.com/problems/robot-bounded-in-circle/submissions/
 class Solution {
+    // 96.67% 
     func isRobotBounded(_ instructions: String) -> Bool {
         var x = 0
         var y = 0
