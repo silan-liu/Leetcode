@@ -20,15 +20,18 @@ var mirrorReflection = function(p, q) {
 
         let x = 0
         let cur = 1
+        let flag = true
 
         // 1 - 逆时针，0 - 顺时针
         let direction = 1
 
         while (x != p) {
-            if (direction === 1) {
-               cur = (cur + 1) % 4
-            } else {
-                cur = (cur + 3) % 4
+            if (flag) {
+                if (direction === 1) {
+                    cur = (cur + 1) % 4
+                 } else {
+                     cur = (cur + 3) % 4
+                 }
             }
 
             if (cur % 2 === 1) {
@@ -47,17 +50,20 @@ var mirrorReflection = function(p, q) {
                 }
                 
                 // 计算已知距离
-                if (cur % 2 === 1) {
-                    l = l / ratio
-                } else {
-                    l = l * ratio
-                }
+                // if (cur % 2 === 1) {
+                //     l = l / ratio
+                // } else {
+                //     l = l * ratio
+                // }
+
+                flag = false
 
                 // 如果超出，方向相反
                 direction = (direction + 1) % 2
 
             } else if (x < p) {
                 l = p - x
+                flag = true
             } else {
                 if (direction === 1) {
                     cur = cur % 4
@@ -75,5 +81,5 @@ var mirrorReflection = function(p, q) {
     return -1
 };
 
-const p = 12, q = 5
+const p = 5, q = 2
 console.log(mirrorReflection(p, q))
