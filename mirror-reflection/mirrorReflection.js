@@ -25,8 +25,8 @@ var mirrorReflection = function (p, q) {
         // 1 - 逆时针，0 - 顺时针
         let direction = 1
 
-        // 因为计算有小数点，四舍五入来比较
-        while (Math.round(x) != p) {
+        // 因为计算有小数点，比较浮点数大小
+        while (!isEqual(x, p)) {
             if (flag) {
                 if (direction === 1) {
                     cur = (cur + 1) % 4
@@ -41,8 +41,8 @@ var mirrorReflection = function (p, q) {
                 x = l * ratio
             }
 
-            // 计算有小数点，四舍五入来比较
-            if (Math.round(x) === p) {
+            // 计算有小数点，比较浮点数大小
+            if (isEqual(x, p)) {
                 if (direction === 1) {
                     cur = cur % 4
                 } else {
@@ -83,6 +83,11 @@ var mirrorReflection = function (p, q) {
 
     return 0
 };
+
+// 比较 x,y 浮点数是否相等
+var isEqual = function (x, y) {
+    return Math.abs(x - y) < 1e-6
+}
 
 const p = 13, q = 3
 console.log(mirrorReflection(p, q))
