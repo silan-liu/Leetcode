@@ -4,7 +4,7 @@
  * @param {number} q
  * @return {number}
  */
-var mirrorReflection = function(p, q) {
+var mirrorReflection = function (p, q) {
     if (p >= q) {
         if (p === q) {
             return 1
@@ -25,13 +25,14 @@ var mirrorReflection = function(p, q) {
         // 1 - 逆时针，0 - 顺时针
         let direction = 1
 
-        while (x != p) {
+        // 因为计算有小数点，四舍五入来比较
+        while (Math.round(x) != p) {
             if (flag) {
                 if (direction === 1) {
                     cur = (cur + 1) % 4
-                 } else {
-                     cur = (cur + 3) % 4
-                 }
+                } else {
+                    cur = (cur + 3) % 4
+                }
             }
 
             if (cur % 2 === 1) {
@@ -39,47 +40,49 @@ var mirrorReflection = function(p, q) {
             } else {
                 x = l * ratio
             }
-            
-            if (x > p) {
-                l = x - p
-                
-                if (direction === 1) {
-                    cur = (cur + 1) % 4
-                 } else {
-                    cur = (cur + 3) % 4
-                }
-                
-                // 计算已知距离
-                // if (cur % 2 === 1) {
-                //     l = l / ratio
-                // } else {
-                //     l = l * ratio
-                // }
 
-                flag = false
-
-                // 如果超出，方向相反
-                direction = (direction + 1) % 2
-
-            } else if (x < p) {
-                l = p - x
-                flag = true
-            } else {
+            // 计算有小数点，四舍五入来比较
+            if (Math.round(x) === p) {
                 if (direction === 1) {
                     cur = cur % 4
                 } else {
                     cur = (cur + 3) % 4
                 }
+                break
+            } else {
+                if (x > p) {
+                    l = x - p
+
+                    if (direction === 1) {
+                        cur = (cur + 1) % 4
+                    } else {
+                        cur = (cur + 3) % 4
+                    }
+
+                    flag = false
+
+                    // 如果超出，方向相反
+                    direction = (direction + 1) % 2
+
+                } else if (x < p) {
+                    if (!flag) {
+                        l = x
+                    } else {
+                        l = p - x
+                    }
+
+                    flag = true
+                }
             }
 
-            console.log(cur, x, l, direction)
+            // console.log(cur, x, l, direction, flag)
         }
 
         return cur
     }
 
-    return -1
+    return 0
 };
 
-const p = 5, q = 2
+const p = 13, q = 3
 console.log(mirrorReflection(p, q))
