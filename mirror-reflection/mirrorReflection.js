@@ -20,6 +20,8 @@ var mirrorReflection = function (p, q) {
 
         let x = 0
         let cur = 1
+
+        // 是否需要计算下一个墙面编号
         let flag = true
 
         // 1 - 逆时针，0 - 顺时针
@@ -59,6 +61,7 @@ var mirrorReflection = function (p, q) {
                         cur = (cur + 3) % 4
                     }
 
+                    // 下次循环不需要计算墙面编号，因为已经计算过了
                     flag = false
 
                     // 如果超出，方向相反
