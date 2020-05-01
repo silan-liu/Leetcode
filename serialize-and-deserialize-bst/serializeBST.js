@@ -37,7 +37,6 @@ var deserialize = function (data) {
     }
 
     let array = str.split('-')
-    console.log(array)
     if (array.length >= 1) {
 
       let root = new TreeNode(parseInt(array[0]))

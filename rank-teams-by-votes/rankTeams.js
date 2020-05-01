@@ -99,10 +99,10 @@ var rankTeams2 = function (votes) {
           list = map.get(ch)
           list[i] += 1
         } else {
-          // 默认 26 个位置
-          list = new Array(26)
+          // 默认 len 个位置
+          list = new Array(len)
           let m = 0
-          while (m < 26) {
+          while (m < len) {
             list[m] = 0
             m += 1
           }
@@ -117,6 +117,8 @@ var rankTeams2 = function (votes) {
 
       i += 1
     }
+
+    console.log(map)
 
     // 排序
     const sortedMap = new Map([...map].sort((a, b) => {

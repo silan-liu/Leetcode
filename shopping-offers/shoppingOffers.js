@@ -24,16 +24,22 @@ var recursive = function (price, needs, special) {
   if (isOver(needs)) {
     return 0
   } else {
+
     let i = 0
+
+    // 直接购买
     let minTotalPrice = buy(price, needs)
+
     while (i < special.length) {
       const offer = special[i]
 
       let j = 0
       let canBuy = true
+      // 新的需求
       let newNeeds = new Array()
 
       while (j < needs.length) {
+        // 商品数不满足
         if (offer[j] > needs[j]) {
           canBuy = false
           break
@@ -44,7 +50,9 @@ var recursive = function (price, needs, special) {
         j += 1
       }
 
+      // 可以购买
       if (canBuy) {
+        // 计算新的需求
         const total = recursive(price, newNeeds, special) + offer[offer.length - 1]
         if (total < minTotalPrice) {
           minTotalPrice = total
@@ -54,6 +62,7 @@ var recursive = function (price, needs, special) {
       i += 1
     }
 
+    // 缓存结果
     map.set(key, minTotalPrice)
     return minTotalPrice
   }
