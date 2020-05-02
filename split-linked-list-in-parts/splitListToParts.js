@@ -15,6 +15,8 @@ function ListNode(val, next) {
 var splitListToParts = function (root, k) {
 
   let result = []
+
+  // 计算链表长度
   let len = 0
   let head = root
   while (head) {
@@ -24,6 +26,8 @@ var splitListToParts = function (root, k) {
 
   let countList = []
   let i = 0
+
+  // 如果长度小于分组个数，则每个组单独为 1，后面补 0
   if (len < k) {
     while (i < k) {
       if (i < len) {
@@ -35,7 +39,10 @@ var splitListToParts = function (root, k) {
       i += 1
     }
   } else {
+    // 求出平均个数
     const count = Math.floor(len / k)
+
+    // 若不能平均分配，则从前面每个 + 1
     const remain = len - count * k
     while (i < k) {
       if (i < remain) {
@@ -50,11 +57,14 @@ var splitListToParts = function (root, k) {
 
   let cur = root
   i = 0
+  // 计算每组的链表头
   while (i < k) {
     const count = countList[i]
     let j = 0
     let head = null
     let pre = null
+
+    // 往后数 count 个
     while (j < count) {
       if (!head) {
         head = cur
@@ -65,6 +75,7 @@ var splitListToParts = function (root, k) {
       j += 1
     }
 
+    // 将一组的链尾置空，否则会保持原有链接关系
     if (pre) {
       pre.next = null
     }
