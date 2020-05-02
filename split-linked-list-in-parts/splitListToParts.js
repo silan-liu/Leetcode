@@ -43,7 +43,7 @@ var splitListToParts = function (root, k) {
     const count = Math.floor(len / k)
 
     // 若不能平均分配，则从前面每个 + 1
-    const remain = len - count * k
+    const remain = len % k
     while (i < k) {
       if (i < remain) {
         countList.push(count + 1)
@@ -61,15 +61,13 @@ var splitListToParts = function (root, k) {
   while (i < k) {
     const count = countList[i]
     let j = 0
-    let head = null
     let pre = null
+
+    // 添加头结点
+    result.push(cur)
 
     // 往后数 count 个
     while (j < count) {
-      if (!head) {
-        head = cur
-      }
-
       pre = cur
       cur = cur.next
       j += 1
@@ -80,8 +78,6 @@ var splitListToParts = function (root, k) {
       pre.next = null
     }
 
-    result.push(head)
-
     i += 1
   }
 
@@ -91,11 +87,11 @@ var splitListToParts = function (root, k) {
 let root = new ListNode(1)
 let head = root
 let j = 2
-while (j <= 1000) {
+while (j <= 10) {
   let node = new ListNode(j)
   head.next = node
   head = node
   j += 1
 }
 
-console.log(splitListToParts(null, 50))
+console.log(splitListToParts(root, 4))
