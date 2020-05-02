@@ -92,5 +92,34 @@ var isEqual = function (x, y) {
     return Math.abs(x - y) < 1e-6
 }
 
-const p = 13, q = 3
+// solution2
+var gcd = function (a, b) {
+    if (a === 0) {
+        return b
+    }
+
+    return gcd(b % a, a)
+}
+
+var mirrorReflection2 = function (p, q) {
+    // 最大公约数
+    const g = gcd(p, q)
+
+    // 使 m，n 最小
+    let m = p / g
+    let n = q / g
+
+    if (m % 2 === 1 && n % 2 === 1) {
+        return 1
+    }
+
+    if (m % 2 === 1) {
+        return 0
+    }
+
+    return 2
+}
+
+const p = 5, q = 3
 console.log(mirrorReflection(p, q))
+console.log(mirrorReflection2(p, q))
