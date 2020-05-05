@@ -5,7 +5,10 @@ var UndergroundSystem = function () {
 
 };
 
+// 记录用户的旅程
 UndergroundSystem.prototype.customerMap = new Map()
+
+// 记录路线对应的时间信息
 UndergroundSystem.prototype.stationMap = new Map()
 
 
@@ -73,6 +76,9 @@ UndergroundSystem.prototype.checkOut = function (id, stationName, t) {
  * @return {number}
  */
 UndergroundSystem.prototype.getAverageTime = function (startStation, endStation) {
+
+  console.log(this.stationMap)
+
   const stationKey = `${startStation}-${endStation}`
   if (this.stationMap.has(stationKey)) {
     const list = this.stationMap.get(stationKey)
