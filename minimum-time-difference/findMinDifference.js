@@ -107,6 +107,6 @@ var calDiff = function (t1, t2) {
   return diff
 }
 
-const timePoints = ["01:00", "12:22", "00:00", "00:30", "23:59"]
+const timePoints = ["00:00", "13:00"]
 console.log(findMinDifference(timePoints))
 console.log(findMinDifference2(timePoints))
