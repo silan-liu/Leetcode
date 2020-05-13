@@ -59,5 +59,61 @@ var numRabbits = function(answers) {
     return sum
 };
 
-const answers = [10, 10, 10, 2, 3,4,3,3,2,1,2,1]
+/**
+ * @param {number[]} answers
+ * @return {number}
+ */
+// 68.00%
+var numRabbits2 = function (answers) {
+    if (!answers || answers.length === 0) {
+        return 0
+    }
+
+    let sum = 0
+    let answerMap = new Map()
+    answers.forEach(answer => {
+        let list
+        if (answerMap.has(answer)) {
+            list = answerMap.get(answer)
+        } else {
+            list = new Array()
+        }
+
+        list.push(answer)
+        answerMap.set(answer, list)
+    })
+
+    answerMap.forEach((value, key) => {
+        if (key === 0) {
+            // 每个兔子都是不同颜色
+            sum += value.length
+        } else {
+
+            // 取第一个兔子说的数目+1，即为应有的总数
+            const totalCount = key + 1
+            sum += totalCount
+
+            // 除去第一只兔子，还剩的总数
+            let remainCount = key
+
+            // 从第二只兔子开始
+            let i = 1
+            while (i < value.length) {
+                if (remainCount > 0) {
+                    remainCount -= 1
+                } else {
+                    sum += totalCount
+                    remainCount = key
+                }
+
+                i += 1
+            }
+        }
+    })
+
+    return sum
+}
+
+const answers = [10,10,10,2, 3,4,3,3,2,1,2,1,3,2,12,1,2,4,3,32,2,3,2,0,1,0,1,0,0,0]
 console.log(numRabbits(answers))
+console.log(numRabbits2(answers))
