@@ -99,9 +99,11 @@ var numRabbits2 = function (answers) {
             // 从第二只兔子开始
             let i = 1
             while (i < value.length) {
+                // 剩余兔子数 > 0，则该兔子说的数量可以覆盖
                 if (remainCount > 0) {
                     remainCount -= 1
                 } else {
+                    // 不能覆盖，则需要新增兔子
                     sum += totalCount
                     remainCount = key
                 }
@@ -140,10 +142,10 @@ var numRabbits3 = function (answers) {
     })
 
     answerMap.forEach((value, key) => {
-        // 应该的总数
+        // 应有的兔子的总数
         const num = key + 1
 
-        // Math.ceil(value / num) 表示应该有几组 num
+        // Math.ceil(value / num) 表示应该有几组 num，如果 key = 10，value = 24，说明需要 3 组兔子才能满足，因为第一只兔子说的总数为 11，可以覆盖到前 11 只兔子。第 12 只兔子说的总数为 11，也可以覆盖 11 只，即到 22 只，依次类推。
         sum += num * Math.ceil(value / num)
     })
 
