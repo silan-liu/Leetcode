@@ -114,6 +114,43 @@ var numRabbits2 = function (answers) {
     return sum
 }
 
+/**
+ * @param {number[]} answers
+ * @return {number}
+ */
+// 96.00%
+var numRabbits3 = function (answers) {
+    if (!answers || answers.length === 0) {
+        return 0
+    }
+
+    let sum = 0
+
+    // 计算相同答案兔子个数
+    let answerMap = new Map()
+    answers.forEach(answer => {
+        let count
+        if (answerMap.has(answer)) {
+            count = answerMap.get(answer) + 1
+        } else {
+            count = 1
+        }
+
+        answerMap.set(answer, count)
+    })
+
+    answerMap.forEach((value, key) => {
+        // 应该的总数
+        const num = key + 1
+
+        // Math.ceil(value / num) 表示应该有几组 num
+        sum += num * Math.ceil(value / num)
+    })
+
+    return sum
+}
+
 const answers = [10,10,10,2, 3,4,3,3,2,1,2,1,3,2,12,1,2,4,3,32,2,3,2,0,1,0,1,0,0,0]
 console.log(numRabbits(answers))
 console.log(numRabbits2(answers))
+console.log(numRabbits3(answers))
