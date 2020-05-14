@@ -44,6 +44,8 @@ var numRabbits = function(answers) {
                 // 没有找到，则为一种新颜色的兔子
                 const value = {totalCount: answer + 1, remainCount: answer}
                 colorMap.set(index, value)
+
+                // 颜色递增
                 index += 1
             }
         }
