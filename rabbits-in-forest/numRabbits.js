@@ -22,15 +22,21 @@ var numRabbits = function(answers) {
         } else {
             // 在 map 中查找是否有某个颜色对应的数量相同的兔子，若有，则表示其为同一个颜色，若无，则表示为其他颜色的兔子
             let found = false
-            let i = 0
+
+            // 从颜色 1 开始遍历
+            let i = 1
             while (i <= index) {
+
+                // 存在颜色
                 if (colorMap.has(i)) {
                     let value = colorMap.get(i)
-                    let {totalCount, remainCount} = value
+                    let { totalCount, remainCount } = value
+                    
+                    // 还有剩余坑位，可以同色
                     if (totalCount === answer + 1 && remainCount > 0) {
                         found = true
 
-                        // 更新剩余兔子数
+                        // 更新剩余坑位数
                         value.remainCount = remainCount - 1
                         colorMap.set(i, value)
                         break
