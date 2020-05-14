@@ -83,6 +83,8 @@ var numRabbits2 = function (answers) {
         answerMap.set(answer, list)
     })
 
+    console.log(answerMap)
+
     answerMap.forEach((value, key) => {
         if (key === 0) {
             // 每个兔子都是不同颜色
@@ -103,7 +105,7 @@ var numRabbits2 = function (answers) {
                 if (remainCount > 0) {
                     remainCount -= 1
                 } else {
-                    // 不能覆盖，则需要新增兔子
+                    // 不能覆盖，则需要新增颜色
                     sum += totalCount
                     remainCount = key
                 }
@@ -152,7 +154,7 @@ var numRabbits3 = function (answers) {
     return sum
 }
 
-const answers = [10,10,10,2, 3,4,3,3,2,1,2,1,3,2,12,1,2,4,3,32,2,3,2,0,1,0,1,0,0,0]
+const answers = [5, 2, 2, 0, 2, 2, 2]//[10,10,10,2, 3,4,3,3,2,1,2,1,3,2,12,1,2,4,3,32,2,3,2,0,1,0,1,0,0,0]
 console.log(numRabbits(answers))
 console.log(numRabbits2(answers))
 console.log(numRabbits3(answers))
