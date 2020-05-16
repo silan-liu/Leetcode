@@ -56,6 +56,37 @@ var findBottomLeftValue = function (root) {
   return null
 };
 
+// 79.61%
+var findBottomLeftValue2 = function (root) {
+  if (root) {
+    let list = []
+    list.push(root)
+
+    // 记录取出的节点
+    let node
+
+    while (list.length > 0) {
+
+      // 取第一个元素
+      node = list.shift()
+
+      // 压入右子树
+      if (node.right) {
+        list.push(node.right)
+      }
+
+      // 压入左子树
+      if (node.left) {
+        list.push(node.left)
+      }
+    }
+
+    return node.val
+  }
+
+  return null
+};
+
 const root = new TreeNode(1)
 const n1 = new TreeNode(2)
 const n2 = new TreeNode(3)
@@ -73,3 +104,4 @@ root.left = n1
 root.right = n2
 
 console.log(findBottomLeftValue(root))
+// console.log(findBottomLeftValue2(root))
