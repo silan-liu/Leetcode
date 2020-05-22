@@ -3,8 +3,6 @@
  * @return {number}
  */
 // https://leetcode.com/problems/longest-string-chain/
-let result = 0
-let cacheResult = new Map()
 
 // 84.74%
 var longestStrChain = function (words) {
@@ -41,8 +39,8 @@ var longestStrChain = function (words) {
 
         return 0
     })
-
-    // 记录每层每个单词的可连接长度
+    
+    // 记录每个单词的可连接长度
     const lengthMap = new Map()
 
     // 找到 lengthMap 中 vale 的最大值
@@ -53,31 +51,30 @@ var longestStrChain = function (words) {
         const len = sortedKeys[i]
         const list1 = map.get(len)
 
-        const wordLinkMap = lengthMap.get(len + 1)
+        const list2 = map.get(len + 1)
 
-        if (!wordLinkMap) {
-            const wordLinkMap = new Map()
+        if (!list2) {
             list1.forEach(word => {
-                wordLinkMap.set(word, 1)
+                lengthMap.set(word, 1)
             })
-
-            lengthMap.set(len, wordLinkMap)
 
             if (longest < 1) {
                 longest = 1
             }
         } else {
-            const currentWordLinkMap = new Map()
     
             list1.forEach(word1 => {
                 // 取最大连接长度
                 let maxLinkLen = 1
                 let flag = false
 
-                wordLinkMap.forEach((linkLen, word2) => {
+                list2.forEach(word2 => {
     
                     if (isSatisfied(word1, word2)) {
                         flag = true
+
+                        const linkLen = lengthMap.get(word2)
+
                         if (maxLinkLen < linkLen) {
                             maxLinkLen = linkLen
                         }
@@ -89,13 +86,14 @@ var longestStrChain = function (words) {
                     maxLinkLen += 1
                 }
     
-                currentWordLinkMap.set(word1, maxLinkLen)
+                // 记录单词的最大链接长度
+                lengthMap.set(word1, maxLinkLen)
+
+                // 更新全局最长链接长度
                 if (longest < maxLinkLen) {
                     longest = maxLinkLen
                 }
             })
-    
-            lengthMap.set(len, currentWordLinkMap)
         }
 
         i += 1
@@ -136,38 +134,106 @@ var isSatisfied = function (word1, word2) {
     return false
 }
 
-var recursive = function (map, preWord, index, len) {
+// 77.89%，递归方式
+var longestStrChain2 = function (words) {
+    if (!words || words.length === 0) {
+        return 0
+    }
+
+    let minWordLength = Number.MAX_VALUE
+    let map = new Map()
+    words.forEach(word => {
+        const len = word.length
+        if (len < minWordLength) {
+            minWordLength = len
+        }
+
+        let set
+        if (map.has(len)) {
+            set = map.get(len)
+        } else {
+            set = new Set()
+            map.set(len, set)
+        }
+
+        set.add(word)
+    });
+
+    // 长度从大到小排序
+    const sortedKeys = [...map.keys()].sort((a, b) => {
+        if (a < b) {
+            return 1
+        } else if (a > b) {
+            return -1
+        }
+
+        return 0
+    })
+
+    // 缓存结果
+    let cacheResult = new Map()
+
+    let longest = Number.MIN_VALUE
+
+    // 从最长字符开始计算
+    let i = 0
+    while (i < sortedKeys.length) {
+        const len = sortedKeys[i]
+        const list = map.get(len)
+
+        list.forEach(word => {
+            const result = dsp(map, word, len + 1, cacheResult)
+            if (longest < result) {
+                longest = result
+            }
+        })
+
+        i += 1
+    }
+  
+    return longest
+};
+
+// 递归计算
+var dsp = function (map, preWord, index, cacheResult) {
+
+    if (cacheResult.has(preWord)) {
+        return cacheResult.get(preWord)
+    }
 
     if (map.has(index)) {
         const set = map.get(index)
         let find = false
 
+        let maxLinkLen = Number.MIN_VALUE
+
         set.forEach(word => {
-
-            // 同时从它自身开始找
-            recursive(map, word, index + 1, 1)
-
-            if (len === 0 || isSatisfied(preWord, word)) {
-
+            if (isSatisfied(preWord, word)) {
                 find = true
-
-                recursive(map, word, index + 1, len + 1)
+                const result = dsp(map, word, index + 1, cacheResult)
+                if (result > maxLinkLen) {
+                    maxLinkLen = result
+                }
             }
         });
 
         if (!find) {
-            if (len > result) {
-                result = len
-            }
+            cacheResult.set(preWord, 1)
+            return 1
+        } else {
+            cacheResult.set(preWord, maxLinkLen + 1)
+
+            return maxLinkLen + 1
         }
     } else { 
-        if (len > result) {
-            result = len
-        }
+        cacheResult.set(preWord, 1)
+
+        return 1
     }
 }
 
-/// ["a","b","c","cd","cde","fb","cedq"]
-// ["sgtnz","sgtz","sgz","ikrcyoglz","ajelpkpx","ajelpkpxm","srqgtnz","srqgotnz","srgtnz","ijkrcyoglz"] //
-const words = ["a","b","c","cd","cde","fb","cdeq"]//["ksqvsyq","ks","kss","czvh","zczpzvdhx","zczpzvh","zczpzvhx","zcpzvh","zczvh","gr","grukmj","ksqvsq","gruj","kssq","ksqsq","grukkmj","grukj","zczpzfvdhx","gru"]
+// const words = ["kxbvnw","uqjszp","pmukt","aai","aaicwm","mhkzelhyek","cjv","v","uqjjspzpp","aaim","uqjjszp","uqjjspzppd","uqjjspzp","aaicm","pukt","pvmukt","dgdb","aaicwbm","mhkelhyek","jv"]
+// const words = ["sgtnz","sgtz","sgz","ikrcyoglz","ajelpkpx","ajelpkpxm","srqgtnz","srqgotnz","srgtnz","ijkrcyoglz"] //
+const words = ["ksqvsyq","ks","kss","czvh","zczpzvdhx","zczpzvh","zczpzvhx","zcpzvh","zczvh","gr","grukmj","ksqvsq","gruj","kssq","ksqsq","grukkmj","grukj","zczpzfvdhx","gru"]
 console.log(longestStrChain(words))
+console.log(longestStrChain2(words))
