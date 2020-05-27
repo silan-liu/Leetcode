@@ -59,33 +59,36 @@ var distanceK = function (root, target, K) {
     return []
 };
 
+// 找到 root -> target 之间的路径，不包括 target
 var getPath = function (root, target) {
     if (root) {
         if (root == target) {
-            console.log('find')
             return []
         } else {
             let result1 = null
             let result2 = null
 
+            // 左边是否存在节点
             if (root.left) {
                 result1 = getPath(root.left, target)
             }
             
+            // 右边是否存在节点
             if (root.right) {
                 result2 = getPath(root.right, target)
             }
 
-            // console.log(result1, result2)
-
             if (result1) {
+                // 0 代表左边节点
                 const curNode = { node: root, dir: 0 }
                 return [curNode].concat(result1)
             } else if (result2) {
+                // 1 代表右边节点
                 const curNode = { node: root, dir: 1 }
                 return [curNode].concat(result2)
             }
 
+            // 都不存在
             return null
         }
     }
