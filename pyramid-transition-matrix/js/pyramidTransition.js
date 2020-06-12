@@ -4,6 +4,7 @@
  * @return {boolean}
  */
 // https://leetcode.com/problems/pyramid-transition-matrix/
+// 82.35%
 var pyramidTransition = function (bottom, allowed) {
   let allowMap = new Map();
   allowed.forEach((element) => {
