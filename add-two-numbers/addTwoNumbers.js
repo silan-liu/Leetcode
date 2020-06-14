@@ -157,7 +157,8 @@ var addTwoNumbers2 = function (l1, l2) {
 // 35.77% 
 var addTwoNumbers3 = function (l1, l2) {
 
-  let result, tmp
+  let result = new ListNode(0, null)
+  let tmp = result
 
   // 进位
   let c = 0
@@ -181,13 +182,8 @@ var addTwoNumbers3 = function (l1, l2) {
     const val = n % 10
     const node = new ListNode(val, null)
 
-    if (!result) {
-      result = node
-      tmp = result
-    } else {
-      tmp.next = node
-      tmp = node
-    }
+    tmp.next = node
+    tmp = node
 
     if (l1) {
       l1 = l1.next
@@ -204,7 +200,7 @@ var addTwoNumbers3 = function (l1, l2) {
     tmp.next = node
   }
 
-  return result
+  return result.next
 };
 
 var buildListNode = function (nums) {
