@@ -90,6 +90,70 @@ var lengthOfListNode = function (l1) {
   return i
 }
 
+// 25.23%
+var addTwoNumbers2 = function (l1, l2) {
+
+  let result, tmp
+
+  // 进位
+  let c = 0
+
+  // 遍历到短链表末尾
+  while (l1 && l2) {
+    const n = l1.val + l2.val + c
+
+    // 进位
+    c = Math.floor(n / 10)
+
+    const val = n % 10
+    const node = new ListNode(val, null)
+    console.log(val)
+
+    if (!result) {
+      result = node
+      tmp = result
+    } else {
+      tmp.next = node
+      tmp = node
+    }
+
+    l1 = l1.next
+    l2 = l2.next
+  }
+
+  let p
+  if (l1) {
+    p = l1
+  } else if (l2) {
+    p = l2
+  }
+
+  // 长链表遍历到末尾
+  while (p) {
+    const n = p.val + c
+
+    // 进位
+    c = Math.floor(n / 10)
+
+    const val = n % 10
+    const node = new ListNode(val, null)
+    console.log(val)
+
+    tmp.next = node
+    tmp = node
+
+    p = p.next
+  }
+
+  // 最高位有进位，需生成新节点
+  if (c > 0) {
+    const node = new ListNode(c, null)
+    tmp.next = node
+  }
+
+  return result
+};
+
 var buildListNode = function (nums) {
   let i = 0
   let head = null
@@ -115,3 +179,4 @@ const l1 = buildListNode([2, 4, 3])
 const l2 = buildListNode([4, 7, 6, 5])
 
 console.log(addTwoNumbers(l1, l2))
+console.log(addTwoNumbers2(l1, l2))
