@@ -154,6 +154,59 @@ var addTwoNumbers2 = function (l1, l2) {
   return result
 };
 
+// 35.77% 
+var addTwoNumbers3 = function (l1, l2) {
+
+  let result, tmp
+
+  // 进位
+  let c = 0
+
+  // 遍历链表
+  while (l1 || l2) {
+    let sum = 0
+    if (l1) {
+      sum += l1.val
+    }
+
+    if (l2) {
+      sum += l2.val
+    }
+
+    const n = sum + c
+
+    // 进位
+    c = Math.floor(n / 10)
+
+    const val = n % 10
+    const node = new ListNode(val, null)
+
+    if (!result) {
+      result = node
+      tmp = result
+    } else {
+      tmp.next = node
+      tmp = node
+    }
+
+    if (l1) {
+      l1 = l1.next
+    }
+
+    if (l2) {
+      l2 = l2.next
+    }
+  }
+
+  // 最高位有进位，需生成新节点
+  if (c > 0) {
+    const node = new ListNode(c, null)
+    tmp.next = node
+  }
+
+  return result
+};
+
 var buildListNode = function (nums) {
   let i = 0
   let head = null
@@ -180,3 +233,4 @@ const l2 = buildListNode([4, 7, 6, 5])
 
 console.log(addTwoNumbers(l1, l2))
 console.log(addTwoNumbers2(l1, l2))
+console.log(addTwoNumbers3(l1, l2))
