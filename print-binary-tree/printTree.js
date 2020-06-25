@@ -13,7 +13,7 @@ function TreeNode(val, left, right) {
 // 32.56%
 var printTree = function (root) {
   if (root) {
-    // 记录每层节点距离父节点的列数
+    // 记录每层所有节点距离父节点的最大列数，因为左右子树的所占空间一样，需要取最大的
     let map = new Map()
 
     // 设置第 0 层的值为 0，因为根节点没有父节点
@@ -36,7 +36,7 @@ var printTree = function (root) {
 /**
  * 生成数组
  * @param {*} root 父节点
- * @param {*} map 每层节点距离父节点最大距离
+ * @param {*} map 记录每层所有节点距离父节点的最大值
  * @param {*} array 数组
  * @param {*} colCount 总列数
  * @param {*} col 当前列
@@ -79,8 +79,8 @@ var generateArray = function (root, map, array, colCount, col, row) {
 /**
  * 计算以 root 为父节点的树占据的列数
  * @param {*} root 父节点
- * @param {*} map 记录每层每个节点中距离父节点的最大值
- * @param {*} level 当前层级
+ * @param {*} map 记录每层所有节点距离父节点的最大值
+ * @param {*} level 当前层数
  */
 var calculateLevelSpace = function (root, map, level) {
   if (root) {
@@ -112,9 +112,9 @@ var calculateLevelSpace = function (root, map, level) {
     }
 
     return space
-  } else {
-    return 0
   }
+
+  return 0
 }
 
 let n1 = new TreeNode(1)
