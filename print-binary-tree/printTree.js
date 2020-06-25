@@ -36,7 +36,7 @@ var printTree = function (root) {
 /**
  * 生成数组
  * @param {*} root 父节点
- * @param {*} map 记录每层所有节点距离父节点的最大值
+ * @param {*} map 记录每层所有节点距离父节点的最大列数
  * @param {*} array 数组
  * @param {*} colCount 总列数
  * @param {*} col 当前列
@@ -79,7 +79,7 @@ var generateArray = function (root, map, array, colCount, col, row) {
 /**
  * 计算以 root 为父节点的树占据的列数
  * @param {*} root 父节点
- * @param {*} map 记录每层所有节点距离父节点的最大值
+ * @param {*} map 记录每层所有节点距离父节点的最大列数
  * @param {*} level 当前层数
  */
 var calculateLevelSpace = function (root, map, level) {
