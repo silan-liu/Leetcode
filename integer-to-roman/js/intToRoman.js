@@ -3,7 +3,7 @@
  * @param {number} num
  * @return {string}
  */
-// 56.30%
+// 93.52%
 var intToRoman = function (num) {
   // 保存结果字符串
   let roman = "";
@@ -30,13 +30,20 @@ var intToRoman = function (num) {
     while (i < numArray.length) {
       const key = numArray[i];
       if (num >= key) {
+        const count = Math.floor(num / key);
+
         // 取对应罗马符号
         const romanSymbol = numMap[key];
 
-        roman += romanSymbol;
+        let j = 0;
+        while (j < count) {
+          roman += romanSymbol;
+
+          j += 1;
+        }
 
         // 减去已计算的数
-        num -= key;
+        num -= key * count;
         break;
       }
 
@@ -47,5 +54,55 @@ var intToRoman = function (num) {
   return roman;
 };
 
-const num = 1002;
+// 88.40%
+var intToRoman2 = function (num) {
+  // 保存结果字符串
+  let roman = "";
+
+  const numArray = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  const romanArray = [
+    "M",
+    "CM",
+    "D",
+    "CD",
+    "C",
+    "XC",
+    "L",
+    "XL",
+    "X",
+    "IX",
+    "V",
+    "IV",
+    "I",
+  ];
+
+  let i = 0;
+  while (i < numArray.length) {
+    const key = numArray[i];
+
+    if (num >= key) {
+      const count = Math.floor(num / key);
+
+      // 取对应罗马符号
+      const romanSymbol = romanArray[i];
+
+      let j = 0;
+      while (j < count) {
+        roman += romanSymbol;
+
+        j += 1;
+      }
+
+      // 减去已计算的数
+      num -= key * count;
+    }
+
+    i += 1;
+  }
+
+  return roman;
+};
+
+const num = 365;
 console.log(intToRoman(num));
+console.log(intToRoman2(num));
