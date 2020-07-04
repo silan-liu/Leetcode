@@ -8,7 +8,7 @@ var lengthOfLongestSubstring = function (s) {
   // 存到以某个位置字符开始的最大长度
   let lenList = []
 
-  // 最大
+  // 最大长度
   let longestLen = 0
   let i = 0
   while (i < s.length) {
@@ -23,8 +23,10 @@ var lengthOfLongestSubstring = function (s) {
     let j = i - 1
 
     while (j >= 0) {
-      // [j+1,i] 的字符串
+      // [j+1,i] 的子串
       const substr = s.substr(j + 1, i - j)
+
+      // 是否包含
       if (!substr.includes(s[j])) {
         lenList[j] = lenList[j + 1] + 1
 
