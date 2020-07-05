@@ -54,7 +54,7 @@ var intToRoman = function (num) {
   return roman;
 };
 
-// 88.40%
+// 97.30%
 var intToRoman2 = function (num) {
   // 保存结果字符串
   let roman = "";
@@ -79,6 +79,10 @@ var intToRoman2 = function (num) {
   let i = 0;
   while (i < numArray.length) {
     const key = numArray[i];
+
+    if (num === 0) {
+      break
+    }
 
     if (num >= key) {
       const count = Math.floor(num / key);
