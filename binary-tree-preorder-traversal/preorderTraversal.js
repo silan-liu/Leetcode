@@ -40,10 +40,12 @@ var preoderTraversalIterative = function (root) {
       const node = list.shift();
       result.push(node.val);
 
+      // 右节点进栈
       if (node.right) {
         list.unshift(node.right);
       }
 
+      // 左节点进栈
       if (node.left) {
         list.unshift(node.left);
       }
