@@ -21,9 +21,13 @@ var preorderTraversal = function (root) {
 
 var preoderTraversalRecursive = function (root, result) {
   if (root) {
+    // 根节点
     result.push(root.val);
 
+    // 左节点
     preoderTraversalRecursive(root.left, result);
+
+    // 右节点
     preoderTraversalRecursive(root.right, result);
   }
 };
@@ -40,10 +44,12 @@ var preoderTraversalIterative = function (root) {
       const node = list.shift();
       result.push(node.val);
 
+      // 右节点进栈
       if (node.right) {
         list.unshift(node.right);
       }
 
+      // 左节点进栈
       if (node.left) {
         list.unshift(node.left);
       }

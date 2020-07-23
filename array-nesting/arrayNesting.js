@@ -4,24 +4,53 @@
  */
 // https://leetcode.com/problems/array-nesting/
 var arrayNesting = function (nums) {
-  let i = 0;
-  let maxLen = 0;
+  let i = 0
+  let maxLen = 0
 
   while (i < nums.length) {
-    let next = nums[i];
-    let list = [];
+    let next = nums[i]
+    let count = 0
 
-    // 找从 i 开始的数字链
-    while (next !== i) {
-      list.push(next);
+    do {
+      count += 1
+      next = nums[next]
+    } while (next !== nums[i])
 
-      // 继续循环
-      next = nums[next];
+    maxLen = Math.max(maxLen, count)
+
+    i += 1;
+  }
+
+  return maxLen;
+};
+
+var arrayNesting2 = function (nums) {
+  let maxLen = 0
+
+  // 记录是否访问过
+  let visited = []
+
+  // 初始化
+  let i = 0;
+  while (i < nums.length) {
+    visited.push(false)
+    i += 1
+  }
+
+  i = 0
+  while (i < nums.length) {
+    let next = nums[i]
+    let count = 0
+
+    if (!visited[i]) {
+      do {
+        count += 1
+        next = nums[next]
+      } while (next !== nums[i])
+
+      visited[i] = true
+      maxLen = Math.max(maxLen, count)
     }
-
-    list.push(next);
-
-    maxLen = Math.max(maxLen, list.length);
 
     i += 1;
   }
@@ -20031,5 +20060,5 @@ const array = [
   5373,
   14924,
 ];
-// console.log(arrayNesting(array));
+console.log(arrayNesting(array));
 console.log(arrayNesting2(array));
