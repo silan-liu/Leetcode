@@ -10,6 +10,7 @@ function ListNode(val, next) {
  * @return {ListNode}
  */
 // 16.12%
+// 将奇数号节点逐个插入
 var oddEvenList = function (head) {
   if (head) {
     // 指向奇数节点
