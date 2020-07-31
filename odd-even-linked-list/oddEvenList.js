@@ -54,6 +54,7 @@ var oddEvenList = function (head) {
       i += 1;
     }
   }
+  return head;
 };
 
 var printLinkList = function (head) {
