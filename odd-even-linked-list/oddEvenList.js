@@ -58,6 +58,7 @@ var oddEvenList = function (head) {
   return head;
 };
 
+// 14.19%
 var oddEvenList2 = function (head) {
   if (head) {
     // 奇数号链最后一个节点
