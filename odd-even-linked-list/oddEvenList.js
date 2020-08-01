@@ -58,6 +58,37 @@ var oddEvenList = function (head) {
   return head;
 };
 
+var oddEvenList2 = function (head) {
+  if (head) {
+    // 奇数号链最后一个节点
+    let odd = head
+
+    // 偶数号链头
+    let evenHead = head.next
+
+    // 偶数号链最后一个节点
+    let even = evenHead
+
+    // 将偶数号链接在奇数号链后面即可
+    while (even) {
+      // 奇数号进行链接
+      odd.next = even.next
+
+      if (odd.next) {
+        odd = odd.next
+      }
+
+      // 偶数号进行链接
+      even.next = odd.next
+      even = even.next
+    }
+
+    odd.next = evenHead
+  }
+
+  return head
+}
+
 var printLinkList = function (head) {
   while (head) {
     console.log(head.val);
@@ -83,5 +114,6 @@ n6.next = n4;
 n4.next = n7;
 
 oddEvenList(n2);
+oddEvenList2(n2);
 
 printLinkList(n2);
