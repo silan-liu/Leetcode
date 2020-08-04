@@ -19,8 +19,9 @@ Solution.prototype.pick = function (target) {
       if (num === target) {
         count += 1;
 
-        // 蓄水池概率问题，当新加入一个数 count，在 [0, count-1] 取随机数，如果取到 count 的概率为 1/count，那么之前加入数的概率也会变成 1/count。
-        const randomIndex = Math.floor(Math.random() * 10) % count;
+        // 水塘抽样问题，当新加入一个数 count，在 [0, count-1] 取随机数，如果取到 count 的概率为 1/count，那么之前加入数的概率也会变成 1/count。
+        // 生成 [0, count-1] 的随机数
+        const randomIndex = Math.floor(Math.random() * count);
         if (randomIndex === 0) {
           result = index;
         }
