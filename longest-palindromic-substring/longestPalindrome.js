@@ -54,5 +54,69 @@ var isPalindrome = function (s) {
   return true
 }
 
-let s = "abcd"
-console.log(longestPalindrome(s))
+var longestPalindrome2 = function (s) {
+  if (!s) {
+    return ""
+  }
+
+  // 反转
+  const t = s.split("").reverse().join("");
+
+  return longestCommonStr(s, t)
+}
+
+// 最长公共子串
+var longestCommonStr = function (s, t) {
+  if (s && t) {
+    let maxLen = 0
+    let maxPalindromeLen = 0
+    let commonStr = ""
+
+    let recordList = new Array()
+    let i = 0
+    while (i < s.length) {
+
+      let rows = new Array()
+      let j = 0
+      while (j < t.length) {
+        if (s[i] === t[j]) {
+
+          let value = 1
+          if (i >= 1 && j >= 1) {
+            value = recordList[i - 1][j - 1] + 1
+          }
+
+          if (value > maxPalindromeLen) {
+            // 求公共字符串
+            const startRow = i - (value - 1)
+            const substr = s.slice(startRow, i + 1)
+
+            console.log(value, substr, startRow, i + 1)
+
+            // 判断是否是回文
+            if (isPalindrome(substr) && substr.length > maxPalindromeLen) {
+              commonStr = substr
+              maxPalindromeLen = substr.length
+            }
+          }
+
+          rows.push(value)
+
+        } else {
+          rows.push(0)
+        }
+        j += 1
+      }
+
+      recordList.push(rows)
+      i += 1
+    }
+
+    return commonStr
+  }
+
+  return ""
+}
+
+let s = "aacdbbbbedcaa"
+console.log(longestPalindrome2(s))
