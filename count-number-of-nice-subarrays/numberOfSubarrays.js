@@ -53,6 +53,41 @@ var numberOfSubarrays = function (nums, k) {
   return sum;
 };
 
-const nums = [2, 2, 1, 0, 4, 1, 2, 1, 1, 2],
+// 83.91%
+var numberOfSubarrays2 = function (nums, k) {
+  if (!nums) {
+    return 0;
+  }
+
+  let sum = 0;
+
+  // 记录上一次 k 个奇数数的第一个数下标
+  let oddIndex = 0
+
+  // 奇数的 index 列表，默认填入 -1
+  let oddList = [-1];
+
+  nums.forEach((element, index) => {
+
+    if (element % 2 === 1) {
+
+      oddList.push(index)
+
+      // 当已经有 k 个奇数，更新记录下标
+      if (oddList.length - oddIndex - 1 > k) {
+        oddIndex += 1
+      }
+    }
+
+    if (oddList.length - oddIndex - 1 === k) {
+      sum += oddList[oddIndex + 1] - oddList[oddIndex]
+    }
+  });
+
+  return sum
+};
+
+const nums = [1, 2, 2, 1, 2, 2, 1, 2, 2, 3],
   k = 3;
 console.log(numberOfSubarrays(nums, k));
+console.log(numberOfSubarrays2(nums, k));
