@@ -79,6 +79,7 @@ var longestCommonStr = function (s, t) {
         if (s[i] === t[j]) {
           let value = 1;
           if (i >= 1 && j >= 1) {
+            // 左上角的值 + 1
             value = recordList[i - 1][j - 1] + 1;
           }
 
