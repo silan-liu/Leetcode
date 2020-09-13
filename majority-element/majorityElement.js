@@ -26,5 +26,20 @@ var majorityElement = function(nums) {
     }
 };
 
-const nums = [2,1]
+// 排序，数组中间的值肯定是众数
+/**
+ * 
+ * @param {[]} nums 
+ */
+var majorityElement2 = function(nums) {
+  if (nums) {
+    const sortedNums = nums.sort((a, b) => a - b) 
+
+    const midIndex = parseInt(nums.length / 2)
+    return sortedNums[midIndex]
+  }
+}
+
+const nums = [2,1,1]
 console.log(majorityElement(nums))
+console.log(majorityElement2(nums))
