@@ -87,7 +87,7 @@ var numberOfSubarrays2 = function (nums, k) {
   return sum
 };
 
-const nums = [1, 2, 2, 1, 2, 2, 1, 2, 2, 3],
-  k = 3;
+const nums = [2, 2, 1, 2, 3, 4, 6, 8],
+  k = 2;
 console.log(numberOfSubarrays(nums, k));
 console.log(numberOfSubarrays2(nums, k));

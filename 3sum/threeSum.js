@@ -3,46 +3,54 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+//  88.07%
 var threeSum = function (nums) {
-  let result = [];
-  nums.sort((a, b) => a - b);
+  let result = []
 
-  let i = 0;
+  nums.sort((a, b) => a - b)
 
-  while (i < nums.length - 2) {
-    const n1 = nums[i];
+  let i = 0
 
-    let j = nums.length - 1;
-
-    while (j > i + 1) {
-      const n2 = nums[j];
-
-      if (n1 <= 0 && n2 >= 0) {
-        const sum = n1 + n2;
-
-        let k = j - 1;
-        while (k > i) {
-          if (sum + nums[k] === 0) {
-            // 保存结果
-            const triplet = [n1, n2, nums[k]];
-            result.push(triplet);
-            break;
-          }
-
-          k -= 1;
-        }
-
-        j -= 1;
-      } else {
-        break;
-      }
+  // 固定 nums[i]
+  for (let i = 0; i < nums.length - 2; i += 1) {
+    // 如果是相同的数，跳过
+    if (i > 0 && nums[i] === nums[i - 1]) {
+      continue
     }
 
-    i += 1;
+    const target = 0 - nums[i]
+
+    let l = i + 1
+    let h = nums.length - 1
+
+    // 二分法
+    while (l < h) {
+      if (nums[l] + nums[h] === target) {
+
+        result.push([nums[i], nums[l], nums[h]])
+
+        // 有相同的数
+        while (l < h && nums[l] === nums[l + 1]) {
+          l += 1
+        }
+
+        // 有相同的数
+        while (l < h && nums[h] === nums[h - 1]) {
+          h -= 1
+        }
+
+        l += 1
+        h -= 1
+      } else if (nums[l] + nums[h] < target) {
+        l += 1
+      } else {
+        h -= 1
+      }
+    }
   }
 
-  return result;
+  return result
 };
 
-const nums = [-5, -4, 1, 2, 2, 3, 4, 0, 0, 1, 6];
+const nums = [-1, 0, 1, 2, -1, -4]
 console.log(threeSum(nums));
