@@ -5,38 +5,38 @@
  */
 var firstMissingPositive = function (nums) {
   if (nums && nums.length > 0) {
-    let left = 0;
-    let right = 0;
-    nums.forEach((num) => {
-      if (num > 0) {
-        if (left === 0 && right === 0) {
-          left = num;
-          right = num;
-        } else {
-          if (num < left) {
-            left = num;
-          } else if (right - left <= 1 && num > right) {
-            right = num;
-          }
+    // 先把每个正数放到正确的位置
+    let i = 0;
+    const len = nums.length;
+
+    while (i < len) {
+      const num = nums[i];
+      if (num > 0 && num < len) {
+        // 它应该放在 num - 1 的位置上，进行交换
+        if (nums[num - 1] !== num) {
+          const tmp = nums[num - 1];
+          nums[num - 1] = num;
+          nums[i] = tmp;
         }
       }
-    });
 
-    console.log(left, right);
-    if (left > 1) {
-      return 1;
+      i += 1;
     }
 
-    // 中间无可用正数
-    if (right - left <= 1) {
-      return right + 1;
+    i = 0;
+    while (i < len) {
+      if (nums[i] !== i + 1) {
+        return i + 1;
+      }
+      i += 1;
     }
 
-    return left + 1;
+    // 如果已经是在正确的位置，则直接返回最右边的数
+    return len + 1;
   }
 
   return 1;
 };
 
-const nums = [1, 2, 0, 5];
+const nums = [-1, 3, 4, 6, 0, 5];
 console.log(firstMissingPositive(nums));
